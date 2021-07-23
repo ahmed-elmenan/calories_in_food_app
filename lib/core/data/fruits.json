@@ -1,0 +1,14 @@
+[
+     {
+        "name" : "Apple",
+        "proteins" : 0.18,
+        "fat" : 0.49,
+        "carb" : 16.5
+    },
+    {
+        "name" : "Ananas",
+        "proteins" : 0.18,
+        "fat" : 0.49,
+        "carb" : 16.5
+    }
+]
