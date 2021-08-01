@@ -1,132 +1,140 @@
 
-  ‘’Name’’ :   ‘’lard ’’ , 
-           ‘’proteins’’ :   12.53g , 
-           ‘’Fat’’ :39.27g , 
-            ‘’Carb’’ :0.79g  , 
-            ‘’calories’’ :407
+{
+  "viande":[
+{
+  "Name" : "lard " , 
+  "proteins" : 12.53 , 
+  "Fat" : 39.27 , 
+  "Carb" : 0.79  , 
+  "calories" : 407
+},
 
-  ‘’Name’’ :   ‘’chiken nuggets’’ , 
-           ‘’proteins’’ :   15.27g , 
-           ‘’Fat’’ :19.82g , 
-            ‘’Carb’’ :14.09g  , 
-            ‘’calories’’ :296
+{  
+  "Name" : "chiken nuets" , 
+  "proteins" :   15.27 , 
+  "Fat" :19.82 , 
+  "Carb" :14.09  , 
+  "calories" :296
+},
+{  "Name" :   " lamb rib, raw" , 
+           "proteins" :   14.52 , 
+           "Fat" :34.39 , 
+            "Carb" :0.0  , 
+            "calories" :372
+},
+{
+  "Name" :   " lamb rib, cooked " , 
+           "proteins" :   21.12 , 
+           "Fat" :29.89 , 
+            "Carb" :0.0  , 
+            "calories" :359},
 
-  ‘’Name’’ :   ‘’ lamb rib, raw’’ , 
-           ‘’proteins’’ :   14.52g , 
-           ‘’Fat’’ :34.39g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :372
+{  "Name" :   " Lamb shoulder, raw " , 
+           "proteins" :   16.58 , 
+           "Fat" :21.45 , 
+            "Carb" :0.0  , 
+            "calories" :264},
 
-  ‘’Name’’ :   ‘’ lamb rib, cooked ’’ , 
-           ‘’proteins’’ :   21.12g , 
-           ‘’Fat’’ :29.89g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :359
+{  "Name" :   " lamb shoulder, cooked " , 
+           "proteins" :   28.68 , 
+           "Fat" :24.55 , 
+            "Carb" :0.0  , 
+            "calories" :344
+},{
+  "Name" :   "raw le of lamb" , 
+           "proteins" :   17.91 , 
+           "Fat" :17.07 , 
+            "Carb" :0.0  , 
+            "calories" :230},
 
-  ‘’Name’’ :   ‘’ Lamb shoulder, raw ’’ , 
-           ‘’proteins’’ :   16.58g , 
-           ‘’Fat’’ :21.45g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :264
+{  "Name" :   " cooked le of lamb " , 
+           "proteins" :   25.55 , 
+           "Fat" :16.48 , 
+            "Carb" :0.0  , 
+            "calories" :258},
 
-  ‘’Name’’ :   ‘’ lamb shoulder, cooked ’’ , 
-           ‘’proteins’’ :   28,68g , 
-           ‘’Fat’’ :24.55g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :344
+ { "Name" :   "  raw Lamb shank" , 
+           "proteins" :   18.58 , 
+           "Fat" :13.49 , 
+            "Carb" :0.0  , 
+            "calories" :201},
 
-  ‘’Name’’ :   ‘’raw leg of lamb’’ , 
-           ‘’proteins’’ :   17.91g , 
-           ‘’Fat’’ :17.07g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :230
+{  "Name" :   " raw  lamb loin " , 
+           "proteins" :   16.32 , 
+           "Fat" :26.63 , 
+            "Carb" :0.0  , 
+            "calories" :306},
 
-  ‘’Name’’ :   ‘’ cooked leg of lamb ’’ , 
-           ‘’proteins’’ :   25.55g , 
-           ‘’Fat’’ :16.48g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :258
+{"Name" :   " cooked lamb loin " , 
+           "proteins" :   25.17 , 
+           "Fat" :23.08 , 
+            "Carb" :0.0  , 
+            "calories" :316},
+{
+"Name" :   " cooked muton " , 
+           "proteins" :   33.43 , 
+           "Fat" :11.09 , 
+            "Carb" :0.8  , 
+            "calories" :234},
 
-  ‘’Name’’ :   ‘’  raw Lamb shank’’ , 
-           ‘’proteins’’ :   18.58g , 
-           ‘’Fat’’ :13.49g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :201
+{"Name" :   "chicken burer steak  " , 
+           "proteins" :   14.85 , 
+           "Fat" :19.58 , 
+            "Carb" :12.84  , 
+            "calories" :287},
 
-  Name’’ :   ‘’ raw  lamb loin ’’ , 
-           ‘’proteins’’ :   16.32g , 
-           ‘’Fat’’ :26.63g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :306
+{"Name" :   " meat substitute" , 
+           "proteins" :   38.11 , 
+           "Fat" :2.97 , 
+            "Carb" :38.32  , 
+            "calories" :313},
 
-Name’’ :   ‘’ cooked lamb loin ’’ , 
-           ‘’proteins’’ :   25.17g , 
-           ‘’Fat’’ :23.08g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :316
+{"Name" :   "  raw lamb sirloin " , 
+           "proteins" :   16.94 , 
+           "Fat" :22.12 , 
+            "Carb" :0.0  , 
+            "calories" :272},
 
-Name’’ :   ‘’ cooked muton ’’ , 
-           ‘’proteins’’ :   33.43g , 
-           ‘’Fat’’ :11.09g , 
-            ‘’Carb’’ :0.8g  , 
-            ‘’calories’’ :234
+{"Name" :   "  cooked lamb sirloin " , 
+           "proteins" :   24.63 , 
+           "Fat" :20.67 , 
+            "Carb" :0.0  , 
+            "calories" :292},
 
-Name’’ :   ‘’chicken burger steak  ’’ , 
-           ‘’proteins’’ :   14.85g , 
-           ‘’Fat’’ :19.58g , 
-            ‘’Carb’’ :12.84g  , 
-            ‘’calories’’ :287
+{"Name" :   "  tournedos  " , 
+           "proteins" :   29.1 , 
+           "Fat" :44.2 , 
+            "Carb" :0.8  , 
+            "calories" :517},
 
-Name’’ :   ‘’ meat substitute’’ , 
-           ‘’proteins’’ :   38.11g , 
-           ‘’Fat’’ :2.97g , 
-            ‘’Carb’’ :38.32g  , 
-            ‘’calories’’ :313
+{"Name" :   "  raw round lamb" , 
+           "proteins" :  16.56 , 
+           "Fat" :23.41 , 
+            "Carb" :0.0  , 
+            "calories" :282},
 
-Name’’ :   ‘’  raw lamb sirloin ’’ , 
-           ‘’proteins’’ :   16.94g , 
-           ‘’Fat’’ :22.12g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :272
+{"Name" :   "  cooked round lamb" , 
+           "proteins" :  24.75 , 
+           "Fat" :16.65 , 
+            "Carb" :0.0  , 
+            "calories" :283},
 
-Name’’ :   ‘’  cooked lamb sirloin ’’ , 
-           ‘’proteins’’ :   24.63g , 
-           ‘’Fat’’ :20.67g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :292
+{"Name" :   " raw lamb meat" , 
+           "proteins" :  17.54 , 
+           "Fat" :18.66 , 
+            "Carb" :0.0  , 
+            "calories" :243},
 
-Name’’ :   ‘’  tournedos  ’’ , 
-           ‘’proteins’’ :   29.1g , 
-           ‘’Fat’’ :44.2g , 
-            ‘’Carb’’ :0.8g  , 
-            ‘’calories’’ :517
+{"Name" :   " cooked lamb meat" , 
+           "proteins" :  25.51 , 
+           "Fat" :18.01 , 
+            "Carb" :0.0  , 
+            "calories" :271},
 
-Name’’ :   ‘’  raw ground lamb’’ , 
-           ‘’proteins’’ :  16.56g , 
-           ‘’Fat’’ :23.41g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :282
-
-Name’’ :   ‘’  cooked ground lamb’’ , 
-           ‘’proteins’’ :  24.75g , 
-           ‘’Fat’’ :16.65g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :283
-
-Name’’ :   ‘’ raw lamb meat’’ , 
-           ‘’proteins’’ :  17.54g , 
-           ‘’Fat’’ :18.66g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :243
-
-Name’’ :   ‘’ cooked lamb meat’’ , 
-           ‘’proteins’’ :  25.51g , 
-           ‘’Fat’’ :18.01g , 
-            ‘’Carb’’ :0.0g  , 
-            ‘’calories’’ :271
-
-Name’’ :   ‘’ sausage steak, McDonald's’’ , 
-           ‘’proteins’’ :  15.19g , 
-           ‘’Fat’’ :39.58g , 
-            ‘’Carb’’ :1.4g  , 
-            ‘’calories’’ :405
+{"Name" : " sausae steak, McDonald's" , 
+           "proteins" :  15.19 , 
+           "Fat" :39.58 , 
+            "Carb" :1.4  , 
+            "calories" :405}
+]
+}
