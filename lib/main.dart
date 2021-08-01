@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'features/fruits/foods_list_page.dart';
+import 'features/home/presentation/pages/home_page.dart';
+
 
 
 void main() {
   runApp(
     MaterialApp(
-      home: FoodsListPage(),
+      home: SilverAppBarExample(),
     )
   );
 }
