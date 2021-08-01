@@ -1,0 +1,646 @@
+{ 
+    ‘’Name’’ :   ‘’nori seaweed’’ , 
+    ‘’proteins’’ :   5.81g , 
+    ‘’Fat’’ :0.28g , 
+     ‘’Carb’’ :5.11g  , 
+     ‘’calories’’ :35
+                                  }
+
+{ 
+    ‘’Name’’ :   ‘’marante ’’ , 
+    ‘’proteins’’ :   4.24g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :13.39g  , 
+     ‘’calories’’ :65
+                                  }
+
+{ 
+    ‘’Name’’ :   ‘’raw artichok ’’ , 
+    ‘’proteins’’ :   3.27g , 
+    ‘’Fat’’ :0.15g  , 
+     ‘’Carb’’ :10.51g  , 
+     ‘’calories’’ :47
+                                  }
+
+{ 
+    ‘’Name’’ :   ‘’raw asparagus  ’’ , 
+    ‘’proteins’’ :   2.2g , 
+    ‘’Fat’’ :0.12g  , 
+     ‘’Carb’’ :3.88g  , 
+     ‘’calories’’ :20
+                                  }
+
+{ 
+    ‘’Name’’ :   ‘’cooked asparagus  ’’ , 
+    ‘’proteins’’ :   2.4g , 
+    ‘’Fat’’ :0.22g  , 
+     ‘’Carb’’ :4.11g  , 
+     ‘’calories’’ :22
+                                  }
+
+{ 
+    ‘’Name’’ :   ‘’raw eggplant’’ , 
+    ‘’proteins’’ :   0.98 , 
+    ‘’Fat’’ :0.18g  , 
+     ‘’Carb’’ :5.88g  , 
+     ‘’calories’’ :25
+                                  }
+
+{ 
+    ‘’Name’’ :   ‘’cooked eggplant  ’’ , 
+    ‘’proteins’’ :   0.38g , 
+    ‘’Fat’’ :0.23g  , 
+     ‘’Carb’’ :8.14g  , 
+     ‘’calories’’ :33
+                                  }
+
+
+{ 
+    ‘’Name’’ :   ‘’suisse chard   ’’ , 
+    ‘’proteins’’ :   1.8g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :3.74g  , 
+     ‘’calories’’ :19
+                                  }
+{ 
+    ‘’Name’’ :   ‘’raw beets’’ , 
+    ‘’proteins’’ :   1.61g , 
+    ‘’Fat’’ :0.17g  , 
+     ‘’Carb’’ :9.56g  , 
+     ‘’calories’’ :43
+                                  }
+{ 
+    ‘’Name’’ :   ‘’cooked beets    ’’ , 
+    ‘’proteins’’ :   1.68g , 
+    ‘’Fat’’ :0.18g  , 
+     ‘’Carb’’ :9.96g  , 
+     ‘’calories’’ :44
+                                  }
+{ 
+    ‘’Name’’ :   ‘’raw broccoli    ’’ , 
+    ‘’proteins’’ :   2.82g , 
+    ‘’Fat’’ :0.37g  , 
+     ‘’Carb’’ :6.64g  , 
+     ‘’calories’’ :34
+                                  }
+{ 
+    ‘’Name’’ :   ‘’cooked broccoli    ’’ , 
+    ‘’proteins’’ :   2.38g , 
+    ‘’Fat’’ :0.41g  , 
+     ‘’Carb’’ :7.18g  , 
+     ‘’calories’’ :35
+                                  }
+{ 
+    ‘’Name’’ :   ‘’broccoli root   ’’ , 
+    ‘’proteins’’ :   1.8g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :3.74g  , 
+     ‘’calories’’ :19
+                                  }
+{ 
+    ‘’Name’’ :   ‘’ raw nopal cactus    ’’ , 
+    ‘’proteins’’ :   0.7g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :4.07g  , 
+     ‘’calories’’ :17
+                                  }
+{ 
+    
+‘’Name’’ :  ‘’cooked nopal cactus   ’’ , 
+    ‘’proteins’’ :   1.35g , 
+    ‘’Fat’’ :0.5g  , 
+     ‘’Carb’’ :3.28g  , 
+     ‘’calories’’ :15
+                                  }
+{ 
+    ‘’Name’’ :   ‘’raw cardoon    ’’ , 
+    ‘’proteins’’ :   0.7g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :4.07g  , 
+     ‘’calories’’ :17
+                                  }
+{ 
+    ‘’Name’’ :   ‘’cooked cardoon   ’’ , 
+    ‘’proteins’’ :   0.76g , 
+    ‘’Fat’’ :0.11g  , 
+     ‘’Carb’’ :4.74g  , 
+     ‘’calories’’ :20
+                                  }
+
+                    
+{ 
+    ‘’Name’’ :   ‘’raw carrot   ’’ , 
+    ‘’proteins’’ :   0.93g , 
+    ‘’Fat’’ :0.24g  , 
+     ‘’Carb’’ :9.58g  , 
+     ‘’calories’’ :41
+                                  }
+
+                    
+{ 
+    ‘’Name’’ :   ‘’cooked carrot   ’’ , 
+    ‘’proteins’’ :   0.76g , 
+    ‘’Fat’’ :0.18g  , 
+     ‘’Carb’’ :8.22g  , 
+     ‘’calories’’ :35
+                                  }
+
+                    
+{ 
+    ‘’Name’’ :   ‘Raw celery   ’’ , 
+    ‘’proteins’’ :   0.69g , 
+    ‘’Fat’’ :0.17g  , 
+     ‘’Carb’’ :2.97g  , 
+     ‘’calories’’ :16
+                                  }
+
+                    
+{ 
+    ‘’Name’’ :   ‘’cooked celery    ’’ , 
+    ‘’proteins’’ :   0.83g , 
+    ‘’Fat’’ :0.16g  , 
+     ‘’Carb’’ :4.0g  , 
+     ‘’calories’’ :18
+                                  }
+
+                    
+{ 
+    ‘’Name’’ :   ‘’raw lamb’s quarters  ’’ , 
+    ‘’proteins’’ :   4.21 , 
+    ‘’Fat’’ :0.28g  , 
+     ‘’Carb’’ :6.96g  , 
+     ‘’calories’’ :47
+                                  }
+
+                    
+{ 
+  ‘’Name’’ :  ‘’cooked lamb’s quarters’’, 
+    ‘’proteins’’ :   3.2g , 
+    ‘’Fat’’ :0.7g   , 
+     ‘’Carb’’ :5.01g   , 
+     ‘’calories’’ :32
+                                  }
+
+                    
+{ 
+  ‘’Name’’ :   ‘’ caribbean cabbage    ’’ , 
+    ‘’proteins’’ :   1.46g , 
+    ‘’Fat’’ :0.4g  , 
+     ‘’Carb’’ :23.63g  , 
+     ‘’calories’’ :98
+                                  } 
+{ 
+
+‘’Name’’ :   ‘’ raw cavalier cabbage    ’’ , 
+    ‘’proteins’’ :   3.02g , 
+    ‘’Fat’’ :0.61g  , 
+     ‘’Carb’’ :5.42g  , 
+     ‘’calories’’ :32
+                                  }
+
+{ 
+
+‘’Name’’ :   ‘’ cooked cavalier cabbage’’, 
+    ‘’proteins’’ :   2.71g , 
+    ‘’Fat’’ :0.72g  , 
+     ‘’Carb’’ :5.65g  , 
+     ‘’calories’’ :33
+                                  }
+
+{ 
+  ‘’Name’’ :   ‘’raw savoy cabbage    ’’ , 
+    ‘’proteins’’ :   2.0g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :6.1g  , 
+     ‘’calories’’ :27
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked savoy cabbage’’, 
+    ‘’proteins’’ :  1.8g , 
+    ‘’Fat’’ :0.9g  , 
+     ‘’Carb’’ :5.41g  , 
+     ‘’calories’’ :24
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ japanese cabbage’’, 
+    ‘’proteins’’ :  1.6 , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :5.67g  , japanes 
+     ‘’calories’’ :30
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw napa cabbage ’’, 
+    ‘’proteins’’ :  1.1g , 
+    ‘’Fat’’ :0.17g  , 
+     ‘’Carb’’ :2.23g  , 
+     ‘’calories’’ :12
+                                  }
+
+{ 
+‘’Name’’ :  ‘’raw  red cabbage’’, 
+    ‘’proteins’’ :  1.43g , 
+    ‘’Fat’’ :0.16g  , 
+     ‘’Carb’’ :7.37g  , 
+     ‘’calories’’ :31
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked red cabbage ’’, 
+    ‘’proteins’’ :  1.51g , 
+    ‘’Fat’’ :1.09g  , 
+     ‘’Carb’’ :6.94g  , 
+     ‘’calories’’ :29
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw cauliflower’’, 
+    ‘’proteins’’ :  1.92g , 
+    ‘’Fat’’ :0.28g  , 
+     ‘’Carb’’ :4.97g  , 
+     ‘’calories’’ :25
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked cauliflower’’, 
+    ‘’proteins’’ :  1.84g , 
+    ‘’Fat’’ :0.45g  , 
+     ‘’Carb’’ :4.11g  , 
+     ‘’calories’’ :23
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw kohlrabi’’, 
+    ‘’proteins’’ : 1.7g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :6.2g  , 
+     ‘’calories’’ :27
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked kohlrabi’’, 
+    ‘’proteins’’ :  1.8g , 
+    ‘’Fat’’ :0.11g  , 
+     ‘’Carb’’ :6.69g  , 
+     ‘’calories’’ :29
+                                  }
+
+{ 
+‘’Name’’ :  ‘’  lemongrass ’’, 
+    ‘’proteins’’ :  1.82g , 
+    ‘’Fat’’ :0.49g  , 
+     ‘’Carb’’ :25.31g  , 
+     ‘’calories’’ :99
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw pumpkin ’’, 
+    ‘’proteins’’ :  1.0g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :6.5g  , 
+     ‘’calories’’ :26
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked pumpkin ’’, 
+    ‘’proteins’’ :  0.72g , 
+    ‘’Fat’’ :0.07g  , 
+     ‘’Carb’’ :4.31g  , 
+     ‘’calories’’ :18
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ tomato compote’’, 
+    ‘’proteins’’ :  1.96g , 
+    ‘’Fat’’ :2.68g  , 
+     ‘’Carb’’ :13.05g  , 
+     ‘’calories’’ :79
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cucumber ’’, 
+    ‘’proteins’’ :  0,65g , 
+    ‘’Fat’’ :0.11g  , 
+     ‘’Carb’’ :3.63g  , 
+     ‘’calories’’ :15
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ peeled cucumber’’, 
+    ‘’proteins’’ :  0.59g , 
+    ‘’Fat’’ :0.16g  , 
+     ‘’Carb’’ :2.16g  , 
+     ‘’calories’’ :12
+                                  }
+
+{ 
+‘’Name’’ :  ‘’sour pickles  ’’, 
+    ‘’proteins’’ :  0.33g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :2.26g  , 
+     ‘’calories’’ :11
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ pickles chow chow’’, 
+    ‘’proteins’’ :  1.5g , 
+    ‘’Fat’’ :0.9g  , 
+     ‘’Carb’’ :26.64g  , 
+     ‘’calories’’ :121
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ sweet pickle’’, 
+    ‘’proteins’’ :  0.58g , 
+    ‘’Fat’’ :0.41g  , 
+     ‘’Carb’’ :21.15g  , 
+     ‘’calories’’ :91
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw butternut squash’’
+    ‘’proteins’’ :  1.0g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :11.69g  , 
+     ‘’calories’’ :45
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked butternut squash’’, 
+    ‘’proteins’’ :  0.9g , 
+    ‘’Fat’’ :0.9g  , 
+     ‘’Carb’’ :10.49g  , 
+     ‘’calories’’ :40
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cress ’’, 
+    ‘’proteins’’ :  2.3g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :1.29g  , 
+     ‘’calories’’ :11
+                                  }
+
+{ 
+‘’Name’’ :  ‘’  raw shallot ’’, 
+    ‘’proteins’’ :  2.5g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :16.8g  , 
+     ‘’calories’’ :72
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ chicory ’’, 
+    ‘’proteins’’ :  1.25g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :3.35g  , 
+     ‘’calories’’ :17
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ okra ’’, 
+    ‘’proteins’’ :  1.93g , 
+    ‘’Fat’’ :0.19g  , 
+     ‘’Carb’’ :7.45g  , 
+     ‘’calories’’ :33
+                                  }
+
+{ 
+‘’Name’’ :  ‘’cooked okra  ’’, 
+    ‘’proteins’’ :  1.87g , 
+    ‘’Fat’’ :0.21g  , 
+     ‘’Carb’’ :4.51g  , 
+     ‘’calories’’ :22
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ red lettuce’’, 
+    ‘’proteins’’ :  1.33g , 
+    ‘’Fat’’ :0.22g  , 
+     ‘’Carb’’ :2.26g  , 
+     ‘’calories’’ :16
+                                  }
+
+{ 
+‘’Name’’ :  ‘’raw white corn  ’’, 
+    ‘’proteins’’ :  9.42g , 
+    ‘’Fat’’ :4.74g  , 
+     ‘’Carb’’ :74.26g  , 
+     ‘’calories’’ :365
+                                  }
+
+{ 
+‘’Name’’ :  ‘’cooked  white corn  ’’, 
+    ‘’proteins’’ :  3.34g , 
+    ‘’Fat’’ :1.41g  , 
+     ‘’Carb’’ :21.71g  , 
+     ‘’calories’’ :97
+                                  }
+
+{ 
+‘’Name’’ :  ‘’cassava’’, 
+    ‘’proteins’’ : 1.36g , 
+    ‘’Fat’’ :0.28g  , 
+     ‘’Carb’’ :38.06g  , 
+     ‘’calories’’ :160
+                                  }
+
+{ 
+‘’Name’’ :  ‘’mini carrots ’’, 
+    ‘’proteins’’ : 0.64g , 
+    ‘’Fat’’ :0.13g  , 
+     ‘’Carb’’ :8.24g  , 
+     ‘’calories’’ :35
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ mini zucchini ’’, 
+    ‘’proteins’’ : 2.71g , 
+    ‘’Fat’’ :0.4g  , 
+     ‘’Carb’’ :3.11g  , 
+     ‘’calories’’ :21
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw turnips’’, 
+    ‘’proteins’’ : 0.9g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :6.43g  , 
+     ‘’calories’’ :28
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked turnips ’’, 
+    ‘’proteins’’ : 0.71g , 
+    ‘’Fat’’ :0.08g  , 
+     ‘’Carb’’ :5.06g  , 
+     ‘’calories’’ :22
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cebette onion’’, 
+    ‘’proteins’’ : 1.83g , 
+    ‘’Fat’’ :0.19g  , 
+     ‘’Carb’’ :7.34g  , 
+     ‘’calories’’ :32
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ sweet onion ’’, 
+    ‘’proteins’’ : 0.8g , 
+    ‘’Fat’’ :0.8g  , 
+     ‘’Carb’’ :7.55g  , 
+     ‘’calories’’ :32
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw onion ’’, 
+    ‘’proteins’’ : 1.1g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :9.34g  , 
+     ‘’calories’’ :40
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked onion ’’, 
+    ‘’proteins’’ : 1.36g , 
+    ‘’Fat’’ :0.19g  , 
+     ‘’Carb’’ :9.56g  , 
+     ‘’calories’’ :42
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ olive ’’, 
+    ‘’proteins’’ : 0.84g , 
+    ‘’Fat’’ :10.68g  , 
+     ‘’Carb’’ :6.26g  , 
+     ‘’calories’’ :115
+                                  }
+
+{ 
+‘’Name’’ :  ‘’raw parsnip ’’, 
+    ‘’proteins’’ : 1.2g , 
+    ‘’Fat’’ :0.3g  , 
+     ‘’Carb’’ :17.99g  , 
+     ‘’calories’’ :75
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked parsnip  ’’, 
+    ‘’proteins’’ :1.32g , 
+    ‘’Fat’’ :0.3g  , 
+     ‘’Carb’’ :17.01g  , 
+     ‘’calories’’ :71
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw Yam  ’’, 
+    ‘’proteins’’ : 1.57g , 
+    ‘’Fat’’ :0.05g  , 
+     ‘’Carb’’ :20.12g  , 
+     ‘’calories’’ :86
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked Yam  ’’, 
+    ‘’proteins’’ : 1.49g , 
+    ‘’Fat’’ :0.14g  , 
+     ‘’Carb’’ :26.99g  , 
+     ‘’calories’’ :114
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ baked sweet potato ’’, 
+    ‘’proteins’’ : 2.01g , 
+    ‘’Fat’’ :0.15g  , 
+     ‘’Carb’’ :20.71g  , 
+     ‘’calories’’ :92
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ raw peas’’, 
+    ‘’proteins’’ : 5.42g , 
+    ‘’Fat’’ :0.4g  , 
+     ‘’Carb’’ :14.45g  , 
+     ‘’calories’’ :81
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked peas  ’’, 
+    ‘’proteins’’ : 5.36g , 
+    ‘’Fat’’ :0.22g  , 
+     ‘’Carb’’ :15.36g  , 
+     ‘’calories’’ :84
+                                  }
+
+{ 
+‘’Name’’ :  ‘’banana pepper ’’, 
+    ‘’proteins’’ : 1.66g , 
+    ‘’Fat’’ :0.45g  , 
+     ‘’Carb’’ :5.35g  , 
+     ‘’calories’’ :27
+                                  }
+
+{ 
+‘’Name’’ :  ‘’raw leek  ’’, 
+    ‘’proteins’’ : 1.5g , 
+    ‘’Fat’’ :0.3g  , 
+     ‘’Carb’’ :14.15g  , 
+     ‘’calories’’ :61
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked leek  ’’, 
+    ‘’proteins’’ : 0.81g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :7.62g  , 
+     ‘’calories’’ :31
+                                  }
+{ 
+‘’Name’’ :  ‘’ yellow pepper ’’, 
+    ‘’proteins’’ : 1.0g , 
+    ‘’Fat’’ :0.21g  , 
+     ‘’Carb’’ :6.32g  , 
+     ‘’calories’’ :27
+{ 
+‘’Name’’ :  ‘’ winter radish  ’’, 
+    ‘’proteins’’ : 1.1g , 
+    ‘’Fat’’ :0.1g  , 
+     ‘’Carb’’ :2.63g  , 
+     ‘’calories’’ :14
+                                  }
+                               
+
+{ 
+‘’Name’’ :  ‘’ yellow tomato ’’, 
+    ‘’proteins’’ : 0.98g , 
+    ‘’Fat’’ :0.26g  , 
+     ‘’Carb’’ :2.98g  , 
+     ‘’calories’’ :15
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ orange tomato ’’, 
+    ‘’proteins’’ : 1.16g , 
+    ‘’Fat’’ :0.19g  , 
+     ‘’Carb’’ :3.18g  , 
+     ‘’calories’’ :16
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ green  tomato ’’, 
+    ‘’proteins’’ : 1.2g , 
+    ‘’Fat’’ :0.2g  , 
+     ‘’Carb’’ :5.1g  , 
+     ‘’calories’’ :23
+                                  }
+
+{ 
+‘’Name’’ :  ‘’ cooked tomato ’’, 
+    ‘’proteins’’ : 0.95g , 
+    ‘’Fat’’ :0.11g  , 
+     ‘’Carb’’ :4.01g  , 
+     ‘’calories’’ :18
+                                  }

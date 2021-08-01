@@ -1,16 +1,357 @@
-[
-     {
-        "name" : "Apple",
-        "proteins" : 0.18,
-        "fat" : 0.49,
-        "carb" : 16.5,
-        "calories" : 16.5
-    },
-    {
-        "name" : "Ananas",
-        "proteins" : 0.18,
-        "fat" : 0.49,
-        "carb" : 16.5,
-        "calories" : 16.5
+
+    {    
+       ‘’Name’’ : ‘’abricot’’ , 
+       ‘’proteins’’:  1.4g , 
+       ‘’fat’’ :   0.39g , 
+       ‘’carb’’ : 11.12g , 
+      ‘’calories’’ : 48           
     }
+
+
+    {     
+     ‘’Name’’ : ‘’pineapple’’ ,
+     ‘’proteins’’: 0.54g , 
+     ‘’Fat’’: 0.12g , 
+     ‘’carb’’: 13.12g , 
+     ‘’ calories’’: 50 
+     } 
+
+{ 
+         ‘’Name’’ :   ‘’melon’’ , 
+         ‘’proteins’’ : 0.84g , 
+         ‘’Fat’’ : 0.25g , 
+          ‘’Carb’’ : 7.97g , 
+          ‘’Calories’’ 33 
+                                                  }
+
+{ 
+         ‘’Name’’ :   ‘’banana  ’’ , 
+         ‘’proteins’’ : 1.09g , 
+         ‘’Fat’’ : 0.33g , 
+          ‘’Carb’’ : 22,84g , 
+          ‘’Calories’’ 89
+                                                 }
+
+{ 
+         ‘’Name’’ :   ‘’ blackcurrant’’ , 
+         ‘’proteins’’ : 1.4g , 
+         ‘’Fat’’ : 0.41g , 
+          ‘’Carb’’ : 15,39g , 
+          ‘’Calories’’ 63
+
+{ 
+         ‘’Name’’ :   ‘’cherry’’ , 
+         ‘’proteins’’ : 1.06g , 
+         ‘’Fat’’ : 0.2g , 
+          ‘’Carb’’ : 16.01g , 
+          ‘’calories’’ : 63
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’lime’’ , 
+         ‘’proteins’’ : 0.7g , 
+         ‘’Fat’’ : 0,2g , 
+          ‘’Carb’’ : 10.54g  , 
+          ‘’calories’’ :30 
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’lemon ’’ , 
+         ‘’proteins’’ : 1.1g  , 
+         ‘’Fat’’ : 0.3g  , 
+          ‘’Carb’’ : 9.32g   , 
+          ‘’calories’’ :29
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’Fig ’’ , 
+         ‘’proteins’’ : 0,75g , 
+         ‘’Fat’’ : 0,3g , 
+          ‘’Carb’’ : 19.18g  , 
+          ‘’calories’’ :74 
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’strawberry   ’’ , 
+         ‘’proteins’’ :   0.67g , 
+         ‘’Fat’’ : 0,3g , 
+          ‘’Carb’’ : 7.68g  , 
+          ‘’calories’’ : 32  
+                                        }
+
+{ 
+         ‘’Name’’ :   ‘’raspberry  ’’ , 
+         ‘’proteins’’ :   1.2 g , 
+         ‘’Fat’’ : 0.65g , 
+          ‘’Carb’’ :11.94 g  , 
+          ‘’calories’’ 52 : 
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ grenade’’ , 
+         ‘’proteins’’ :  1.67g , 
+         ‘’Fat’’ : 1.17g , 
+          ‘’Carb’’ :18.7 g  , 
+          ‘’calories’’ 83: 
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’khaki  ’’ , 
+         ‘’proteins’’ :  0.8 g , 
+         ‘’Fat’’ :0.4 g , 
+          ‘’Carb’’ : 33.5g  , 
+          ‘’calories’’ : 127
+                                          }
+
+{ 
+         ‘’Name’’ :   ‘’kiwi  ’’ , 
+         ‘’proteins’’ :   1.14g , 
+         ‘’Fat’’ : 0.52g , 
+          ‘’Carb’’ : 14.66g  , 
+          ‘’calories’’ : 61
+                                       }
+
+
+
+{ 
+         ‘’Name’’ :   ‘’ mandarin ’’ , 
+         ‘’proteins’’ :  0.81g , 
+         ‘’Fat’’ : 0.31g , 
+          ‘’Carb’’ : 13.34g  , 
+          ‘’calories’’ : 53
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’  mango’’ , 
+         ‘’proteins’’ :   0.82g , 
+         ‘’Fat’’ : 0.38g , 
+          ‘’Carb’’ :14.98 g  , 
+          ‘’calories’’ : 60
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’  blackberry’’ , 
+         ‘’proteins’’ :   1.44g , 
+         ‘’Fat’’ :0.39 g , 
+          ‘’Carb’’ : 9.8g  , 
+          ‘’calories’’ : 43
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’  grapefruit’’ , 
+         ‘’proteins’’ :   0.77g , 
+         ‘’Fat’’ : 0.14g , 
+          ‘’Carb’’ : 10.66g  , 
+          ‘’calories’’ : 42
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’watermelon   ’’ , 
+         ‘’proteins’’ :   0.61g , 
+         ‘’Fat’’ : 0.15g , 
+          ‘’Carb’’ :7.55 g  , 
+          ‘’calories’’ : 30
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ peach ’’ , 
+         ‘’proteins’’ :   0.91g , 
+         ‘’Fat’’ : 0.25g , 
+          ‘’Carb’’ : 9.54g  , 
+          ‘’calories’’ : 39
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ pear’’ , 
+         ‘’proteins’’ :   0.36g , 
+         ‘’Fat’’ : 0.14g , 
+          ‘’Carb’’ : 15.23g  , 
+          ‘’calories’’ : 57
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ appl ’’ , 
+         ‘’proteins’’ :   0.26g , 
+         ‘’Fat’’ : 0.17g , 
+          ‘’Carb’’ : 13.81g  , 
+          ‘’calories’’ : 52
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ grape’’ , 
+         ‘’proteins’’ :   0.72g , 
+         ‘’Fat’’ : 0.16g , 
+          ‘’Carb’’ : 18.1g  , 
+          ‘’calories’’ : 69
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ prickly pear’’ , 
+         ‘’proteins’’ :   0.73g , 
+         ‘’Fat’’ : 0.51g , 
+          ‘’Carb’’ :9.57 g  , 
+          ‘’calories’’ : 41
+                                                           }
+                                       
+{ 
+         ‘’Name’’ :   ‘’ papaya’’ , 
+         ‘’proteins’’ :   0.47g , 
+         ‘’Fat’’ :0.26 g , 
+          ‘’Carb’’ :10.82 g  , 
+          ‘’calories’’ : 43
+                                       }
+
+
+                                   
+{ 
+         ‘’Name’’ :   ‘’ elderberry ’’ , 
+         ‘’proteins’’ :   0.66g , 
+         ‘’Fat’’ :0.5g , 
+          ‘’Carb’’ :18.4g  , 
+          ‘’calories’’ :73
+                                       }
+
+                       
+{ 
+         ‘’Name’’ :   ‘’ rowan berry ’’ , 
+         ‘’proteins’’ :   2.3g , 
+         ‘’Fat’’ :2.0g , 
+          ‘’Carb’’ :23.9g  , 
+          ‘’calories’’ :111
+                                       }
+
+             
+{ 
+         ‘’Name’’ :   ‘’ cranberries’’ , 
+         ‘’proteins’’ :   0.39g , 
+         ‘’Fat’’ :0.13g , 
+          ‘’Carb’’ :12.2g  , 
+          ‘’calories’’ :46
+                                       }
+
+             
+{ 
+         ‘’Name’’ :   ‘’ crambola ’’ , 
+         ‘’proteins’’ :   1.04g , 
+         ‘’Fat’’ :0.33g , 
+          ‘’Carb’’ :6.73g  , 
+          ‘’calories’’ :31
+                                       }
+
+
+             
+{ 
+  ‘’Name’’ : ‘’red and white blackcurrant’’
+         ‘’proteins’’ :  1.4g , 
+         ‘’Fat’’ :0.2g , 
+          ‘’Carb’’ :13.8g  , 
+          ‘’calories’’ :56
+                                       }
+
+         
+{ 
+         ‘’Name’’ :   ‘’ground cherry ’’ , 
+         ‘’proteins’’ :   1.9g , 
+         ‘’Fat’’ :0.7g , 
+          ‘’Carb’’ :11.2g  , 
+          ‘’calories’’ :53
+                                       }
+
+
+ 
+{ 
+         ‘’Name’’ :   ‘’cherimoya  ’’ , 
+         ‘’proteins’’ :   1.57g , 
+         ‘’Fat’’ :0.68g , 
+          ‘’Carb’’ :17.71g  , 
+          ‘’calories’’ :75
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ clémentine’’ , 
+         ‘’proteins’’ :   0.85g , 
+         ‘’Fat’’ :0.15g , 
+          ‘’Carb’’ :12.02g  , 
+          ‘’calories’’ :47
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’quince  ’’ , 
+         ‘’proteins’’ :   0.4g , 
+         ‘’Fat’’ :0.1g , 
+          ‘’Carb’’ :15.03g  , 
+          ‘’calories’’ :57
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’kiwano  ’’ , 
+         ‘’proteins’’ :   1.78g , 
+         ‘’Fat’’ :1.26g , 
+          ‘’Carb’’ :7.56g  , 
+          ‘’calories’’ :44
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’kumquat  ’’ , 
+         ‘’proteins’’ :   1.88g , 
+         ‘’Fat’’ :0.86g , 
+          ‘’Carb’’ :15.9g  , 
+          ‘’calories’’ :71
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’plum ’’ , 
+         ‘’proteins’’ :   3.7g , 
+         ‘’Fat’’ :0.73g , 
+          ‘’Carb’’ :89.07g  , 
+          ‘’calories’’ :339
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’ American grape   ’’ , 
+         ‘’proteins’’ :   0.36g , 
+         ‘’Fat’’ :0.35g , 
+          ‘’Carb’’ :17.15g  , 
+          ‘’calories’’ :67
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’muscat grape ’’ , 
+         ‘’proteins’’ :   0.81g , 
+         ‘’Fat’’ :0.47g , 
+          ‘’Carb’’ :13.93g  , 
+          ‘’calories’’ :57
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’Orange zest ’’ , 
+         ‘’proteins’’ :   1.5g , 
+         ‘’Fat’’ :0.2g , 
+          ‘’Carb’’ :25.0g  , 
+          ‘’calories’’ :97
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’wild raspberry ’’ , 
+         ‘’proteins’’ :   1.12g , 
+         ‘’Fat’’ :0.28g , 
+          ‘’Carb’’ :13.85g  , 
+          ‘’calories’’ :62
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’Guava ’’ , 
+         ‘’proteins’’ :   2.55g , 
+         ‘’Fat’’ :0.95g , 
+          ‘’Carb’’ :14.32g  , 
+          ‘’calories’’ :68
+                                       }
+
+{ 
+         ‘’Name’’ :   ‘’avocado ’’ , 
+         ‘’proteins’’ :   2.0g , 
+         ‘’Fat’’ :14.66g , 
+          ‘’Carb’’ :8.53g  , 
+          ‘’calories’’ :160
+                                       }
 ]
