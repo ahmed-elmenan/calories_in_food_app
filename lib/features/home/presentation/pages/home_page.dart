@@ -7,7 +7,9 @@ class SilverAppBarExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        // backgroundColor: Colors,
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
@@ -29,18 +31,16 @@ class SilverAppBarExample extends StatelessWidget {
               pinned: true,
               snap: true,
               elevation: 50,
-              backgroundColor: Colors.pink,
+              backgroundColor: Color(0xFF09D093),
               flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: true,
-                  title: Text('Title',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
-                      )),
-                  background: Container(
-                    color: Color(0xFF4BA686),
-                    child: HomeHeader(),
-                  )),
+                centerTitle: true,
+                title: Text('Food App',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.0,
+                    )),
+                background: HomeHeader(),
+              ),
             ),
             new SliverList(
                 delegate: new SliverChildListDelegate(
@@ -56,9 +56,11 @@ class SilverAppBarExample extends StatelessWidget {
 
     for (int i = 0; i < count; i++) {
       listItems.add(new Padding(
-          padding: new EdgeInsets.all(20.0),
+          padding: new EdgeInsets.all(8.0),
           child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])));
     }
     return listItems;
   }
 }
+// 09D093
+// 00B892
