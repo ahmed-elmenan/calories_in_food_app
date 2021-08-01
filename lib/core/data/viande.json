@@ -1,6 +1,4 @@
-
-{
-  "viande":[
+[
 {
   "Name" : "lard " , 
   "proteins" : 12.53 , 
@@ -137,4 +135,3 @@
             "Carb" :1.4  , 
             "calories" :405}
 ]
-}

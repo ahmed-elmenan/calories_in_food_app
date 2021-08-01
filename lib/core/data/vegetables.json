@@ -1,5 +1,4 @@
-{
-    "vegetables":[
+[
 { 
     "Name" :   "nori seaweed" , 
     "proteins" :   5.81 , 
@@ -647,4 +646,3 @@
     "calories" :18
  }
 ]
-}
