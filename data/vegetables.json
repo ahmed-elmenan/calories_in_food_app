@@ -1,0 +1,569 @@
+[
+    {
+        "Name": "nori seaweed",
+        "proteins": 5.81,
+        "Fat": 0.28,
+        "Carb": 5.11,
+        "calories": 35
+    },
+    {
+        "Name": "marante ",
+        "proteins": 4.24,
+        "Fat": 0.2,
+        "Carb": 13.39,
+        "calories": 65
+    },
+    {
+        "Name": "raw artichok ",
+        "proteins": 3.27,
+        "Fat": 0.15,
+        "Carb": 10.51,
+        "calories": 47
+    },
+    {
+        "Name": "raw asparaus  ",
+        "proteins": 2.2,
+        "Fat": 0.12,
+        "Carb": 3.88,
+        "calories": 20
+    },
+    {
+        "Name": "cooked asparaus  ",
+        "proteins": 2.4,
+        "Fat": 0.22,
+        "Carb": 4.11,
+        "calories": 22
+    },
+    {
+        "Name": "raw eplant",
+        "proteins": 0.98,
+        "Fat": 0.18,
+        "Carb": 5.88,
+        "calories": 25
+    },
+    {
+        "Name": "cooked eplant  ",
+        "proteins": 0.38,
+        "Fat": 0.23,
+        "Carb": 8.14,
+        "calories": 33
+    },
+    {
+        "Name": "suisse chard   ",
+        "proteins": 1.8,
+        "Fat": 0.2,
+        "Carb": 3.74,
+        "calories": 19
+    },
+    {
+        "Name": "raw beets",
+        "proteins": 1.61,
+        "Fat": 0.17,
+        "Carb": 9.56,
+        "calories": 43
+    },
+    {
+        "Name": "cooked beets    ",
+        "proteins": 1.68,
+        "Fat": 0.18,
+        "Carb": 9.96,
+        "calories": 44
+    },
+    {
+        "Name": "raw broccoli    ",
+        "proteins": 2.82,
+        "Fat": 0.37,
+        "Carb": 6.64,
+        "calories": 34
+    },
+    {
+        "Name": "cooked broccoli    ",
+        "proteins": 2.38,
+        "Fat": 0.41,
+        "Carb": 7.18,
+        "calories": 35
+    },
+    {
+        "Name": "broccoli root   ",
+        "proteins": 1.8,
+        "Fat": 0.2,
+        "Carb": 3.74,
+        "calories": 19
+    },
+    {
+        "Name": " raw nopal cactus    ",
+        "proteins": 0.7,
+        "Fat": 0.1,
+        "Carb": 4.07,
+        "calories": 17
+    },
+    {
+        "Name": "cooked nopal cactus   ",
+        "proteins": 1.35,
+        "Fat": 0.5,
+        "Carb": 3.28,
+        "calories": 15
+    },
+    {
+        "Name": "raw cardoon    ",
+        "proteins": 0.7,
+        "Fat": 0.1,
+        "Carb": 4.07,
+        "calories": 17
+    },
+    {
+        "Name": "cooked cardoon   ",
+        "proteins": 0.76,
+        "Fat": 0.11,
+        "Carb": 4.74,
+        "calories": 20
+    },
+    {
+        "Name": "raw carrot   ",
+        "proteins": 0.93,
+        "Fat": 0.24,
+        "Carb": 9.58,
+        "calories": 41
+    },
+    {
+        "Name": "cooked carrot   ",
+        "proteins": 0.76,
+        "Fat": 0.18,
+        "Carb": 8.22,
+        "calories": 35
+    },
+    {
+        "Name": "Raw celery   ",
+        "proteins": 0.69,
+        "Fat": 0.17,
+        "Carb": 2.97,
+        "calories": 16
+    },
+    {
+        "Name": "cooked celery    ",
+        "proteins": 0.83,
+        "Fat": 0.16,
+        "Carb": 4.0,
+        "calories": 18
+    },
+    {
+        "Name": "raw lamb’s quarters  ",
+        "proteins": 4.21,
+        "Fat": 0.28,
+        "Carb": 6.96,
+        "calories": 47
+    },
+    {
+        "Name": "cooked lamb’s quarters",
+        "proteins": 3.2,
+        "Fat": 0.7,
+        "Carb": 5.01,
+        "calories": 32
+    },
+    {
+        "Name": " caribbean cabbae    ",
+        "proteins": 1.46,
+        "Fat": 0.4,
+        "Carb": 23.63,
+        "calories": 98
+    },
+    {
+        "Name": " raw cavalier cabbae    ",
+        "proteins": 3.02,
+        "Fat": 0.61,
+        "Carb": 5.42,
+        "calories": 32
+    },
+    {
+        "Name": " cooked cavalier cabbae",
+        "proteins": 2.71,
+        "Fat": 0.72,
+        "Carb": 5.65,
+        "calories": 33
+    },
+    {
+        "Name": "raw savoy cabbae    ",
+        "proteins": 2.0,
+        "Fat": 0.1,
+        "Carb": 6.1,
+        "calories": 27
+    },
+    {
+        "Name": " cooked savoy cabbae",
+        "proteins": 1.8,
+        "Fat": 0.9,
+        "Carb": 5.41,
+        "calories": 24
+    },
+    {
+        "Name": " japanese cabbae",
+        "proteins": 1.6,
+        "Fat": 0.1,
+        "Carb": 5.67,
+        "calories": 30
+    },
+    {
+        "Name": " raw napa cabbae ",
+        "proteins": 1.1,
+        "Fat": 0.17,
+        "Carb": 2.23,
+        "calories": 12
+    },
+    {
+        "Name": "raw  red cabbae",
+        "proteins": 1.43,
+        "Fat": 0.16,
+        "Carb": 7.37,
+        "calories": 31
+    },
+    {
+        "Name": " cooked red cabbae ",
+        "proteins": 1.51,
+        "Fat": 1.09,
+        "Carb": 6.94,
+        "calories": 29
+    },
+    {
+        "Name": " raw cauliflower",
+        "proteins": 1.92,
+        "Fat": 0.28,
+        "Carb": 4.97,
+        "calories": 25
+    },
+    {
+        "Name": " cooked cauliflower",
+        "proteins": 1.84,
+        "Fat": 0.45,
+        "Carb": 4.11,
+        "calories": 23
+    },
+    {
+        "Name": " raw kohlrabi",
+        "proteins": 1.7,
+        "Fat": 0.1,
+        "Carb": 6.2,
+        "calories": 27
+    },
+    {
+        "Name": " cooked kohlrabi",
+        "proteins": 1.8,
+        "Fat": 0.11,
+        "Carb": 6.69,
+        "calories": 29
+    },
+    {
+        "Name": "  lemonrass ",
+        "proteins": 1.82,
+        "Fat": 0.49,
+        "Carb": 25.31,
+        "calories": 99
+    },
+    {
+        "Name": " raw pumpkin ",
+        "proteins": 1.0,
+        "Fat": 0.1,
+        "Carb": 6.5,
+        "calories": 26
+    },
+    {
+        "Name": " cooked pumpkin ",
+        "proteins": 0.72,
+        "Fat": 0.07,
+        "Carb": 4.31,
+        "calories": 18
+    },
+    {
+        "Name": " tomato compote",
+        "proteins": 1.96,
+        "Fat": 2.68,
+        "Carb": 13.05,
+        "calories": 79
+    },
+    {
+        "Name": " cucumber ",
+        "proteins": 0.65,
+        "Fat": 0.11,
+        "Carb": 3.63,
+        "calories": 15
+    },
+    {
+        "Name": " peeled cucumber",
+        "proteins": 0.59,
+        "Fat": 0.16,
+        "Carb": 2.16,
+        "calories": 12
+    },
+    {
+        "Name": "sour pickles  ",
+        "proteins": 0.33,
+        "Fat": 0.2,
+        "Carb": 2.26,
+        "calories": 11
+    },
+    {
+        "Name": " pickles chow chow",
+        "proteins": 1.5,
+        "Fat": 0.9,
+        "Carb": 26.64,
+        "calories": 121
+    },
+    {
+        "Name": " sweet pickle",
+        "proteins": 0.58,
+        "Fat": 0.41,
+        "Carb": 21.15,
+        "calories": 91
+    },
+    {
+        "Name": " raw butternut squash",
+        "proteins": 1.0,
+        "Fat": 0.1,
+        "Carb": 11.69,
+        "calories": 45
+    },
+    {
+        "Name": " cooked butternut squash",
+        "proteins": 0.9,
+        "Fat": 0.9,
+        "Carb": 10.49,
+        "calories": 40
+    },
+    {
+        "Name": " cress ",
+        "proteins": 2.3,
+        "Fat": 0.1,
+        "Carb": 1.29,
+        "calories": 11
+    },
+    {
+        "Name": "  raw shallot ",
+        "proteins": 2.5,
+        "Fat": 0.1,
+        "Carb": 16.8,
+        "calories": 72
+    },
+    {
+        "Name": " chicory ",
+        "proteins": 1.25,
+        "Fat": 0.2,
+        "Carb": 3.35,
+        "calories": 17
+    },
+    {
+        "Name": " okra ",
+        "proteins": 1.93,
+        "Fat": 0.19,
+        "Carb": 7.45,
+        "calories": 33
+    },
+    {
+        "Name": "cooked okra  ",
+        "proteins": 1.87,
+        "Fat": 0.21,
+        "Carb": 4.51,
+        "calories": 22
+    },
+    {
+        "Name": " red lettuce",
+        "proteins": 1.33,
+        "Fat": 0.22,
+        "Carb": 2.26,
+        "calories": 16
+    },
+    {
+        "Name": "raw white corn  ",
+        "proteins": 9.42,
+        "Fat": 4.74,
+        "Carb": 74.26,
+        "calories": 365
+    },
+    {
+        "Name": "cooked  white corn  ",
+        "proteins": 3.34,
+        "Fat": 1.41,
+        "Carb": 21.71,
+        "calories": 97
+    },
+    {
+        "Name": "cassava",
+        "proteins": 1.36,
+        "Fat": 0.28,
+        "Carb": 38.06,
+        "calories": 160
+    },
+    {
+        "Name": "mini carrots ",
+        "proteins": 0.64,
+        "Fat": 0.13,
+        "Carb": 8.24,
+        "calories": 35
+    },
+    {
+        "Name": " mini zucchini ",
+        "proteins": 2.71,
+        "Fat": 0.4,
+        "Carb": 3.11,
+        "calories": 21
+    },
+    {
+        "Name": " raw turnips",
+        "proteins": 0.9,
+        "Fat": 0.1,
+        "Carb": 6.43,
+        "calories": 28
+    },
+    {
+        "Name": " cooked turnips ",
+        "proteins": 0.71,
+        "Fat": 0.08,
+        "Carb": 5.06,
+        "calories": 22
+    },
+    {
+        "Name": " cebette onion",
+        "proteins": 1.83,
+        "Fat": 0.19,
+        "Carb": 7.34,
+        "calories": 32
+    },
+    {
+        "Name": " sweet onion ",
+        "proteins": 0.8,
+        "Fat": 0.8,
+        "Carb": 7.55,
+        "calories": 32
+    },
+    {
+        "Name": " raw onion ",
+        "proteins": 1.1,
+        "Fat": 0.1,
+        "Carb": 9.34,
+        "calories": 40
+    },
+    {
+        "Name": " cooked onion ",
+        "proteins": 1.36,
+        "Fat": 0.19,
+        "Carb": 9.56,
+        "calories": 42
+    },
+    {
+        "Name": " olive ",
+        "proteins": 0.84,
+        "Fat": 10.68,
+        "Carb": 6.26,
+        "calories": 115
+    },
+    {
+        "Name": "raw parsnip ",
+        "proteins": 1.2,
+        "Fat": 0.3,
+        "Carb": 17.99,
+        "calories": 75
+    },
+    {
+        "Name": " cooked parsnip  ",
+        "proteins": 1.32,
+        "Fat": 0.3,
+        "Carb": 17.01,
+        "calories": 71
+    },
+    {
+        "Name": " raw Yam  ",
+        "proteins": 1.57,
+        "Fat": 0.05,
+        "Carb": 20.12,
+        "calories": 86
+    },
+    {
+        "Name": " cooked Yam  ",
+        "proteins": 1.49,
+        "Fat": 0.14,
+        "Carb": 26.99,
+        "calories": 114
+    },
+    {
+        "Name": " baked sweet potato ",
+        "proteins": 2.01,
+        "Fat": 0.15,
+        "Carb": 20.71,
+        "calories": 92
+    },
+    {
+        "Name": " raw peas",
+        "proteins": 5.42,
+        "Fat": 0.4,
+        "Carb": 14.45,
+        "calories": 81
+    },
+    {
+        "Name": " cooked peas  ",
+        "proteins": 5.36,
+        "Fat": 0.22,
+        "Carb": 15.36,
+        "calories": 84
+    },
+    {
+        "Name": "banana pepper ",
+        "proteins": 1.66,
+        "Fat": 0.45,
+        "Carb": 5.35,
+        "calories": 27
+    },
+    {
+        "Name": "raw leek  ",
+        "proteins": 1.5,
+        "Fat": 0.3,
+        "Carb": 14.15,
+        "calories": 61
+    },
+    {
+        "Name": " cooked leek  ",
+        "proteins": 0.81,
+        "Fat": 0.2,
+        "Carb": 7.62,
+        "calories": 31
+    },
+    {
+        "Name": " yellow pepper ",
+        "proteins": 1.0,
+        "Fat": 0.21,
+        "Carb": 6.32,
+        "calories": 27
+    },
+    {
+        "Name": " winter radish  ",
+        "proteins": 1.1,
+        "Fat": 0.1,
+        "Carb": 2.63,
+        "calories": 14
+    },
+    {
+        "Name": " yellow tomato ",
+        "proteins": 0.98,
+        "Fat": 0.26,
+        "Carb": 2.98,
+        "calories": 15
+    },
+    {
+        "Name": " orane tomato ",
+        "proteins": 1.16,
+        "Fat": 0.19,
+        "Carb": 3.18,
+        "calories": 16
+    },
+    {
+        "Name": " reen  tomato ",
+        "proteins": 1.2,
+        "Fat": 0.2,
+        "Carb": 5.1,
+        "calories": 23
+    },
+    {
+        "Name": " cooked tomato ",
+        "proteins": 0.95,
+        "Fat": 0.11,
+        "Carb": 4.01,
+        "calories": 18
+    }
+]

@@ -28,8 +28,12 @@ class FoodCard extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => page_details()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => page_details(),
+                    settings:
+                        RouteSettings(arguments: this.foodCategorie["name"])));
           },
           child: Row(
             children: [
