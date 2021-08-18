@@ -6,7 +6,7 @@ import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 
-import '../dataobject.dart';
+import '../data/models/dataobject.dart';
 
 class SilverAppBarExample extends StatefulWidget {
   @override
@@ -14,22 +14,6 @@ class SilverAppBarExample extends StatefulWidget {
 }
 
 class _SilverAppBarExampleState extends State<SilverAppBarExample> {
-   Future<List<FoodModel>> getData() async {
-    return await Future.delayed(Duration(seconds: 2), () {
-      List<dynamic> data = jsonDecode(VIANDE);
-      List<FoodModel> categorie =
-          data.map((data) => FoodModel.fromJson(data)).toList();
-      print(categorie[0].carb);
-      return categorie;
-    });
-  }
-  
-   @override
-  void initState() {
-    super.initState();
-    getData();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
