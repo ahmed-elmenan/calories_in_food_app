@@ -31,6 +31,7 @@ class _Card_detailsState extends State<Card_details> {
       ],
     );
   }
+  
 
   @override
   Widget build(BuildContext context) {
