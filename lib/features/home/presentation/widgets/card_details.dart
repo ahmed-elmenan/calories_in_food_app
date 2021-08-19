@@ -1,16 +1,12 @@
-import 'dart:convert';
-
-import 'package:fapp/core/data/viande.dart';
-import 'package:fapp/features/home/presentation/pages/page_details.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../data/models/dataobject.dart';
+
 
 class Card_details extends StatefulWidget {
   FoodModel categorieModel;
-
-  Card_details({this.categorieModel});
+  Function(int) addCal;
+  static int globaleKcal = 0;
+  Card_details({this.categorieModel, this.addCal});
   @override
   _Card_detailsState createState() => _Card_detailsState();
 }
@@ -31,7 +27,17 @@ class _Card_detailsState extends State<Card_details> {
       ],
     );
   }
-  
+
+  Widget _titleOfcard(String title) {
+    return Row(
+      children: <Widget>[
+        Text(
+          "$title (100 g)",
+          style: TextStyle(fontSize: 20),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,31 +62,25 @@ class _Card_detailsState extends State<Card_details> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Text(
-                widget.categorieModel.name,
-                style: TextStyle(fontSize: 35),
-              ),
-            ],
-          ),
+          _titleOfcard(widget.categorieModel.name),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              _Columns(widget.categorieModel.calories.toString(),
-                  widget.categorieModel.calories.toString()),
-              _Columns(widget.categorieModel.carb.toString(),
-                  widget.categorieModel.carb.toString()),
-              _Columns(widget.categorieModel.proteins.toString(),
-                  widget.categorieModel.proteins.toString()),
-              _Columns(widget.categorieModel.fat.toString(),
-                  widget.categorieModel.fat.toString()),
+              _Columns(widget.categorieModel.proteins.toString(), "proteins."),
+              _Columns(widget.categorieModel.fat.toString(), "fat."),
+              _Columns(widget.categorieModel.carb.toString(), "carb."),
+              _Columns(widget.categorieModel.calories.toString(), "Kcal."),
               Column(
                 children: <Widget>[
                   IconButton(
-                      icon: Icon(
-                    Icons.add,
-                  ))
+                    icon: Icon(
+                      Icons.add,
+                    ),
+                    onPressed: () {
+                      Card_details.globaleKcal += widget.categorieModel.calories;
+                      print(Card_details.globaleKcal);
+                    },
+                  )
                 ],
               ),
             ],

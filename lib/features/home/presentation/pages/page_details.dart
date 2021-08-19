@@ -1,10 +1,7 @@
 import 'dart:convert';
 
-import 'package:fapp/core/data/fruits.dart';
-import 'package:fapp/core/data/juce.dart';
-import 'package:fapp/core/data/vegetables.dart';
-import 'package:fapp/core/data/viande.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
+import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
 
@@ -37,10 +34,25 @@ class _page_detailsState extends State<page_details> {
     getData();
   }
 
+  addKcal() {
+    setState(() {
+      Card_details.globaleKcal;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: new IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () {
+              Route route = MaterialPageRoute(
+                  builder: (context) => SilverAppBarExample());
+              Navigator.push(context, route).then(addKcal());
+            },
+          ),
+        ),
         body: Center(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,

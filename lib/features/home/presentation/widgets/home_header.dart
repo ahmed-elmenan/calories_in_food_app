@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'card_details.dart';
+
 class HomeHeader extends StatefulWidget {
   HomeHeader({Key key}) : super(key: key);
-
   @override
   _HomeHeaderState createState() => _HomeHeaderState();
 }
@@ -30,7 +31,7 @@ class _HomeHeaderState extends State<HomeHeader> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Eaten", style: headertextStyle),
-                Text("0 Cal", style: headertextStyle),
+                Text("${Card_details.globaleKcal} Cal", style: headertextStyle),
                 SizedBox(height: 8),
                 Text("Remaining", style: headertextStyle),
                 Text("2397 Cal", style: headertextStyle),

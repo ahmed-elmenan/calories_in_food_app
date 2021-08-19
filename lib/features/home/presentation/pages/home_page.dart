@@ -1,12 +1,8 @@
-import 'dart:convert';
 
 import 'package:fapp/core/consts/food_categories.dart';
-import 'package:fapp/core/data/viande.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/material.dart';
-
-import '../data/models/dataobject.dart';
 
 class SilverAppBarExample extends StatefulWidget {
   @override
@@ -14,6 +10,7 @@ class SilverAppBarExample extends StatefulWidget {
 }
 
 class _SilverAppBarExampleState extends State<SilverAppBarExample> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,7 +46,6 @@ class _SilverAppBarExampleState extends State<SilverAppBarExample> {
 
   List _buildList(int count) {
     List<Widget> listItems = [];
-
     for (int i = 0; i < count; i++) {
       listItems.add(new Padding(
           padding: new EdgeInsets.all(8.0),
