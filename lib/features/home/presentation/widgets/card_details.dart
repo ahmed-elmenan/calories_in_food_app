@@ -1,27 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '../data/models/dataobject.dart';
-
 
 class Card_details extends StatefulWidget {
   FoodModel categorieModel;
   Function(int) addCal;
-  static int globaleKcal = 0;
+  static int calories = 0;
+  static double proteins = 0;
+  static double carb = 0;
+  static double fat = 0;
   Card_details({this.categorieModel, this.addCal});
   @override
   _Card_detailsState createState() => _Card_detailsState();
 }
 
 class _Card_detailsState extends State<Card_details> {
-  Widget _Columns(String name, String value) {
+  void calcul() {
+    if (widget.categorieModel.calories.toString() != "null")
+      Card_details.calories += widget.categorieModel.calories;
+    if (widget.categorieModel.fat.toString() != "null")
+      Card_details.fat += widget.categorieModel.fat;
+    if (widget.categorieModel.carb.toString() != "null")
+      Card_details.carb += widget.categorieModel.carb;
+    if (widget.categorieModel.proteins.toString() != "null")
+      Card_details.proteins += widget.categorieModel.proteins;
+  }
+
+  Widget _Columns(String value, String name) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          name,
+          value = (value == "null") ? "0" : value,
           style: TextStyle(fontSize: 20),
         ),
         Text(
-          value,
+          name,
           style: TextStyle(fontSize: 10),
         ),
       ],
@@ -77,8 +91,7 @@ class _Card_detailsState extends State<Card_details> {
                       Icons.add,
                     ),
                     onPressed: () {
-                      Card_details.globaleKcal += widget.categorieModel.calories;
-                      print(Card_details.globaleKcal);
+                      calcul();
                     },
                   )
                 ],

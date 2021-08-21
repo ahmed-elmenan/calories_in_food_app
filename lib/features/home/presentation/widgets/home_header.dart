@@ -31,17 +31,29 @@ class _HomeHeaderState extends State<HomeHeader> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Eaten", style: headertextStyle),
-                Text("${Card_details.globaleKcal} Cal", style: headertextStyle),
+                Text("${Card_details.calories} Cal", style: headertextStyle),
                 SizedBox(height: 8),
                 Text("Remaining", style: headertextStyle),
                 Text("2397 Cal", style: headertextStyle),
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("${Card_details.carb.toStringAsFixed(2)}"),
+                    SizedBox(width: 10),
+                    Text("${Card_details.fat.toStringAsFixed(2)}"),
+                    SizedBox(width: 10),
+                    Text("${Card_details.proteins.toStringAsFixed(2)}"),
+                  ],
+                )
               ],
             ),
           ),
           SvgPicture.asset(
             "assets/images/apple_home_logo.svg",
             height: 200,
-          )
+          ),
         ],
       ),
     );

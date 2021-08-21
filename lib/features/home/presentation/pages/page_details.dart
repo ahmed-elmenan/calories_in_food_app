@@ -36,7 +36,10 @@ class _page_detailsState extends State<page_details> {
 
   addKcal() {
     setState(() {
-      Card_details.globaleKcal;
+      Card_details.calories;
+      Card_details.carb;
+      Card_details.fat;
+      Card_details.proteins;
     });
   }
 
