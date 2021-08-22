@@ -12,6 +12,27 @@ class HomeHeader extends StatefulWidget {
 class _HomeHeaderState extends State<HomeHeader> {
   TextStyle headertextStyle =
       TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.bold);
+
+  Widget verticalDivider() {
+    return Container(
+      width: 2,
+      height: 30,
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      color: Color(0xFF818182),
+    );
+  }
+
+  Widget macroPerGrame(String name, String value) {
+    return Column(
+      children: [
+        Text("$value",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        Text("$name",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,25 +56,29 @@ class _HomeHeaderState extends State<HomeHeader> {
                 SizedBox(height: 8),
                 Text("Remaining", style: headertextStyle),
                 Text("2397 Cal", style: headertextStyle),
-                SizedBox(height: 10),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("${Card_details.carb.toStringAsFixed(2)}"),
-                    SizedBox(width: 10),
-                    Text("${Card_details.fat.toStringAsFixed(2)}"),
-                    SizedBox(width: 10),
-                    Text("${Card_details.proteins.toStringAsFixed(2)}"),
+                    macroPerGrame("carb", Card_details.carb.toStringAsFixed(2)),
+                    verticalDivider(),
+                    macroPerGrame("fat", Card_details.fat.toStringAsFixed(2)),
+                    verticalDivider(),
+                    macroPerGrame(
+                        "prot", Card_details.proteins.toStringAsFixed(2)),
                   ],
-                )
+                ),
               ],
             ),
           ),
-          SvgPicture.asset(
-            "assets/images/apple_home_logo.svg",
-            height: 200,
-          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 30, right: 15),
+            child: SvgPicture.asset(
+              "assets/images/apple_home_logo.svg",
+              height: 150,
+            ),
+          )
         ],
       ),
     );

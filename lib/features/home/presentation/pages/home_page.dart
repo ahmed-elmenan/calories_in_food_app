@@ -1,4 +1,3 @@
-
 import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
@@ -10,7 +9,6 @@ class SilverAppBarExample extends StatefulWidget {
 }
 
 class _SilverAppBarExampleState extends State<SilverAppBarExample> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

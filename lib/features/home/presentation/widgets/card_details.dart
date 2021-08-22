@@ -82,7 +82,7 @@ class _Card_detailsState extends State<Card_details> {
             children: <Widget>[
               _Columns(widget.categorieModel.proteins.toString(), "proteins."),
               _Columns(widget.categorieModel.fat.toString(), "fat."),
-              _Columns(widget.categorieModel.carb.toString(), "carb."),
+              _Columns(widget.categorieModel.carb.toString(), "carsb."),
               _Columns(widget.categorieModel.calories.toString(), "Kcal."),
               Column(
                 children: <Widget>[
