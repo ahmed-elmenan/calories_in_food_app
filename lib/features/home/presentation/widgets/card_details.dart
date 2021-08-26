@@ -52,9 +52,48 @@ class _Card_detailsState extends State<Card_details> {
       ],
     );
   }
+  
+  Future<dynamic> draggableScrollable(BuildContext context, double rating) {
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) {
+        return StatefulBuilder(
+            builder: (BuildContext context, StateSetter setState) {
+          return DraggableScrollableSheet(
+            expand: false,
+            builder: (context, controller) {
+              return Container(
+                color: Colors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Slider(
+                        activeColor: Colors.red,
+                        inactiveColor: Colors.red.shade100,
+                        value: rating,
+                        min: 0,
+                        max: 100,
+                        divisions: 10,
+                        onChanged: (_myvalue) {
+                          setState(() {
+                            rating = _myvalue;
+                          });
+                        }),
+                  ],
+                ),
+              );
+            },
+          );
+        });
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    double rating = 50;
     Size size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8),
@@ -91,7 +130,9 @@ class _Card_detailsState extends State<Card_details> {
                       Icons.add,
                     ),
                     onPressed: () {
-                      calcul();
+                      setState(() {
+                        draggableScrollable(context, rating);
+                      });
                     },
                   )
                 ],
