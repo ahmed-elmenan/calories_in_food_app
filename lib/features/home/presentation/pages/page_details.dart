@@ -4,6 +4,7 @@ import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../data/models/dataobject.dart';
 
@@ -32,6 +33,7 @@ class _page_detailsState extends State<page_details> {
   void initState() {
     super.initState();
     getData();
+    myBanner.load();
   }
 
   addKcal() {
@@ -43,6 +45,14 @@ class _page_detailsState extends State<page_details> {
     });
   }
 
+  final AdSize adSize = AdSize(height: 50, width: 300);
+  final BannerAd myBanner = BannerAd(
+    adUnitId: BannerAd.testAdUnitId,
+    size: AdSize.banner,
+    request: AdRequest(),
+    listener: BannerAdListener(),
+  );
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -50,8 +60,8 @@ class _page_detailsState extends State<page_details> {
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
             onPressed: () {
-              Route route = MaterialPageRoute(
-                  builder: (context) => SilverAppBarExample());
+              Route route =
+                  MaterialPageRoute(builder: (context) => FoodCaloriesApp());
               Navigator.push(context, route).then(addKcal());
             },
           ),
@@ -85,6 +95,11 @@ class _page_detailsState extends State<page_details> {
                       ],
                     ),
                   ),
+                ),
+                Container(
+                  height: 100,
+                  width: double.infinity,
+                  child: AdWidget(ad: myBanner),
                 ),
                 Wrap(
                   children: _buildList(categorie_model.length),

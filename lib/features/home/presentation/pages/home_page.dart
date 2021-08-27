@@ -3,12 +3,13 @@ import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 
-class SilverAppBarExample extends StatefulWidget {
+class FoodCaloriesApp extends StatefulWidget {
   @override
-  _SilverAppBarExampleState createState() => _SilverAppBarExampleState();
+  _FoodCaloriesAppState createState() => _FoodCaloriesAppState();
 }
 
-class _SilverAppBarExampleState extends State<SilverAppBarExample> {
+class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
