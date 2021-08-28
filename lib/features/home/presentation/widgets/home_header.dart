@@ -52,10 +52,11 @@ class _HomeHeaderState extends State<HomeHeader> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Eaten", style: headertextStyle),
-                Text("${Card_details.calories} Cal", style: headertextStyle),
+                Text("${Card_details.calories.toStringAsFixed(2)} Cal",
+                    style: headertextStyle),
                 SizedBox(height: 8),
                 Text("Remaining", style: headertextStyle),
-                Text("2397 Cal", style: headertextStyle),
+                Text("${Card_details.remaining} Cal", style: headertextStyle),
                 SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

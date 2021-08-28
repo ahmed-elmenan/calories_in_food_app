@@ -5,6 +5,7 @@ import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:auto_animated/auto_animated.dart';
 
 import '../data/models/dataobject.dart';
 
@@ -97,7 +98,7 @@ class _page_detailsState extends State<page_details> {
                   ),
                 ),
                 Container(
-                  height: 100,
+                  height: 50,
                   width: double.infinity,
                   child: AdWidget(ad: myBanner),
                 ),

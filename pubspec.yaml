@@ -33,6 +33,7 @@ dependencies:
   google_mobile_ads: ^0.13.4
   cloud_firestore: ^2.5.1
   firebase_core: ^1.6.0
+  auto_animated: ^3.0.0
   
 
 dev_dependencies:
