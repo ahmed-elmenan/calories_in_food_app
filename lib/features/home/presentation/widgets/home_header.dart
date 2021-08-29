@@ -56,7 +56,8 @@ class _HomeHeaderState extends State<HomeHeader> {
                     style: headertextStyle),
                 SizedBox(height: 8),
                 Text("Remaining", style: headertextStyle),
-                Text("${Card_details.remaining} Cal", style: headertextStyle),
+                Text("${Card_details.remaining.toStringAsFixed(2)} Cal",
+                    style: headertextStyle),
                 SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
