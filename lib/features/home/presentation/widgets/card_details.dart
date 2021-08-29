@@ -59,9 +59,12 @@ class _Card_detailsState extends State<Card_details> {
   Widget _titleOfcard(String title) {
     return Row(
       children: <Widget>[
-        Text(
-          "$title (100 g)",
-          style: TextStyle(fontSize: 20),
+        Container(
+          width: MediaQuery.of(context).size.width / 1.2,
+          child: Text(
+            "$title \n(100 g)",
+            style: TextStyle(fontSize: 20),
+          ),
         ),
       ],
     );
@@ -91,11 +94,12 @@ class _Card_detailsState extends State<Card_details> {
                       ],
                     ),
                     Slider(
+                      
                         activeColor: Colors.red,
                         inactiveColor: Colors.red.shade100,
                         value: rating,
                         min: 0,
-                        max: 1000,
+                        max: 500,
                         divisions: 100,
                         onChanged: (_myvalue) {
                           setState(() {
@@ -175,7 +179,7 @@ class _Card_detailsState extends State<Card_details> {
 
   @override
   Widget build(BuildContext context) {
-    double rating = 0;
+    double rating = 100;
     Size size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8),

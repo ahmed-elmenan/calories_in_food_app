@@ -68,45 +68,52 @@ class _page_detailsState extends State<page_details> {
           ),
         ),
         body: Center(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                AppBar(
-                  automaticallyImplyLeading: false,
-                  title: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        DropdownButton<String>(
-                          hint: Text("carb"),
-                          icon:
-                              Icon(Icons.arrow_drop_down, color: Colors.white),
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    AppBar(
+                      automaticallyImplyLeading: false,
+                      title: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            DropdownButton<String>(
+                              hint: Text("carb"),
+                              icon: Icon(Icons.arrow_drop_down,
+                                  color: Colors.white),
+                            ),
+                            DropdownButton<String>(
+                              hint: Text("fat"),
+                              icon: Icon(Icons.arrow_drop_down,
+                                  color: Colors.white),
+                            ),
+                            DropdownButton<String>(
+                              hint: Text("prot"),
+                              icon: Icon(Icons.arrow_drop_down,
+                                  color: Colors.white),
+                            ),
+                          ],
                         ),
-                        DropdownButton<String>(
-                          hint: Text("fat"),
-                          icon:
-                              Icon(Icons.arrow_drop_down, color: Colors.white),
-                        ),
-                        DropdownButton<String>(
-                          hint: Text("prot"),
-                          icon:
-                              Icon(Icons.arrow_drop_down, color: Colors.white),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    Wrap(
+                      children: _buildList(categorie_model.length),
+                    ),
+                  ],
                 ),
-                Container(
+              ),
+              Positioned(
+                bottom: 3,
+                child: Container(
                   height: 50,
-                  width: double.infinity,
+                  width: MediaQuery.of(context).size.width,
                   child: AdWidget(ad: myBanner),
                 ),
-                Wrap(
-                  children: _buildList(categorie_model.length),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ));
   }
