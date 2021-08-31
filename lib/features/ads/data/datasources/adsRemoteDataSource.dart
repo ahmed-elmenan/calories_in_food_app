@@ -3,6 +3,7 @@ import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 
 abstract class AdsRemoteDataSource {
   Future<Map<String, List<AdsInfoModel>>> getAdsInfo();
+  Future<bool>  pushAdsId(AdsInfoModel adsInfoModel, String adsState);
 }
 
 class IAdsRemoteDataSource implements AdsRemoteDataSource {
@@ -39,5 +40,15 @@ class IAdsRemoteDataSource implements AdsRemoteDataSource {
       print("=ERROR=>" + e.toString());
     }
     return adsStatesInfo;
+  }
+
+  @override
+  Future<bool> pushAdsId(AdsInfoModel adsInfoModel, String adStateCollection) {
+    // TODO: implement pushAdsId
+    try {
+      // _fireStore.collection(adStateCollection).doc(values["id"]).set(values);
+      
+    } catch (e) {
+    }
   }
 }
