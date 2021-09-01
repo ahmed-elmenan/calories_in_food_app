@@ -3,7 +3,7 @@ import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 
 abstract class AdsRemoteDataSource {
   Future<Map<String, List<AdsInfoModel>>> getAdsInfo();
-  Future<bool>  pushAdsId(AdsInfoModel adsInfoModel, String adsState);
+  Future<bool> pushAdsIdToOnHold(AdsInfoModel adsInfoModel);
 }
 
 class IAdsRemoteDataSource implements AdsRemoteDataSource {
@@ -13,42 +13,45 @@ class IAdsRemoteDataSource implements AdsRemoteDataSource {
   FirebaseFirestore _fireStore = FirebaseFirestore.instance;
   Map<String, List<AdsInfoModel>> adsStatesInfo = {};
 
+
+    Future getAdsInfoPerCollection(String collection) async {
+      adsStatesInfo[collection] = [];
+      await _fireStore.collection(collection).get().then((doc) {
+        doc.docs.forEach((DocumentSnapshot doc) {
+          adsStatesInfo[collection].add(AdsInfoModel.fromSnapshot(doc));
+        });
+      });
+    }
+
+
   @override
   Future<Map<String, List<AdsInfoModel>>> getAdsInfo() async {
     try {
-      adsStatesInfo[APPROVED_ADs] = [];
-      await _fireStore.collection(APPROVED_ADs).get().then((doc) {
-        doc.docs.forEach((DocumentSnapshot doc) {
-          adsStatesInfo[APPROVED_ADs].add(AdsInfoModel.fromSnapshot(doc));
-        });
-      });
-
-      adsStatesInfo[ON_HOLD_ADs] = [];
-      await _fireStore.collection(ON_HOLD_ADs).get().then((doc) {
-        doc.docs.forEach((DocumentSnapshot doc) {
-          adsStatesInfo[ON_HOLD_ADs].add(AdsInfoModel.fromSnapshot(doc));
-        });
-      });
-
-      adsStatesInfo[FORBIDDEN_ADs] = [];
-      await _fireStore.collection(FORBIDDEN_ADs).get().then((doc) {
-        doc.docs.forEach((DocumentSnapshot doc) {
-          adsStatesInfo[FORBIDDEN_ADs].add(AdsInfoModel.fromSnapshot(doc));
-        });
-      });
+        await getAdsInfoPerCollection(APPROVED_ADs);
+        await getAdsInfoPerCollection(ON_HOLD_ADs);
+        await getAdsInfoPerCollection(FORBIDDEN_ADs);
     } catch (e) {
-      print("=ERROR=>" + e.toString());
-    }
+        print("=GET ERROR=>" + e.toString());
+    }  
+
+    // for(int i =0; i < adsStatesInfo[ON_HOLD_ADs].length; i++) {
+    //   print(adsStatesInfo[ON_HOLD_ADs][i].responseId);
+    // } 
+    
     return adsStatesInfo;
   }
 
   @override
-  Future<bool> pushAdsId(AdsInfoModel adsInfoModel, String adStateCollection) {
-    // TODO: implement pushAdsId
+  Future<bool> pushAdsIdToOnHold(AdsInfoModel adsInfoModel) async {
     try {
-      // _fireStore.collection(adStateCollection).doc(values["id"]).set(values);
-      
+      await _fireStore.collection("OnHoldAds").doc(adsInfoModel.responseId).set({
+        "ResponseId": adsInfoModel.responseId,
+        "AdType": adsInfoModel.adType
+      });
+      return  true;
     } catch (e) {
+      print("=PUSH ERROR=>" + e.toString());
     }
+      return false;
   }
 }
