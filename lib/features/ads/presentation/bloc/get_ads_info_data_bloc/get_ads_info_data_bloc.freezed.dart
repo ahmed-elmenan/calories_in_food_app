@@ -161,7 +161,7 @@ class _$GetAdsInfoDataStateTearOff {
 
 // ignore: unused_element
   _GetAdsInfoDataSuccess getAdsInfoDataSuccess(
-      Map<String, List<AdsInfoModel>> adsStatesInfoList) {
+      Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList) {
     return _GetAdsInfoDataSuccess(
       adsStatesInfoList,
     );
@@ -185,7 +185,7 @@ mixin _$GetAdsInfoDataState {
     @required TResult getAdsInfoDataLoading(),
     @required
         TResult getAdsInfoDataSuccess(
-            Map<String, List<AdsInfoModel>> adsStatesInfoList),
+            Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     @required TResult getAdsInfoDataFailed(),
   });
   @optionalTypeArgs
@@ -193,7 +193,7 @@ mixin _$GetAdsInfoDataState {
     TResult initial(),
     TResult getAdsInfoDataLoading(),
     TResult getAdsInfoDataSuccess(
-        Map<String, List<AdsInfoModel>> adsStatesInfoList),
+        Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     TResult getAdsInfoDataFailed(),
     @required TResult orElse(),
   });
@@ -272,7 +272,7 @@ class _$_Initial implements _Initial {
     @required TResult getAdsInfoDataLoading(),
     @required
         TResult getAdsInfoDataSuccess(
-            Map<String, List<AdsInfoModel>> adsStatesInfoList),
+            Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     @required TResult getAdsInfoDataFailed(),
   }) {
     assert(initial != null);
@@ -288,7 +288,7 @@ class _$_Initial implements _Initial {
     TResult initial(),
     TResult getAdsInfoDataLoading(),
     TResult getAdsInfoDataSuccess(
-        Map<String, List<AdsInfoModel>> adsStatesInfoList),
+        Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     TResult getAdsInfoDataFailed(),
     @required TResult orElse(),
   }) {
@@ -378,7 +378,7 @@ class _$_GetAdsInfoDataLoading implements _GetAdsInfoDataLoading {
     @required TResult getAdsInfoDataLoading(),
     @required
         TResult getAdsInfoDataSuccess(
-            Map<String, List<AdsInfoModel>> adsStatesInfoList),
+            Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     @required TResult getAdsInfoDataFailed(),
   }) {
     assert(initial != null);
@@ -394,7 +394,7 @@ class _$_GetAdsInfoDataLoading implements _GetAdsInfoDataLoading {
     TResult initial(),
     TResult getAdsInfoDataLoading(),
     TResult getAdsInfoDataSuccess(
-        Map<String, List<AdsInfoModel>> adsStatesInfoList),
+        Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     TResult getAdsInfoDataFailed(),
     @required TResult orElse(),
   }) {
@@ -446,7 +446,7 @@ abstract class _$GetAdsInfoDataSuccessCopyWith<$Res> {
   factory _$GetAdsInfoDataSuccessCopyWith(_GetAdsInfoDataSuccess value,
           $Res Function(_GetAdsInfoDataSuccess) then) =
       __$GetAdsInfoDataSuccessCopyWithImpl<$Res>;
-  $Res call({Map<String, List<AdsInfoModel>> adsStatesInfoList});
+  $Res call({Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList});
 }
 
 /// @nodoc
@@ -467,7 +467,7 @@ class __$GetAdsInfoDataSuccessCopyWithImpl<$Res>
     return _then(_GetAdsInfoDataSuccess(
       adsStatesInfoList == freezed
           ? _value.adsStatesInfoList
-          : adsStatesInfoList as Map<String, List<AdsInfoModel>>,
+          : adsStatesInfoList as Map<String, Map<String, List<AdsInfoModel>>>,
     ));
   }
 }
@@ -478,7 +478,7 @@ class _$_GetAdsInfoDataSuccess implements _GetAdsInfoDataSuccess {
       : assert(adsStatesInfoList != null);
 
   @override
-  final Map<String, List<AdsInfoModel>> adsStatesInfoList;
+  final Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList;
 
   @override
   String toString() {
@@ -512,7 +512,7 @@ class _$_GetAdsInfoDataSuccess implements _GetAdsInfoDataSuccess {
     @required TResult getAdsInfoDataLoading(),
     @required
         TResult getAdsInfoDataSuccess(
-            Map<String, List<AdsInfoModel>> adsStatesInfoList),
+            Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     @required TResult getAdsInfoDataFailed(),
   }) {
     assert(initial != null);
@@ -528,7 +528,7 @@ class _$_GetAdsInfoDataSuccess implements _GetAdsInfoDataSuccess {
     TResult initial(),
     TResult getAdsInfoDataLoading(),
     TResult getAdsInfoDataSuccess(
-        Map<String, List<AdsInfoModel>> adsStatesInfoList),
+        Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     TResult getAdsInfoDataFailed(),
     @required TResult orElse(),
   }) {
@@ -573,10 +573,10 @@ class _$_GetAdsInfoDataSuccess implements _GetAdsInfoDataSuccess {
 
 abstract class _GetAdsInfoDataSuccess implements GetAdsInfoDataState {
   const factory _GetAdsInfoDataSuccess(
-          Map<String, List<AdsInfoModel>> adsStatesInfoList) =
+          Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList) =
       _$_GetAdsInfoDataSuccess;
 
-  Map<String, List<AdsInfoModel>> get adsStatesInfoList;
+  Map<String, Map<String, List<AdsInfoModel>>> get adsStatesInfoList;
   @JsonKey(ignore: true)
   _$GetAdsInfoDataSuccessCopyWith<_GetAdsInfoDataSuccess> get copyWith;
 }
@@ -624,7 +624,7 @@ class _$_GetAdsInfoDataFailed implements _GetAdsInfoDataFailed {
     @required TResult getAdsInfoDataLoading(),
     @required
         TResult getAdsInfoDataSuccess(
-            Map<String, List<AdsInfoModel>> adsStatesInfoList),
+            Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     @required TResult getAdsInfoDataFailed(),
   }) {
     assert(initial != null);
@@ -640,7 +640,7 @@ class _$_GetAdsInfoDataFailed implements _GetAdsInfoDataFailed {
     TResult initial(),
     TResult getAdsInfoDataLoading(),
     TResult getAdsInfoDataSuccess(
-        Map<String, List<AdsInfoModel>> adsStatesInfoList),
+        Map<String, Map<String, List<AdsInfoModel>>> adsStatesInfoList),
     TResult getAdsInfoDataFailed(),
     @required TResult orElse(),
   }) {

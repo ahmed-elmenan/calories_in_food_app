@@ -21,7 +21,7 @@ class GetAdsInfoDataBloc
   ) async* {
     if (event is _Started) {
       try {
-        Map<String, List<AdsInfoModel>> adsStatesInfoList;
+        Map<String,  Map<String, List<AdsInfoModel>>> adsStatesInfoList;
 
         yield _GetAdsInfoDataLoading();
         adsStatesInfoList = await adsRemoteDataSource.getAdsInfo();
