@@ -1,0 +1,621 @@
+{
+        "name" : "rice drink",
+        "proteins" : 0.28,
+        "fat" : 0.97,
+        "carb" : 9.17,
+        "calories" : 47
+    }
+{
+        "name" : "Malta drink",
+        "proteins" : 0.21,
+        "fat" : 0.12,
+        "carb" : 8.05,
+        "calories" : 37
+    }
+{
+        "name" : "chocolate powder",
+        "proteins" : 4.55,
+        "fat" : 2.27,
+        "carb" : 90.28,
+        "calories" : 400
+    }
+
+{
+        "name" : "coconut water",
+        "proteins" : 0.72,
+        "fat" : 0.2,
+        "carb" : 3.71,
+        "calories" : 19
+    }
+
+{
+        "name" : "fruit & vegetable juice",
+        "proteins" : 0.04,
+        "fat" : 0.01,
+        "carb" : 7.47,
+        "calories" : 29
+    }
+
+{
+        "name" : "coconut milk",
+        "proteins" : 2.29,
+        "fat" : 23.84,
+        "carb" : 5.54,
+        "calories" : 230
+    }
+
+{
+        "name" : "cocoa powder",
+        "proteins" : 6.67,
+        "fat" : 4.0,
+        "carb" : 83.73,
+        "calories" : 398
+    }
+
+{
+        "name" : "full throttle (energy drink),Coca Cola ",
+        "proteins" : 0.25,
+        "fat" : 0.08,
+        "carb" : 12.08,
+        "calories" : 46
+    }
+
+{
+        "name" : "Powerade (energy drink), Coca Cola",
+        "proteins" : 0.0,
+        "fat" : 0.05,
+        "carb" : 7.84,
+        "calories" : 32
+    }
+
+{
+        "name" : "powerade Zero lon4 (energy drink)Coca Cola ",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.0,
+        "calories" : 0
+    }
+
+{
+        "name" : "Amp Energy (energy drink, pepsi",
+        "proteins" : 0.25,
+        "fat" : 0.08,
+        "carb" : 12.08,
+        "calories" : 46
+    }
+
+{
+        "name" : "Amp Energy Sugar free (energy drink, pepsi",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 1.03,
+        "calories" : 2
+    }
+
+{
+        "name" : "Gatorade G2 (energy drink), Pepsi",
+        "proteins" : 0.5,
+        "fat" : 0.01,
+        "carb" : 1.94,
+        "calories" : 8
+    }
+
+{
+        "name" : " Red Bull ,energy drink",
+        "proteins" : 0.25,
+        "fat" : 0.08,
+        "carb" : 10.94,
+        "calories" : 45
+    }
+
+{
+        "name" : " Red Bull ,sugar free energy drink",
+        "proteins" : 0.25,
+        "fat" : 0.08,
+        "carb" : 0.7,
+        "calories" : 5
+    }
+
+{
+        "name" : "apricot and cranberry juice ",
+        "proteins" : 0.2,
+        "fat" : 0.0,
+        "carb" : 16.2,
+        "calories" : 64
+    }
+
+{
+        "name" : "pineapple and grapefruit juice",
+        "proteins" : 0.2,
+        "fat" : 0.1,
+        "carb" : 11.6,
+        "calories" : 47
+    }
+
+{
+        "name" : "concentrated apple juice",
+        "proteins" : 0.51,
+        "fat" : 0.37,
+        "carb" : 41.0,
+        "calories" : 166
+    }
+
+{
+        "name" : " acerola juice",
+        "proteins" : 0.4,
+        "fat" : 0.3,
+        "carb" : 4.8,
+        "calories" : 23
+    }
+
+{
+        "name" : "citrus juice",
+        "proteins" : 0.34,
+        "fat" : 0.03,
+        "carb" : 11.42,
+        "calories" : 46
+    }
+
+{
+        "name" : "ananase juice",
+        "proteins" : 0.36,
+        "fat" : 0.12,
+        "carb" : 12.87,
+        "calories" : 53
+    }
+
+{
+        "name" : "orange juice",
+        "proteins" : 0.7,
+        "fat" : 0.2,
+        "carb" : 10.4,
+        "calories" : 45
+    }
+
+{
+        "name" : "cranberry juice",
+        "proteins" : 0.39,
+        "fat" : 0.13,
+        "carb" : 12.2,
+        "calories" : 46
+    }
+
+{
+        "name" : "lemon juice",
+        "proteins" : 0.4,
+        "fat" : 0.29,
+        "carb" : 6.48,
+        "calories" : 21
+    }
+
+{
+        "name" : "lime juice",
+        "proteins" : 0.42,
+        "fat" : 0.07,
+        "carb" : 8.42,
+        "calories" : 25
+    }
+
+{
+        "name" : "fruit juice",
+        "proteins" : 0.13,
+        "fat" : 0.05,
+        "carb" : 13.16,
+        "calories" : 54
+    }
+
+{
+        "name" : "pomegranate juice",
+        "proteins" : 0.15,
+        "fat" : 0.29,
+        "carb" : 13.13,
+        "calories" : 54
+    }
+
+{
+        "name" : "grapefruit juice",
+        "proteins" : 0.5,
+        "fat" : 0.1,
+        "carb" : 9.2,
+        "calories" : 39
+    }
+
+{
+        "name" : "wall juice",
+        "proteins" : 0.3,
+        "fat" : 0.6,
+        "carb" : 7.8,
+        "calories" : 38
+    }
+
+{
+        "name" : "Apple  juice",
+        "proteins" : 0.1,
+        "fat" : 0.13,
+        "carb" : 11.3,
+        "calories" : 46
+    }
+
+{
+        "name" : "plum juice",
+        "proteins" : 0.61,
+        "fat" : 0.03,
+        "carb" : 17.45,
+        "calories" : 71
+    }
+
+{
+        "name" : "grape juice",
+        "proteins" : 0.37,
+        "fat" : 0.13,
+        "carb" : 14.77,
+        "calories" : 60
+    }
+
+{
+        "name" : "orange and apricot juice",
+        "proteins" : 0.3,
+        "fat" : 0.1,
+        "carb" : 12.7,
+        "calories" : 51
+    }
+
+{
+        "name" : "orange juice and ananase",
+        "proteins" : 0.41,
+        "fat" : 0.08,
+        "carb" : 12.2,
+        "calories" : 51
+    }
+
+{
+        "name" : "apricot nectar",
+        "proteins" : 0.37,
+        "fat" : 0.09,
+        "carb" : 14.39,
+        "calories" : 56
+    }
+
+{
+        "name" : "corossol nectar",
+        "proteins" : 0.11,
+        "fat" : 0.17,
+        "carb" : 14.93,
+        "calories" : 59
+    }
+
+{
+        "name" : "guava nectar",
+        "proteins" : 0.09,
+        "fat" : 0.06,
+        "carb" : 14.87,
+        "calories" : 57
+    }
+
+{
+        "name" : "mango nectar",
+        "proteins" : 0.11,
+        "fat" : 0.06,
+        "carb" : 13.12,
+        "calories" : 51
+    }
+
+{
+        "name" : "papaya nectar",
+        "proteins" : 0.17,
+        "fat" : 0.15,
+        "carb" : 14.51,
+        "calories" : 57
+    }
+
+{
+        "name" : "peach nectar",
+        "proteins" : 0.27,
+        "fat" : 0.02,
+        "carb" : 13.92,
+        "calories" : 54
+    }
+
+{
+        "name" : "fruit punch",
+        "proteins" : 0.7,
+        "fat" : 0.17,
+        "carb" : 10.44,
+        "calories" : 42
+    }
+
+{
+        "name" : "Lime soda",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 13.79,
+        "calories" : 52
+    }
+
+{
+        "name" : "carrot juice",
+        "proteins" : 0.95,
+        "fat" : 0.15,
+        "carb" : 9.28,
+        "calories" : 40
+    }
+
+{
+        "name" : "vegetable juice",
+        "proteins" : 0.63,
+        "fat" : 0.09,
+        "carb" : 4.55,
+        "calories" : 19
+    }
+
+{
+        "name" : "tomato juice",
+        "proteins" : 0.76,
+        "fat" : 0.05,
+        "carb" : 4.24,
+        "calories" : 17
+    }
+
+{
+        "name" : "Coffee",
+        "proteins" : 0.12,
+        "fat" : 0.02,
+        "carb" : 0.0,
+        "calories" : 1
+    }
+
+{
+        "name" : "instant coffee powder",
+        "proteins" : 12.2,
+        "fat" : 0.5,
+        "carb" : 75.4,
+        "calories" : 353
+    }
+
+{
+        "name" : "instant coffee powder with water",
+        "proteins" : 0.12,
+        "fat" : 0.0,
+        "carb" : 0.34,
+        "calories" : 2
+    }
+
+{
+        "name" : "instant coffee powder with water,decaffeinated",
+        "proteins" : 0.12,
+        "fat" : 0.0,
+        "carb" : 0.43,
+        "calories" : 2
+    }
+
+{
+        "name" : "instant decaffeinated coffee powder",
+        "proteins" : 11.6,
+        "fat" : 0.2,
+        "carb" : 76.0,
+        "calories" : 351
+    }
+
+{
+        "name" : "decaffeinated coffee",
+        "proteins" : 0.1,
+        "fat" : 0.0,
+        "carb" : 0.0,
+        "calories" : 0
+    }
+
+{
+        "name" : "instant cappuccino powder",
+        "proteins" : 3.1,
+        "fat" : 5.56,
+        "carb" : 85.94,
+        "calories" : 406
+    }
+
+{
+        "name" : "espresso",
+        "proteins" : 0.12,
+        "fat" : 0.18,
+        "carb" : 1.67,
+        "calories" : 9
+    }
+
+{
+        "name" : "Decaffeinated espresso",
+        "proteins" : 0.1,
+        "fat" : 0.18,
+        "carb" : 1.69,
+        "calories" : 9
+    }
+
+{
+        "name" : "water",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.0,
+        "calories" : 0
+    }
+
+{
+        "name" : "spring water",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.0,
+        "calories" : 0
+    }
+
+{
+        "name" : "tap water",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.0,
+        "calories" : 0
+    }
+
+{
+        "name" : "Vanilla soft drink",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 13.3,
+        "calories" : 51
+    }
+
+{
+        "name" : "chocolate soft drink",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 10.7,
+        "calories" : 42
+    }
+
+{
+        "name" : "Lime soft drink",
+        "proteins" : 0.09,
+        "fat" : 0.0,
+        "carb" : 10.42,
+        "calories" : 41
+    }
+
+{
+        "name" : "grape soft drink",
+        "proteins" : 0.09,
+        "fat" : 0.0,
+        "carb" : 11.2,
+        "calories" : 43
+    }
+
+{
+        "name" : "Coca",
+        "proteins" : 0.07,
+        "fat" : 0.02,
+        "carb" : 9.56,
+        "calories" : 37
+    }
+
+{
+        "name" : "sparkling water",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.0,
+        "calories" : 0
+    }
+
+{
+        "name" : "ginger Ale",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 8.77,
+        "calories" : 34
+    }
+
+{
+        "name" : "white limonada",
+        "proteins" : 0.7,
+        "fat" : 0.04,
+        "carb" : 10.42,
+        "calories" : 40
+    }
+
+{
+        "name" :  "pink limonada",
+        "proteins" : 0.5,
+        "fat" : 0.15,
+        "carb" : 10.81,
+        "calories" : 43
+    }
+
+{
+        "name" :  "low calorie limonada",
+        "proteins" : 0.3,
+        "fat" : 0.0,
+        "carb" : 0.68,
+        "calories" : 3
+    }
+
+{
+        "name" :  "Tonic",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 8.8,
+        "calories" : 34
+    }
+
+{
+        "name" :  "Coca cola ",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 10.58,
+        "calories" : 41
+    }
+
+{
+        "name" :  "Coca light, coca cola ",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 5.16,
+        "calories" : 20
+    }
+
+{
+        "name" :  "sprit, coca cola ",
+        "proteins" : 0.5,
+        "fat" : 0.02,
+        "carb" : 10.14,
+        "calories" : 40
+    }
+
+{
+        "name" :  "Iemon ice tea,Nestlé ",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 9.09,
+        "calories" : 36
+    }
+
+{
+        "name" :  "instant lemon tea",
+        "proteins" : 0.06,
+        "fat" : 0.0,
+        "carb" : 0.17,
+        "calories" : 1
+    }
+
+{
+        "name" :  "instant lemon tea sugar",
+        "proteins" : 0.01,
+        "fat" : 0.06,
+        "carb" : 8.61,
+        "calories" : 35
+    }
+
+{
+        "name" :  "black tea",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.3,
+        "calories" : 1
+    }
+
+{
+        "name" :  "tisane",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.2,
+        "calories" : 1
+    }
+
+{
+        "name" :  "chamomile tea",
+        "proteins" : 0.0,
+        "fat" : 0.0,
+        "carb" : 0.2,
+        "calories" : 1
+    }
+
+{
+        "name" :  "hibiscus tea",
+        "proteins" : 0.43,
+        "fat" : 0.65,
+        "carb" : 7.41,
+        "calories" : 37
+    }
