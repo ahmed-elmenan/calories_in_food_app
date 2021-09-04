@@ -1,0 +1,223 @@
+{
+        "name" : "raw canadian bacon",
+        "proteins" : 20.64,
+        "fat" : 6.97,
+        "carb" : 1.68,
+        "calories" : 157
+    }
+
+{
+        "name" : "cooked turkey bacon",
+        "proteins" : 29.6,
+        "fat" : 27.9,
+        "carb" : 3.1,
+        "calories" : 382
+    }
+
+{
+        "name" : "honey cake",
+        "proteins" : 11.12,
+        "fat" : 4.47,
+        "carb" : 9.98,
+        "calories" : 125
+    }
+
+{
+        "name" : "Turkey ham",
+        "proteins" : 17.5,
+        "fat" : 4.84,
+        "carb" : 2.04,
+        "calories" : 126
+    }
+
+{
+        "name" : "mortadella",
+        "proteins" : 16.37,
+        "fat" : 25.39,
+        "carb" : 3.05,
+        "calories" : 311
+    }
+
+{
+        "name" : "meatloaf",
+        "proteins" : 18.4,
+        "fat" : 4.8,
+        "carb" : 4.9,
+        "calories" : 141
+    }
+
+{
+        "name" : "pork bread and olives",
+        "proteins" : 11.8,
+        "fat" : 16.5,
+        "carb" : 9.2,
+        "calories" : 235
+    }
+
+{
+        "name" : "turkey pastrami",
+        "proteins" : 16.3,
+        "fat" : 6.21,
+        "carb" : 1.79,
+        "calories" : 133
+    }
+
+{
+        "name" : "beef pepperoni",
+        "proteins" : 22.68,
+        "fat" : 43.98,
+        "carb" : 0.0,
+        "calories" : 494
+    }
+
+{
+        "name" : "sliced turkey breast",
+        "proteins" : 17.07,
+        "fat" : 1.66,
+        "carb" : 4.21,
+        "calories" : 104
+    }
+
+{
+        "name" : "turkey roll",
+        "proteins" : 18.14,
+        "fat" : 6.99,
+        "carb" : 2.12,
+        "calories" : 149
+    }
+
+{
+        "name" : "cooked beef salami",
+        "proteins" : 12.6,
+        "fat" : 22.2,
+        "carb" : 1.9,
+        "calories" : 261
+    }
+
+{
+        "name" : "cooked turkey salami",
+        "proteins" : 19.3,
+        "fat" : 9.21,
+        "carb" : 1.55,
+        "calories" : 172
+    }
+
+{
+        "name" : "pork salami",
+        "proteins" : 22.58,
+        "fat" : 33.72,
+        "carb" : 1.6,
+        "calories" : 407
+    }
+
+{
+        "name" : "italian salami",
+        "proteins" : 21.7,
+        "fat" : 37.0,
+        "carb" : 1.2,
+        "calories" : 425
+    }
+
+{
+        "name" : "pork and beef salami",
+        "proteins" : 19.9,
+        "fat" : 31.59,
+        "carb" : 1.18,
+        "calories" : 374
+    }
+
+{
+        "name" : "cooked pork and beef salami",
+        "proteins" : 21.85,
+        "fat" : 25.9,
+        "carb" : 2.4,
+        "calories" : 366
+    }
+
+{
+        "name" : "turkey bologna",
+        "proteins" : 11.42,
+        "fat" : 16.05,
+        "carb" : 4.68,
+        "calories" : 209
+    }
+
+{
+        "name" : "bologna sausage with beef",
+        "proteins" : 10.91,
+        "fat" : 26.13,
+        "carb" : 4.29,
+        "calories" : 299
+    }
+
+{
+        "name" : "pork bologna",
+        "proteins" : 15.3,
+        "fat" : 19.87,
+        "carb" : 0.73,
+        "calories" : 247
+    }
+
+{
+        "name" : "beef and pork bologna sausage",
+        "proteins" : 15.3,
+        "fat" : 19.87,
+        "carb" : 0.73,
+        "calories" : 247
+    }
+
+{
+        "name" : "Lebanese bologna sausage",
+        "proteins" : 15.3,
+        "fat" : 19.87,
+        "carb" : 0.73,
+        "calories" : 247
+    }
+
+{
+        "name" : "chicken and pork bologna sausage",
+        "proteins" : 10.31,
+        "fat" : 30.61,
+        "carb" : 4.19,
+        "calories" : 336
+    }
+
+{
+        "name" : "smoked sausage with cooked garlic",
+        "proteins" : 14.8,
+        "fat" : 22.6,
+        "carb" : 1.4,
+        "calories" : 268
+    }
+
+{
+        "name" : "cold beef slices in jelly",
+        "proteins" : 19.0,
+        "fat" : 3.3,
+        "carb" : 0.0,
+        "calories" : 111
+    }
+
+{
+        "name" : " raw slice of bacon-type pork",
+        "proteins" : 11.74,
+        "fat" : 37.16,
+        "carb" : 0.7,
+        "calories" : 388
+    }
+
+{
+        "name" : "slice of cold meat beef",
+        "proteins" : 17.94,
+        "fat" : 3.4,
+        "carb" : 2.59,
+        "calories" : 117
+    }
+
+{
+        "name" : "slice of cold meat beef and pork",
+        "proteins" : 12.59,
+        "fat" : 32.16,
+        "carb" : 2.33,
+        "calories" : 353
+    }

@@ -5,7 +5,6 @@ import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:auto_animated/auto_animated.dart';
 
 import '../data/models/dataobject.dart';
 
@@ -51,7 +50,12 @@ class _page_detailsState extends State<page_details> {
     adUnitId: BannerAd.testAdUnitId,
     size: AdSize.banner,
     request: AdRequest(),
-    listener: BannerAdListener(),
+    listener: BannerAdListener(
+      onAdLoaded: (ad) {
+        print(ad.responseInfo.responseId);
+        // push to fire store 
+      },
+    ),
   );
 
   @override
@@ -110,7 +114,7 @@ class _page_detailsState extends State<page_details> {
                 child: Container(
                   height: 50,
                   width: MediaQuery.of(context).size.width,
-                  child: AdWidget(ad: myBanner),
+                  child:/* trenary to check if the id exist in the db then take an action*/ AdWidget(ad: myBanner),
                 ),
               ),
             ],

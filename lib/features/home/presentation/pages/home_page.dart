@@ -1,4 +1,6 @@
 import 'package:fapp/core/consts/food_categories.dart';
+import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
+import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,17 @@ class FoodCaloriesApp extends StatefulWidget {
 }
 
 class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
-  
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    IAdsRemoteDataSource iAdsRemoteDataSource = IAdsRemoteDataSource();
+    iAdsRemoteDataSource.getAdsInfo();
+    // iAdsRemoteDataSource.pushAdsIdToOnHold(
+    //     AdsInfoModel(responseId: "12345", adType: "banner"));
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
