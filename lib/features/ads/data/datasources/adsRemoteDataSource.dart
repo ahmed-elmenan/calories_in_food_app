@@ -39,9 +39,9 @@ class IAdsRemoteDataSource implements AdsRemoteDataSource {
       print("=GET ERROR=>" + e.toString());
     }
 
-    print("====+" + adsStatesInfo[ON_HOLD_ADs]["banner"].length.toString());
-    for (int i = 0; i < adsStatesInfo[ON_HOLD_ADs]["banner"].length; i++) {
-      print("ban ==>" + adsStatesInfo[ON_HOLD_ADs]["banner"][i].responseId);
+    print("====+" + adsStatesInfo[APPROVED_ADs]["interstitial"].length.toString());
+    for (int i = 0; i < adsStatesInfo[APPROVED_ADs]["interstitial"].length; i++) {
+      print("ban ==>" + adsStatesInfo[APPROVED_ADs]["interstitial"][i].responseId);
     }
 
     return adsStatesInfo;

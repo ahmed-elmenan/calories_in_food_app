@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fapp/core/utils/global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
@@ -18,6 +19,7 @@ class page_details extends StatefulWidget {
 
 class _page_detailsState extends State<page_details> {
   List<FoodModel> categorie_model = [];
+  bool showAd = false;
   Future<List<FoodModel>> getData() async {
     return await Future.delayed(Duration(seconds: 0), () {
       print(widget.nameCategorie);
@@ -34,6 +36,12 @@ class _page_detailsState extends State<page_details> {
     super.initState();
     getData();
     myBanner.load();
+    print(">>>DABA>>" +
+        FoodCaloriesApp.adsData['OnHoldAds']['banner'][0].responseId);
+    print("==EXISTTTTTTT=>" +
+        GlobalUtils.isDataExist(
+                "12345", FoodCaloriesApp.adsData['OnHoldAds']['banner'])
+            .toString());
   }
 
   addKcal() {
@@ -51,9 +59,15 @@ class _page_detailsState extends State<page_details> {
     size: AdSize.banner,
     request: AdRequest(),
     listener: BannerAdListener(
-      onAdLoaded: (ad) {
-        print(ad.responseInfo.responseId);
-        // push to fire store 
+      onAdLoaded: (ad) async {
+        if (await GlobalUtils.isAdDisplayable(
+                    ad.responseInfo.responseId,
+                    'banner')) {
+          print("OK");
+        } else {
+          print("mzaakhkhkh");
+          await ad.dispose();
+        }
       },
     ),
   );
@@ -114,7 +128,8 @@ class _page_detailsState extends State<page_details> {
                 child: Container(
                   height: 50,
                   width: MediaQuery.of(context).size.width,
-                  child:/* trenary to check if the id exist in the db then take an action*/ AdWidget(ad: myBanner),
+                  child: /* trenary to check if the id exist in the db then take an action*/ AdWidget(
+                      ad: myBanner),
                 ),
               ),
             ],

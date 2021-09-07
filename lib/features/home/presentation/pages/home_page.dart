@@ -6,20 +6,28 @@ import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
+  static Map<String, Map<String, List<AdsInfoModel>>> adsData;
+
   @override
   _FoodCaloriesAppState createState() => _FoodCaloriesAppState();
 }
 
 class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
+
+  getAdsData() async {
+    IAdsRemoteDataSource iAdsRemoteDataSource = IAdsRemoteDataSource();
+    
+    FoodCaloriesApp.adsData = await iAdsRemoteDataSource.getAdsInfo();
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    IAdsRemoteDataSource iAdsRemoteDataSource = IAdsRemoteDataSource();
-    iAdsRemoteDataSource.getAdsInfo();
+    getAdsData();
+
     // iAdsRemoteDataSource.pushAdsIdToOnHold(
     //     AdsInfoModel(responseId: "12345", adType: "banner"));
-    
   }
 
   @override
