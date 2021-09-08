@@ -1,0 +1,95 @@
+{
+        "name" : " Fries medium",
+        "proteins" : 4,
+        "fat" : 17,
+        "carb" : 47,
+        "calories" : 341
+    }
+
+{
+        "name" : " Fries large ",
+        "proteins" : 5.1,
+        "fat" : 21,
+        "carb" : 55,
+        "calories" : 434
+    }
+
+{
+        "name" : " Deluxe potatoes medium",
+        "proteins" : 3.1,
+        "fat" : 9.8,
+        "carb" : 29,
+        "calories" : 220
+    }
+
+{
+        "name" : "sauce creamy Deluxe",
+        "proteins" : 0.2,
+        "fat" : 8.2,
+        "carb" : 0.8,
+        "calories" : 79
+    }
+
+{
+        "name" : "Fries small",
+        "proteins" : 2.7,
+        "fat" : 11,
+        "carb" : 29,
+        "calories" : 231
+    }
+
+{
+        "name" : "Delux potatoes large ",
+        "proteins" : 4.5,
+        "fat" : 14,
+        "carb" : 41,
+        "calories" : 321
+    }
+
+{
+        "name" : "The pomme frites-sauce ",
+        "proteins" : 0.5,
+        "fat" : 15,
+        "carb" : 1.1.8,
+        "calories" : 189
+    }
+
+{
+        "name" : "Potato-frensh fries sauce ",
+        "proteins" : 0.1,
+        "fat" : 2.2,
+        "carb" : 1.7,
+        "calories" : 27
+    }
+
+{
+        "name" : "Twister fries ",
+        "proteins" : 3,
+        "fat" : 11,
+        "carb" : 25,
+        "calories" : 215
+    }
+
+{
+        "name" : "Onion rings",
+        "proteins" : 3.2,
+        "fat" : 8.4,
+        "carb" : 29.3,
+        "calories" : 190
+    }
+
+{
+        "name" : "Classic tendres chips ",
+        "proteins" : 2,
+        "fat" : 9,
+        "carb" : 23,
+        "calories" : 187
+    }
+
+{
+        "name" : "Winter fries ",
+        "proteins" : 2.4,
+        "fat" : 18,
+        "carb" : 29,
+        "calories" : 299
+    }

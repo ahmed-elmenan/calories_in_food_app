@@ -1,0 +1,343 @@
+{
+        "name" : " big Tasty ",
+        "proteins" : 44,
+        "fat" : 50,
+        "carb" : 50,
+        "calories" : 828
+    }
+
+{
+        "name" : " filet-O-fish ",
+        "proteins" : 15,
+        "fat" : 13,
+        "carb" : 36,
+        "calories" : 333
+    }
+
+{
+        "name" : " Mac Chicken ",
+        "proteins" : 21,
+        "fat" : 21,
+        "carb" : 43,
+        "calories" : 445
+    }
+
+{
+        "name" : " McFirst Chiken Ranch ",
+        "proteins" : 21,
+        "fat" : 18,
+        "carb" : 46,
+        "calories" : 436
+    }
+
+{
+        "name" : " McFirst beef ",
+        "proteins" : 17,
+        "fat" : 16,
+        "carb" : 37,
+        "calories" : 366
+    }
+
+{
+        "name" : " Burger Chicken & melted Cheddar ",
+        "proteins" : 26,
+        "fat" : 28,
+        "carb" : 52,
+        "calories" : 570
+    }
+
+{
+        "name" : "Beef BBQ Burger 1 meat",
+        "proteins" : 40,
+        "fat" : 32,
+        "carb" : 50,
+        "calories" : 665
+    }
+
+{
+        "name" : "Beef BBQ Burger 2 meat",
+        "proteins" : 61,
+        "fat" : 49,
+        "carb" : 51,
+        "calories" : 987
+    }
+
+{
+        "name" : "Burger breaded processed cheese",
+        "proteins" : 20,
+        "fat" : 26,
+        "carb" : 57,
+        "calories" : 550
+    }
+
+{
+        "name" : " burger breaded cheese",
+        "proteins" : 19,
+        "fat" : 29,
+        "carb" : 64,
+        "calories" : 601
+    }
+
+{
+        "name" : "Spicy Ranch Burger",
+        "proteins" : 61,
+        "fat" : 57,
+        "carb" : 53,
+        "calories" : 975
+    }
+
+{
+        "name" : "Littel Fade",
+        "proteins" : 17,
+        "fat" : 16,
+        "carb" : 33,
+        "calories" : 347
+    }
+
+{
+        "name" : "McFirst  Ranch Fish",
+        "proteins" : 21,
+        "fat" : 22,
+        "carb" : 43,
+        "calories" : 460
+    }
+
+{
+        "name" : "Double Filet-O-Fish",
+        "proteins" : 26,
+        "fat" : 21,
+        "carb" : 45,
+        "calories" : 476
+    }
+
+{
+        "name" : "Signature 1 Meat",
+        "proteins" : 40,
+        "fat" : 37,
+        "carb" : 50,
+        "calories" : 699
+    }
+
+{
+        "name" : "McFirst beef ranche mustard",
+        "proteins" : 26,
+        "fat" : 21,
+        "carb" : 33,
+        "calories" : 431
+    }
+
+{
+        "name" : "Tripel cheese",
+        "proteins" : 17,
+        "fat" : 15,
+        "carb" : 14,
+        "calories" : 265
+    }
+
+{
+        "name" : "Mcfirst fish",
+        "proteins" : 18,
+        "fat" : 14,
+        "carb" : 45,
+        "calories" : 384
+    }
+
+{
+        "name" : "Royal Cheese",
+        "proteins" : 32,
+        "fat" : 28,
+        "carb" : 36,
+        "calories" : 530
+    }
+
+{
+        "name" : "Mc Choconuts",
+        "proteins" : 10,
+        "fat" : 17,
+        "carb" : 56,
+        "calories" : 425
+    }
+
+{
+        "name" : "Wrap pepper chicken",
+        "proteins" : 29,
+        "fat" : 34,
+        "carb" : 54,
+        "calories" : 646
+    }
+
+{
+        "name" : "chicken Avocado",
+        "proteins" : 10,
+        "fat" : 12,
+        "carb" : 22,
+        "calories" : 238
+    }
+
+{
+        "name" : "Small Wrap Veggie",
+        "proteins" : 7,
+        "fat" : 12,
+        "carb" : 35,
+        "calories" : 280
+    }
+
+{
+        "name" : "Big Hot dog ",
+        "proteins" : 26,
+        "fat" : 37,
+        "carb" : 60,
+        "calories" : 685
+    }
+
+{
+        "name" : "Mac junior",
+        "proteins" : 21,
+        "fat" : 20,
+        "carb" : 35,
+        "calories" : 408
+    }
+
+{
+        "name" : "Mega Mac",
+        "proteins" : 42,
+        "fat" : 39,
+        "carb" : 42,
+        "calories" : 693
+    }
+
+{
+        "name" : "289 cheese sauce ",
+        "proteins" : 45,
+        "fat" : 46,
+        "carb" : 56,
+        "calories" : 826
+    }
+
+{
+        "name" : "Small italien",
+        "proteins" : 16,
+        "fat" : 12,
+        "carb" : 29,
+        "calories" : 16
+    }
+
+{
+        "name" : "large bagel cheese",
+        "proteins" : 51,
+        "fat" : 46,
+        "carb" : 59,
+        "calories" : 860
+    }
+
+{
+        "name" : " beef ranch mustard",
+        "proteins" : 25,
+        "fat" : 24,
+        "carb" : 32,
+        "calories" : 442
+    }
+
+{
+        "name" : " little focaccia",
+        "proteins" : 17,
+        "fat" : 16,
+        "carb" : 29,
+        "calories" : 330
+    }
+
+{
+        "name" : "big premium",
+        "proteins" : 49,
+        "fat" : 53,
+        "carb" : 56,
+        "calories" : 905
+    }
+
+{
+        "name" : "Chicken Sticks ",
+        "proteins" : 56,
+        "fat" : 38,
+        "carb" : 74,
+        "calories" : 864
+    }
+
+{
+        "name" : "cheese recipe",
+        "proteins" : 45,
+        "fat" : 46,
+        "carb" : 56,
+        "calories" : 826
+    }
+
+{
+        "name" : "Big veggie",
+        "proteins" : 23,
+        "fat" : 33,
+        "carb" : 88,
+        "calories" : 763
+    }
+
+{
+        "name" : "chicken curry snack",
+        "proteins" : 26,
+        "fat" : 33,
+        "carb" : 87,
+        "calories" : 771
+    }
+
+{
+        "name" : "small Mc baguette",
+        "proteins" : 17,
+        "fat" : 30,
+        "carb" : 14,
+        "calories" : 318
+    }
+
+{
+        "name" : "McPioner",
+        "proteins" : 28,
+        "fat" : 28,
+        "carb" : 38,
+        "calories" : 490
+    }
+
+{
+        "name" : "Maestro Wacko Guaco",
+        "proteins" : 32,
+        "fat" : 34,
+        "carb" : 60,
+        "calories" : 687
+    }
+
+{
+        "name" : "ham and cheese snack",
+        "proteins" : 27,
+        "fat" : 26,
+        "carb" : 70,
+        "calories" : 642
+    }
+
+{
+        "name" : "goat cheese recipe with honey sauce",
+        "proteins" : 34,
+        "fat" : 34,
+        "carb" : 84,
+        "calories" : 792
+    }
+
+{
+        "name" : " the little focaccia",
+        "proteins" : 17,
+        "fat" : 16,
+        "carb" : 29,
+        "calories" : 330
+    }
+
+{
+        "name" : "grand chicago classic",
+        "proteins" : 39,
+        "fat" : 36,
+        "carb" : 52,
+        "calories" : 696
+    }

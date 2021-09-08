@@ -1,0 +1,263 @@
+{
+        "name" : "Small salad",
+        "proteins" : 1,
+        "fat" : 6,
+        "carb" : 4,
+        "calories" : 75
+    }
+
+{
+        "name" : "Classic caesar salad",
+        "proteins" : 34,
+        "fat" : 13,
+        "carb" : 11,
+        "calories" : 303
+    }
+
+{
+        "name" : "La P’tite salade +sauce",
+        "proteins" : 1,
+        "fat" : 6,
+        "carb" : 4,
+        "calories" : 75
+    }
+
+{
+        "name" : "La P’tite salade ",
+        "proteins" : 1,
+        "fat" : 0,
+        "carb" : 2,
+        "calories" : 15
+    }
+
+{
+        "name" : "Caesar salad ",
+        "proteins" : 19,
+        "fat" : 8,
+        "carb" : 2.2,
+        "calories" : 152
+    }
+
+{
+        "name" : "Caesar salad ",
+        "proteins" : 19,
+        "fat" : 8,
+        "carb" : 2.2,
+        "calories" : 152
+    }
+
+{
+        "name" : "The Caesar Crispy Chicken salad",
+        "proteins" : 25,
+        "fat" : 18,
+        "carb" : 28,
+        "calories" : 385
+    }
+
+{
+        "name" : "Crispy Goat Cheese salad",
+        "proteins" : 13,
+        "fat" : 21,
+        "carb" : 50,
+        "calories" : 451
+    }
+
+{
+        "name" : "Mozzarella Pasta Salad",
+        "proteins" : 22,
+        "fat" : 16.50,
+        "carb" : 46,
+        "calories" : 510
+    }
+
+{
+        "name" : "Manhattan salade",
+        "proteins" : 19,
+        "fat" : 14,
+        "carb" : 22,
+        "calories" : 296
+    }
+
+{
+        "name" : "New York Caesar Roast Chicken Salad",
+        "proteins" : 23,
+        "fat" : 12,
+        "carb" : 10,
+        "calories" : 240
+    }
+
+{
+        "name" : " Chicken Coleslaw Salad",
+        "proteins" : 6.7,
+        "fat" : 5.3,
+        "carb" : 4.6,
+        "calories" : 97
+    }
+
+{
+        "name" : "Mozzarella Pasta Salad",
+        "proteins" : 7.7,
+        "fat" : 5.4,
+        "carb" : 18.7,
+        "calories" : 157
+    }
+
+{
+        "name" : "Chicken Onion Potato Salad",
+        "proteins" : 4,
+        "fat" : 1,
+        "carb" : 10,
+        "calories" : 75
+    }
+
+{
+        "name" : "Summer Salad",
+        "proteins" : 18,
+        "fat" : 4,
+        "carb" : 27,
+        "calories" : 228
+    }
+
+{
+        "name" : "Greek Salad",
+        "proteins" : 7,
+        "fat" : 11,
+        "carb" : 4,
+        "calories" : 143
+    }
+
+{
+        "name" : "Summer Salad",
+        "proteins" : 8.6,
+        "fat" : 0.6,
+        "carb" : 9.6,
+        "calories" : 73
+    }
+
+{
+        "name" : "Chicken Thai Salad",
+        "proteins" : 18,
+        "fat" : 10,
+        "carb" : 27,
+        "calories" : 286
+    }
+
+{
+        "name" : "Cheese  Salad",
+        "proteins" : 26,
+        "fat" : 28,
+        "carb" : 4,
+        "calories" : 372
+    }
+
+{
+        "name" : "Chicken Mustard Salad",
+        "proteins" : 21,
+        "fat" : 20,
+        "carb" : 45,
+        "calories" : 456
+    }
+
+{
+        "name" : "Manhattan Salad With Marinated and Fried Chicken",
+        "proteins" : 21,
+        "fat" : 15,
+        "carb" : 27,
+        "calories" : 337
+    }
+
+{
+        "name" : "Farmer’s Salad",
+        "proteins" : 28,
+        "fat" : 24,
+        "carb" : 22,
+        "calories" : 415
+    }
+
+{
+        "name" : "Chicken thai salad ",
+        "proteins" : 6.9,
+        "fat" : 4,
+        "carb" : 10.7,
+        "calories" : 112
+    }
+
+{
+        "name" : "Crispy Mozza Pasta Salad",
+        "proteins" : 19,
+        "fat" : 31,
+        "carb" : 76,
+        "calories" : 665
+    }
+
+{
+        "name" : "New Cesar Salad",
+        "proteins" : 11.7,
+        "fat" : 5,
+        "carb" : 1.4,
+        "calories" : 95
+    }
+
+{
+        "name" : "Chicken Caesar Salad",
+        "proteins" : 25,
+        "fat" : 21,
+        "carb" : 32,
+        "calories" : 423
+    }
+
+{
+        "name" : "Italian Cesar Salad",
+        "proteins" : 6.2,
+        "fat" : 7.5,
+        "carb" : 20.1,
+        "calories" : 171
+    }
+
+{
+        "name" : "Cesar Salad",
+        "proteins" : 25,
+        "fat" : 21,
+        "carb" : 32,
+        "calories" : 423
+    }
+
+{
+        "name" : "Exotic Chicken & Tandoori Wheat Salad",
+        "proteins" : 30,
+        "fat" : 14,
+        "carb" : 28,
+        "calories" : 370
+    }
+
+{
+        "name" : "Caesar Grilled Chicken Salad (with Caesar Sauce )",
+        "proteins" : 28,
+        "fat" : 9,
+        "carb" : 23,
+        "calories" : 285
+    }
+
+{
+        "name" : "Olive Oil and Balsamic Vinaigrette Dressing",
+        "proteins" : 0.2,
+        "fat" : 59,
+        "carb" : 5.9,
+        "calories" : 559
+    }
+
+{
+        "name" : "Italian Mozza ",
+        "proteins" : 6.2,
+        "fat" : 7.5,
+        "carb" : 20.1,
+        "calories" : 171
+    }
+
+{
+        "name" : "Sauce Tandoori ",
+        "proteins" : 0,
+        "fat" : 3,
+        "carb" : 24,
+        "calories" : 228
+    }

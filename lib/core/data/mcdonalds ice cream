@@ -1,0 +1,157 @@
+{
+        "name" : "McFlurry M&M’s Caramel",
+        "proteins" : 7,
+        "fat" : 14,
+        "carb" : 50,
+        "calories" : 355
+    }
+{
+        "name" : "Sundae Caramel",
+        "proteins" : 7,
+        "fat" : 9,
+        "carb" : 54,
+        "calories" : 325
+    }
+{
+        "name" : "McFlurry Daim",
+        "proteins" : 6.3,
+        "fat" : 13,
+        "carb" : 49,
+        "calories" : 340
+    }
+
+{
+        "name" : "McFlurry M&M’s",
+        "proteins" : 8,
+        "fat" : 12,
+        "carb" : 49,
+        "calories" : 340
+    }
+
+{
+        "name" : "McFlurry Kit Kat Ball",
+        "proteins" : 7,
+        "fat" : 10,
+        "carb" : 49,
+        "calories" : 315
+    }
+
+{
+        "name" : "McFlurry Oreo",
+        "proteins" : 6,
+        "fat" : 7,
+        "carb" : 41,
+        "calories" : 251
+    }
+
+{
+        "name" : "McFlurry Speculoos",
+        "proteins" : 6,
+        "fat" : 8,
+        "carb" : 43,
+        "calories" : 268
+    }
+
+{
+        "name" : "McFlurry Kit Kat",
+        "proteins" : 7,
+        "fat" : 12,
+        "carb" : 47,
+        "calories" : 320
+    }
+
+{
+        "name" : "Very Parfait",
+        "proteins" : 8,
+        "fat" : 21,
+        "carb" : 71,
+        "calories" : 509
+    }
+
+{
+        "name" : "Sundae Nature",
+        "proteins" : 6,
+        "fat" : 7,
+        "carb" : 31,
+        "calories" : 210
+    }
+
+{
+        "name" : "P’tit glacé Vanilla Flavor",
+        "proteins" : 2,
+        "fat" : 2,
+        "carb" : 10,
+        "calories" : 66
+    }
+
+{
+        "name" : " Very Parfait Nature",
+        "proteins" : 4,
+        "fat" : 11,
+        "carb" : 28,
+        "calories" : 228
+    }
+
+{
+        "name" : "McFlurry Oreo Chocolate Flavor",
+        "proteins" : 7,
+        "fat" : 8,
+        "carb" : 53,
+        "calories" : 318
+    }
+
+{
+        "name" : "Very parfait caramel ",
+        "proteins" : 6,
+        "fat" : 13,
+        "carb" : 86,
+        "calories" : 486
+    }
+
+{
+        "name" : "Choco Glacé",
+        "proteins" : 7,
+        "fat" : 23,
+        "carb" : 39,
+        "calories" : 390
+    }
+
+{
+        "name" : "Coconut Flavor shake",
+        "proteins" : 5,
+        "fat" : 3,
+        "carb" : 32,
+        "calories" : 159
+    }
+
+{
+        "name" : "Strawberry Cone",
+        "proteins" : 2,
+        "fat" : 2,
+        "carb" : 29,
+        "calories" : 144
+    }
+
+{
+        "name" : "Caramel Topping",
+        "proteins" : 2,
+        "fat" : 4,
+        "carb" : 66,
+        "calories" : 310
+    }
+
+{
+        "name" : "McFlurry Granola",
+        "proteins" : 6,
+        "fat" : 9,
+        "carb" : 43,
+        "calories" : 275
+    }
+
+{
+        "name" : "Blueberry shake",
+        "proteins" : 4,
+        "fat" : 5,
+        "carb" : 33,
+        "calories" : 181
+    }
