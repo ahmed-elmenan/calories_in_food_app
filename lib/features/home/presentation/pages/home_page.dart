@@ -26,8 +26,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     super.initState();
     getAdsData();
 
-    // iAdsRemoteDataSource.pushAdsIdToOnHold(
-    //     AdsInfoModel(responseId: "12345", adType: "banner"));
   }
 
   @override

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:fapp/core/utils/global_utils.dart';
+import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
@@ -11,6 +11,8 @@ import '../data/models/dataobject.dart';
 
 class page_details extends StatefulWidget {
   String nameCategorie;
+  bool toShow = false;
+  static BannerAd myBanner;
 
   page_details({this.nameCategorie});
   @override
@@ -35,13 +37,22 @@ class _page_detailsState extends State<page_details> {
   void initState() {
     super.initState();
     getData();
-    myBanner.load();
-    print(">>>DABA>>" +
-        FoodCaloriesApp.adsData['OnHoldAds']['banner'][0].responseId);
-    print("==EXISTTTTTTT=>" +
-        GlobalUtils.isDataExist(
-                "12345", FoodCaloriesApp.adsData['OnHoldAds']['banner'])
-            .toString());
+    page_details.myBanner = BannerAd(
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.banner,
+        request: AdRequest(),
+        listener: BannerAdListener(onAdLoaded: (Ad ad) async {
+          print(ad.responseInfo.responseId);
+          if (await AdsGlobalUtils.isAdDisplayable(
+              "appr", 'banner')) {
+            print("BANNER HAS BEEN APPROVED");
+          } else {
+            ad.dispose();
+            page_details.myBanner.load();
+            print("BANNER NOT APPROVED");
+          }
+        }));
+    page_details.myBanner.load();
   }
 
   addKcal() {
@@ -53,24 +64,12 @@ class _page_detailsState extends State<page_details> {
     });
   }
 
-  final AdSize adSize = AdSize(height: 50, width: 300);
-  final BannerAd myBanner = BannerAd(
-    adUnitId: BannerAd.testAdUnitId,
-    size: AdSize.banner,
-    request: AdRequest(),
-    listener: BannerAdListener(
-      onAdLoaded: (ad) async {
-        if (await GlobalUtils.isAdDisplayable(
-                    ad.responseInfo.responseId,
-                    'banner')) {
-          print("OK");
-        } else {
-          print("mzaakhkhkh");
-          await ad.dispose();
-        }
-      },
-    ),
-  );
+  bool ft_toshow() {
+    // setState(() {
+
+    // myBanner.load();
+    // });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -126,11 +125,10 @@ class _page_detailsState extends State<page_details> {
               Positioned(
                 bottom: 3,
                 child: Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width,
-                  child: /* trenary to check if the id exist in the db then take an action*/ AdWidget(
-                      ad: myBanner),
-                ),
+                    height: 50,
+                    width: MediaQuery.of(context).size.width,
+                    child: /* trenary to check if the id exist in the db then take an action*/
+                        AdWidget(ad: page_details.myBanner)),
               ),
             ],
           ),

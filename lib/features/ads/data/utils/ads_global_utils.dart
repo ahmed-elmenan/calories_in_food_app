@@ -2,20 +2,22 @@ import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
 import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 
-class GlobalUtils {
+class AdsGlobalUtils {
+  
   static bool isDataExist(String value, List<AdsInfoModel> adsIdList) {
     var data = adsIdList.where((item) => (item.responseId == value));
-    print("len = " + data.length.toString());
     return data.length >= 1 ? true : false;
   }
 
   static Future<bool> isAdDisplayable(String responseId, String adType) async {
-    
-    if (GlobalUtils.isDataExist(
+    if (AdsGlobalUtils.isDataExist(
         responseId, FoodCaloriesApp.adsData['approvedAds'][adType])) {
       return true;
-    } else if (GlobalUtils.isDataExist(
-        responseId, FoodCaloriesApp.adsData['ForbiddenAds'][adType])) {
+    } else if (AdsGlobalUtils.isDataExist(
+            responseId, FoodCaloriesApp.adsData['ForbiddenAds'][adType]) ||
+        AdsGlobalUtils.isDataExist(
+            responseId, FoodCaloriesApp.adsData['OnHoldAds'][adType])) {
+      print("FORBIDDEN");
       return false;
     } else {
       try {
