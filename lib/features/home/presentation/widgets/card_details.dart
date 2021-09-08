@@ -1,5 +1,7 @@
+import 'package:fapp/features/ads/services/ads_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../data/models/dataobject.dart';
 
 class Card_details extends StatefulWidget {
@@ -70,6 +72,16 @@ class _Card_detailsState extends State<Card_details> {
     );
   }
 
+  // InterstitialAd interstitialAd;
+  //
+ 
+
+  @override
+  void initState() {
+    super.initState();
+   // AdsManager.createInterAd(0);
+  }
+
   Future<dynamic> draggableScrollable(BuildContext context, double rating) {
     return showModalBottomSheet(
       context: context,
@@ -94,7 +106,6 @@ class _Card_detailsState extends State<Card_details> {
                       ],
                     ),
                     Slider(
-                      
                         activeColor: Colors.red,
                         inactiveColor: Colors.red.shade100,
                         value: rating,
@@ -156,6 +167,7 @@ class _Card_detailsState extends State<Card_details> {
                     ),
                     TextButton(
                         onPressed: () {
+                        //  AdsManager.showInter();
                           setState(() {
                             Card_details.calories += widget.calories_tmp;
                             Card_details.carb += widget.carb_tmp;

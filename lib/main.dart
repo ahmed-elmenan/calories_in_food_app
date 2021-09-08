@@ -11,3 +11,22 @@ void main() async {
     home: FoodCaloriesApp(),
   ));
 }
+
+
+// class TestDate extends StatelessWidget {
+//   checkDAte() {
+//     DateTime date = DateTime.now();
+//     DateTime date2 = date.add(Duration(hours: 24)); 
+//     print("==>" + date.difference(date2).toString());
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     checkDAte();
+//     return Scaffold(
+//       body: Container(
+//         color: Colors.blue,
+//       ),
+//     );
+//   }
+// }
