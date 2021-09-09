@@ -3,20 +3,22 @@ import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 
 class AdsGlobalUtils {
-  
   static bool isDataExist(String value, List<AdsInfoModel> adsIdList) {
     var data = adsIdList.where((item) => (item.responseId == value));
     return data.length >= 1 ? true : false;
   }
 
   static Future<bool> isAdDisplayable(String responseId, String adType) async {
+    IAdsRemoteDataSource adsRemoteDataSource = IAdsRemoteDataSource();
+    await adsRemoteDataSource.gethAdsDataByAdsType(adType);
+
     if (AdsGlobalUtils.isDataExist(
-        responseId, FoodCaloriesApp.adsData['approvedAds'][adType])) {
+        responseId, adsRemoteDataSource.adsStatesInfo['ApprovedAds'][adType])) {
       return true;
-    } else if (AdsGlobalUtils.isDataExist(
-            responseId, FoodCaloriesApp.adsData['ForbiddenAds'][adType]) ||
-        AdsGlobalUtils.isDataExist(
-            responseId, FoodCaloriesApp.adsData['OnHoldAds'][adType])) {
+    } else if (AdsGlobalUtils.isDataExist(responseId,
+            adsRemoteDataSource.adsStatesInfo['ForbiddenAds'][adType]) ||
+        AdsGlobalUtils.isDataExist(responseId,
+            adsRemoteDataSource.adsStatesInfo['OnHoldAds'][adType])) {
       print("FORBIDDEN");
       return false;
     } else {
