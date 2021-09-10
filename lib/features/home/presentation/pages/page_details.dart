@@ -3,6 +3,8 @@ import 'dart:convert';
 
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
+import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
+import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +32,7 @@ class _page_detailsState extends State<page_details> {
       setState(() {
         categorie_model = data.map((data) => FoodModel.fromJson(data)).toList();
       });
+      foodListSaver = List.from(categorie_model);
       return categorie_model;
     });
   }
@@ -50,17 +53,23 @@ class _page_detailsState extends State<page_details> {
   List tab = ["dwkfjvdfkw", "12", "dwkfjvdfkw"];
   int i = 0;
 
+  List<FoodModel> foodListSaver;
   @override
   void initState() {
     super.initState();
     getData();
+
+    // print("LLLLLLLEEEEEEEENNNNNNN +>" + foodListSaver.length.toString());
+    // print("LLLLLLLEEEEEEEENNNNNNN +>" + categorie_model.length.toString());
+    foodLocalDataSource = IFoodLocalDataSource();
     page_details.myBanner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
           print("==AD ID=>" + ad.responseInfo.responseId);
-          if (await AdsGlobalUtils.isAdDisplayable(ad.responseInfo.responseId, 'banner')) {
+          if (await AdsGlobalUtils.isAdDisplayable(
+              ad.responseInfo.responseId, 'banner')) {
             print(
                 "BANNER HAS BEEN APPROVED =====================================================");
             showAdState(true);
@@ -83,11 +92,11 @@ class _page_detailsState extends State<page_details> {
     });
   }
 
-
-
+  IFoodLocalDataSource foodLocalDataSource;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      resizeToAvoidBottomInset: false,
         appBar: AppBar(
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
@@ -101,40 +110,100 @@ class _page_detailsState extends State<page_details> {
         body: Center(
           child: Stack(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    AppBar(
-                      automaticallyImplyLeading: false,
-                      title: Container(
+              Column(
+                children: [
+                  AppBar(
+                    automaticallyImplyLeading: false,
+                    title: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          DropdownButton<String>(
+                            hint: Text("carb"),
+                            icon: Icon(Icons.arrow_drop_down,
+                                color: Colors.white),
+                          ),
+                          DropdownButton<String>(
+                            hint: Text("fat"),
+                            icon: Icon(Icons.arrow_drop_down,
+                                color: Colors.white),
+                          ),
+                          DropdownButton<String>(
+                            hint: Text("prot"),
+                            icon: Icon(Icons.arrow_drop_down,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(8),
+                    height: 60,
+                    // color: Colors.red,
+                    child: Form(
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 7, horizontal: 17),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(32),
+                        ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            DropdownButton<String>(
-                              hint: Text("carb"),
-                              icon: Icon(Icons.arrow_drop_down,
-                                  color: Colors.white),
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 5,
+                              child: TextField(
+                                // controller: passwordController,
+                                onChanged: (String value) {
+                                  // bloc event here
+                                  setState(() {
+                                    categorie_model = List.from(
+                                        foodLocalDataSource.getSerchedFood(
+                                            foodListSaver, value));
+                                  });
+                                },
+                                decoration: InputDecoration(
+                                  hintText: "search for foods",
+                                  hintStyle: TextStyle(
+                                    color: Color(0xFF979BA3),
+                                  ),
+                                  // filled: true,
+                                  border: InputBorder.none,
+                                ),
+                              ),
                             ),
-                            DropdownButton<String>(
-                              hint: Text("fat"),
-                              icon: Icon(Icons.arrow_drop_down,
-                                  color: Colors.white),
-                            ),
-                            DropdownButton<String>(
-                              hint: Text("prot"),
-                              icon: Icon(Icons.arrow_drop_down,
-                                  color: Colors.white),
-                            ),
+                            Expanded(
+                                flex: 1,
+                                child: Container(
+                                    height: 30,
+                                    child: Icon(
+                                      Icons.close,
+                                      color: Color(0xFF979BA3),
+                                    ))),
                           ],
                         ),
                       ),
                     ),
-                    Wrap(
-                      children: _buildList(categorie_model.length),
-                    ),
-                  ],
-                ),
+                  ),
+                  // Wrap(
+                  //   children: _buildList(categorie_model.length),
+                  // ),
+                  Container(
+                    height: MediaQuery.of(context).size.height - 220,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: categorie_model.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                              padding: new EdgeInsets.all(8.0),
+                              child: Card_details(
+                                  categorieModel: categorie_model[index]));
+                        }),
+                  )
+                ],
               ),
               Positioned(
                 bottom: 3,
