@@ -1,0 +1,31 @@
+{
+        "name" : "Donuts",
+        "proteins" : 2.7,
+        "fat" : 15,
+        "carb" : 33,
+        "calories" : 281
+    }
+
+{
+        "name" : "Muffin Oreo",
+        "proteins" : 4,
+        "fat" : 11,
+        "carb" : 46,
+        "calories" : 301
+    }
+
+{
+        "name" : "Red Apple Crumble",
+        "proteins" : 2,
+        "fat" : 9,
+        "carb" : 33,
+        "calories" : 220
+    }
+
+{
+        "name" : "Chocolate Cake",
+        "proteins" : 5,
+        "fat" : 21,
+        "carb" : 39,
+        "calories" : 365
+    }

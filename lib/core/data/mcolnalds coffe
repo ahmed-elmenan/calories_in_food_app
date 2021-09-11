@@ -1,0 +1,41 @@
+Coffee
+
+{
+        "name" : "Viennese Coffee",
+        "proteins" : 1,
+        "fat" : 13,
+        "carb" : 7,
+        "calories" : 150
+    }
+
+{
+        "name" : "Cappuccino Diam",
+        "proteins" : 4,
+        "fat" : 6,
+        "carb" : 9,
+        "calories" : 105
+    }
+
+{
+        "name" : "Cappuccino",
+        "proteins" : 4,
+        "fat" : 2,
+        "carb" : 8,
+        "calories" : 66
+    }
+
+{
+        "name" : "Double Latte",
+        "proteins" : 4,
+        "fat" : 2,
+        "carb" : 6,
+        "calories" : 60
+    }
+
+{
+        "name" : "Mocha",
+        "proteins" : 2.5,
+        "fat" : 1,
+        "carb" : 7,
+        "calories" : 49
+    }

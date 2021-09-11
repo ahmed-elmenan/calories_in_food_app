@@ -1,0 +1,47 @@
+{
+        "name" : "Hazelnut Chocolate Cookie",
+        "proteins" : 5.,
+        "fat" : 18,
+        "carb" : 45.,
+        "calories" : 366
+    }
+
+{
+        "name" : "Raspberry White Chocolate Cookie",
+        "proteins" : 4.,
+        "fat" : 10,
+        "carb" : 50.,
+        "calories" : 366
+    }
+
+{
+        "name" : "Caramel and Pecan Cookie ",
+        "proteins" : 5.,
+        "fat" : 16,
+        "carb" : 49.,
+        "calories" : 364
+    }
+
+{
+        "name" : "Raspberry Filled Cookie ",
+        "proteins" : 4,
+        "fat" : 10,
+        "carb" : 50,
+        "calories" : 308
+    }
+
+{
+        "name" : "Cookie Fourré Choconuts",
+        "proteins" : 5,
+        "fat" : 18,
+        "carb" : 49,
+        "calories" : 382
+    }
+
+{
+        "name" : "Hazelnut Cookie Stick",
+        "proteins" : 3,
+        "fat" : 13,
+        "carb" : 30,
+        "calories" : 255
+    }
