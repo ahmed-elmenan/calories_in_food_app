@@ -84,6 +84,7 @@ class _page_detailsState extends State<page_details> {
   }
 
   final _controller = ScrollController();
+  int _croissance = 0;
   TextEditingController _textController = TextEditingController();
   addKcal() {
     setState(() {
@@ -94,6 +95,14 @@ class _page_detailsState extends State<page_details> {
     });
   }
 
+  final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+    primary: Colors.white,
+    minimumSize: Size(88, 36),
+    padding: EdgeInsets.symmetric(horizontal: 16.0),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    ),
+  );
   IFoodLocalDataSource foodLocalDataSource;
 
   @override
@@ -121,20 +130,53 @@ class _page_detailsState extends State<page_details> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          DropdownButton<String>(
-                            hint: Text("carb"),
-                            icon: Icon(Icons.arrow_drop_down,
-                                color: Colors.white),
+                          TextButton(
+                            style: flatButtonStyle,
+                            onPressed: () {
+                              setState(() {
+                                _croissance = (_croissance >= 0) ? -1 : 1;
+                                categorie_model = List.from(foodLocalDataSource
+                                    .getSortProt(foodListSaver, _croissance));
+                                _controller.animateTo(
+                                  _controller.position.minScrollExtent,
+                                  duration: Duration(seconds: 1),
+                                  curve: Curves.fastOutSlowIn,
+                                );
+                              });
+                            },
+                            child: Text('Prot'),
                           ),
-                          DropdownButton<String>(
-                            hint: Text("fat"),
-                            icon: Icon(Icons.arrow_drop_down,
-                                color: Colors.white),
+                          TextButton(
+                            style: flatButtonStyle,
+                            onPressed: () {
+                              setState(() {
+                                _croissance = (_croissance >= 0) ? -1 : 1;
+                                categorie_model = List.from(foodLocalDataSource
+                                    .getSortFat(foodListSaver, _croissance));
+                                _controller.animateTo(
+                                  _controller.position.minScrollExtent,
+                                  duration: Duration(seconds: 1),
+                                  curve: Curves.fastOutSlowIn,
+                                );
+                              });
+                            },
+                            child: Text('Fat'),
                           ),
-                          DropdownButton<String>(
-                            hint: Text("prot"),
-                            icon: Icon(Icons.arrow_drop_down,
-                                color: Colors.white),
+                          TextButton(
+                            style: flatButtonStyle,
+                            onPressed: () {
+                              setState(() {
+                                _croissance = (_croissance >= 0) ? -1 : 1;
+                                categorie_model = List.from(foodLocalDataSource
+                                    .getSortCarb(foodListSaver, _croissance));
+                                _controller.animateTo(
+                                  _controller.position.minScrollExtent,
+                                  duration: Duration(seconds: 1),
+                                  curve: Curves.fastOutSlowIn,
+                                );
+                              });
+                            },
+                            child: Text('Carb'),
                           ),
                         ],
                       ),
@@ -188,7 +230,8 @@ class _page_detailsState extends State<page_details> {
                                   onTap: () {
                                     _textController.clear();
                                     setState(() {
-                                      categorie_model = List.from(foodListSaver);
+                                      categorie_model =
+                                          List.from(foodListSaver);
                                     });
                                   },
                                   child: Container(
