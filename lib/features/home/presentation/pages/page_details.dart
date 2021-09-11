@@ -95,6 +95,26 @@ class _page_detailsState extends State<page_details> {
     });
   }
 
+  Widget appBarSort(
+      IFoodLocalDataSource foodLocalDataSource, int prop, String title) {
+    return TextButton(
+      style: flatButtonStyle,
+      onPressed: () {
+        setState(() {
+          _croissance = (_croissance >= 0) ? -1 : 1;
+          categorie_model = List.from(
+              foodLocalDataSource.getSort(foodListSaver, _croissance, prop));
+          _controller.animateTo(
+            _controller.position.minScrollExtent,
+            duration: Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+          );
+        });
+      },
+      child: Text(title),
+    );
+  }
+
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
     primary: Colors.white,
     minimumSize: Size(88, 36),
@@ -130,54 +150,9 @@ class _page_detailsState extends State<page_details> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          TextButton(
-                            style: flatButtonStyle,
-                            onPressed: () {
-                              setState(() {
-                                _croissance = (_croissance >= 0) ? -1 : 1;
-                                categorie_model = List.from(foodLocalDataSource
-                                    .getSortProt(foodListSaver, _croissance));
-                                _controller.animateTo(
-                                  _controller.position.minScrollExtent,
-                                  duration: Duration(seconds: 1),
-                                  curve: Curves.fastOutSlowIn,
-                                );
-                              });
-                            },
-                            child: Text('Prot'),
-                          ),
-                          TextButton(
-                            style: flatButtonStyle,
-                            onPressed: () {
-                              setState(() {
-                                _croissance = (_croissance >= 0) ? -1 : 1;
-                                categorie_model = List.from(foodLocalDataSource
-                                    .getSortFat(foodListSaver, _croissance));
-                                _controller.animateTo(
-                                  _controller.position.minScrollExtent,
-                                  duration: Duration(seconds: 1),
-                                  curve: Curves.fastOutSlowIn,
-                                );
-                              });
-                            },
-                            child: Text('Fat'),
-                          ),
-                          TextButton(
-                            style: flatButtonStyle,
-                            onPressed: () {
-                              setState(() {
-                                _croissance = (_croissance >= 0) ? -1 : 1;
-                                categorie_model = List.from(foodLocalDataSource
-                                    .getSortCarb(foodListSaver, _croissance));
-                                _controller.animateTo(
-                                  _controller.position.minScrollExtent,
-                                  duration: Duration(seconds: 1),
-                                  curve: Curves.fastOutSlowIn,
-                                );
-                              });
-                            },
-                            child: Text('Carb'),
-                          ),
+                          appBarSort(foodLocalDataSource, 1, "prot"),
+                          appBarSort(foodLocalDataSource, 2, "Fat"),
+                          appBarSort(foodLocalDataSource, 3, "Carb"),
                         ],
                       ),
                     ),

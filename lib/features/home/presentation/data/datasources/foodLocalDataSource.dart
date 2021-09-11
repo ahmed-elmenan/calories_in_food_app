@@ -40,4 +40,16 @@ class IFoodLocalDataSource implements FoodLocalDataSource {
       foodList.sort((a, b) => b.proteins.compareTo(a.proteins));
     return foodList;
   }
+
+  @override
+  List<FoodModel> getSort(List<FoodModel> foodList, int _croissance, int prop) {
+    if (prop == 1) {
+      getSortProt(foodList, _croissance);
+    } else if (prop == 2) {
+      getSortFat(foodList, _croissance);
+    } else if (prop == 3) {
+      getSortCarb(foodList, _croissance);
+    }
+    return foodList;
+  }
 }
