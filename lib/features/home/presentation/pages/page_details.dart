@@ -83,6 +83,8 @@ class _page_detailsState extends State<page_details> {
     page_details.myBanner.load();
   }
 
+  final _controller = ScrollController();
+  TextEditingController _textController = TextEditingController();
   addKcal() {
     setState(() {
       Card_details.calories;
@@ -93,10 +95,11 @@ class _page_detailsState extends State<page_details> {
   }
 
   IFoodLocalDataSource foodLocalDataSource;
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
@@ -155,13 +158,18 @@ class _page_detailsState extends State<page_details> {
                             Expanded(
                               flex: 5,
                               child: TextField(
-                                // controller: passwordController,
+                                controller: _textController,
                                 onChanged: (String value) {
                                   // bloc event here
                                   setState(() {
                                     categorie_model = List.from(
                                         foodLocalDataSource.getSerchedFood(
                                             foodListSaver, value));
+                                    _controller.animateTo(
+                                      _controller.position.minScrollExtent,
+                                      duration: Duration(seconds: 1),
+                                      curve: Curves.fastOutSlowIn,
+                                    );
                                   });
                                 },
                                 decoration: InputDecoration(
@@ -176,12 +184,20 @@ class _page_detailsState extends State<page_details> {
                             ),
                             Expanded(
                                 flex: 1,
-                                child: Container(
-                                    height: 30,
-                                    child: Icon(
-                                      Icons.close,
-                                      color: Color(0xFF979BA3),
-                                    ))),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    _textController.clear();
+                                    setState(() {
+                                      categorie_model = List.from(foodListSaver);
+                                    });
+                                  },
+                                  child: Container(
+                                      height: 30,
+                                      child: Icon(
+                                        Icons.close,
+                                        color: Color(0xFF979BA3),
+                                      )),
+                                )),
                           ],
                         ),
                       ),
@@ -190,18 +206,20 @@ class _page_detailsState extends State<page_details> {
                   // Wrap(
                   //   children: _buildList(categorie_model.length),
                   // ),
-                  Container(
-                    height: MediaQuery.of(context).size.height - 220,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: categorie_model.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                              padding: new EdgeInsets.all(8.0),
-                              child: Card_details(
-                                  categorieModel: categorie_model[index]));
-                        }),
+                  Expanded(
+                    child: Container(
+                      child: ListView.builder(
+                          controller: _controller,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: categorie_model.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                                padding: new EdgeInsets.all(8.0),
+                                child: Card_details(
+                                    categorieModel: categorie_model[index]));
+                          }),
+                    ),
                   )
                 ],
               ),

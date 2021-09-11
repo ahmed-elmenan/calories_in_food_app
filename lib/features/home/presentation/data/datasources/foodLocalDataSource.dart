@@ -12,4 +12,3 @@ abstract class FoodLocalDataSource {
     return searchedFoodList.length >= 1 ? searchedFoodList : [];
   }
 }
-
