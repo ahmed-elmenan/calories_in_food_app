@@ -21,6 +21,7 @@ class AdsManager {
 
   static bool display = true;
   static int attemptSaver = 0;
+  static int creatingInterAttempt = 0;
 
   static InterstitialAd interstitialAd;
 
@@ -44,55 +45,80 @@ class AdsManager {
     return ad;
   }
 
-  static Future createInterAd(int creatingInterAttempt) async {
-    attemptSaver = creatingInterAttempt;
+  static Future<InterstitialAd> createInterAd() async {
+    // attemptSaver = creatingInterAttempt;
     await InterstitialAd.load(
-        adUnitId: "ca-app-pub-3940256099942544/1033173712", // interAdUnitId,
+        adUnitId: InterstitialAd.testAdUnitId, // interAdUnitId,
         request: AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) async {
-            interstitialAd = ad;
-            // if (await AdsGlobalUtils.isAdDisplayable("12345", 'interstitial')) {
-            //   print("INTER HAS BEEN APPROVED");
-            //   interstitialAd = ad;
-            // } else {
-            //   await ad.dispose();
-            //   interstitialAd = null;
-            //   print("INTER NOT APPROVED");
-            // }
-          },
-          onAdFailedToLoad: (LoadAdError error) {
-            print('INTER LOAD ERROR =>' + error.message);
-            creatingInterAttempt++;
-            if (creatingInterAttempt <= 2) {
-              createInterAd(creatingInterAttempt);
+            // interstitialAd = ad;
+
+            print(
+                "INTER  APPROVED ==============================================================================");
+            if (await AdsGlobalUtils.isAdDisplayable(
+                "12345", 'interstitial')) {
+              print(
+                  "INTER HAS BEEN APPROVED +++++++++++++++++++++++++++++++++++++++");
+
+              interstitialAd = ad;
+              // if (creatingInterAttempt == 0) {
+              //   createInterAd();
+              //   creatingInterAttempt = 1;
+              // } else {
+              //   creatingInterAttempt = 0;
+              // }
+            } else {
+              await ad.dispose();
+              interstitialAd = null;
+              print(
+                  "INTER NOT APPROVED +++++++++++++++++++++++++++++++++++++++");
             }
           },
+          onAdFailedToLoad: (LoadAdError error) {
+            print('INTER LOAD ERROR ========================>' + error.message);
+            // creatingInterAttempt++;
+            // if (creatingInterAttempt <= 2) {
+            //   createInterAd(creatingInterAttempt);
+            // }
+          },
         ));
+    return null;
   }
 
-  static void showInter() {
-    if (interstitialAd == null) {
-      {
-        print('Warning: attempt to show interstitial before loaded.');
-        return;
-      }
+  static FullScreenContentCallback<InterstitialAd> interListener() {
+    // print("IIIIIIIIINNNNNNTTTEERRRR ==> " +
+    //     interstitialAd.responseInfo.responseId);
 
-      print("IIIIIIIIINNNNNNTTTEERRRR ==> " + interstitialAd.responseInfo.responseId);
-     
-      interstitialAd.fullScreenContentCallback = FullScreenContentCallback(
-        onAdShowedFullScreenContent: (InterstitialAd ad) =>
-            print('ad onAdShowedFullScreenContent.'),
-        onAdDismissedFullScreenContent: (InterstitialAd ad) {
-          print('$ad onAdDismissedFullScreenContent.');
-          ad.dispose();
-        },
-        onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
-          print('$ad onAdFailedToShowFullScreenContent: $error');
-          ad.dispose();
-          createInterAd(attemptSaver);
-        },
-      );
+    // if (interstitialAd == null) {
+    //   {
+    //     print('Warning: attempt to show interstitial before loaded.');
+    //     return;
+    //   }
+    print(
+        "mzzzzzaaaaakh ======================================================================>>");
+
+    return interstitialAd != null
+        ? FullScreenContentCallback(
+            onAdShowedFullScreenContent: (InterstitialAd ad) => print(
+                'ad onAdShowedFullScreenContent. ==============================================='),
+            onAdDismissedFullScreenContent: (InterstitialAd ad) {
+              print(
+                  '$ad onAdDismissedFullScreenContent. ===========================');
+              ad.dispose();
+            },
+            onAdFailedToShowFullScreenContent:
+                (InterstitialAd ad, AdError error) {
+              print('$ad onAdFailedToShowFullScreenContent: $error');
+              ad.dispose();
+              // createInterAd(attemptSaver);
+            },
+          )
+        : null;
+  }
+
+  static showInter() {
+    if (interstitialAd != null) {
       interstitialAd.show();
       interstitialAd = null;
     }

@@ -72,14 +72,15 @@ class _Card_detailsState extends State<Card_details> {
     );
   }
 
-  // InterstitialAd interstitialAd;
-  //
- 
+
+
+
 
   @override
   void initState() {
     super.initState();
-   // AdsManager.createInterAd(0);
+    // AdsManager.createInterAd();
+    // createInterAd();
   }
 
   Future<dynamic> draggableScrollable(BuildContext context, double rating) {
@@ -167,7 +168,9 @@ class _Card_detailsState extends State<Card_details> {
                     ),
                     TextButton(
                         onPressed: () {
-                        //  AdsManager.showInter();
+                          // showInter();
+                          AdsManager.interListener();
+                          AdsManager.showInter();
                           setState(() {
                             Card_details.calories += widget.calories_tmp;
                             Card_details.carb += widget.carb_tmp;
@@ -228,6 +231,7 @@ class _Card_detailsState extends State<Card_details> {
                       Icons.add,
                     ),
                     onPressed: () {
+                      AdsManager.createInterAd();
                       setState(() {
                         draggableScrollable(context, rating);
                         widget.calories_tmp = 0;

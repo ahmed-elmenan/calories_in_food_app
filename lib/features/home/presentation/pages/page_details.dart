@@ -3,6 +3,8 @@ import 'dart:convert';
 
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
+import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
+import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +32,7 @@ class _page_detailsState extends State<page_details> {
       setState(() {
         categorie_model = data.map((data) => FoodModel.fromJson(data)).toList();
       });
+      foodListSaver = List.from(categorie_model);
       return categorie_model;
     });
   }
@@ -50,17 +53,23 @@ class _page_detailsState extends State<page_details> {
   List tab = ["dwkfjvdfkw", "12", "dwkfjvdfkw"];
   int i = 0;
 
+  List<FoodModel> foodListSaver;
   @override
   void initState() {
     super.initState();
     getData();
+
+    // print("LLLLLLLEEEEEEEENNNNNNN +>" + foodListSaver.length.toString());
+    // print("LLLLLLLEEEEEEEENNNNNNN +>" + categorie_model.length.toString());
+    foodLocalDataSource = IFoodLocalDataSource();
     page_details.myBanner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
           print("==AD ID=>" + ad.responseInfo.responseId);
-          if (await AdsGlobalUtils.isAdDisplayable(ad.responseInfo.responseId, 'banner')) {
+          if (await AdsGlobalUtils.isAdDisplayable(
+              ad.responseInfo.responseId, 'banner')) {
             print(
                 "BANNER HAS BEEN APPROVED =====================================================");
             showAdState(true);
@@ -74,6 +83,9 @@ class _page_detailsState extends State<page_details> {
     page_details.myBanner.load();
   }
 
+  final _controller = ScrollController();
+  int _croissance = 0;
+  TextEditingController _textController = TextEditingController();
   addKcal() {
     setState(() {
       Card_details.calories;
@@ -83,11 +95,40 @@ class _page_detailsState extends State<page_details> {
     });
   }
 
+  Widget appBarSort(
+      IFoodLocalDataSource foodLocalDataSource, int prop, String title) {
+    return TextButton(
+      style: flatButtonStyle,
+      onPressed: () {
+        setState(() {
+          _croissance = (_croissance >= 0) ? -1 : 1;
+          categorie_model = List.from(
+              foodLocalDataSource.getSort(foodListSaver, _croissance, prop));
+          _controller.animateTo(
+            _controller.position.minScrollExtent,
+            duration: Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+          );
+        });
+      },
+      child: Text(title),
+    );
+  }
 
+  final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+    primary: Colors.white,
+    minimumSize: Size(88, 36),
+    padding: EdgeInsets.symmetric(horizontal: 16.0),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(2.0)),
+    ),
+  );
+  IFoodLocalDataSource foodLocalDataSource;
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
@@ -101,40 +142,104 @@ class _page_detailsState extends State<page_details> {
         body: Center(
           child: Stack(
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    AppBar(
-                      automaticallyImplyLeading: false,
-                      title: Container(
+              Column(
+                children: [
+                  AppBar(
+                    automaticallyImplyLeading: false,
+                    title: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          appBarSort(foodLocalDataSource, 1, "prot"),
+                          appBarSort(foodLocalDataSource, 2, "Fat"),
+                          appBarSort(foodLocalDataSource, 3, "Carb"),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(8),
+                    height: 60,
+                    // color: Colors.red,
+                    child: Form(
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 7, horizontal: 17),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(32),
+                        ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            DropdownButton<String>(
-                              hint: Text("carb"),
-                              icon: Icon(Icons.arrow_drop_down,
-                                  color: Colors.white),
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              flex: 5,
+                              child: TextField(
+                                controller: _textController,
+                                onChanged: (String value) {
+                                  // bloc event here
+                                  setState(() {
+                                    categorie_model = List.from(
+                                        foodLocalDataSource.getSerchedFood(
+                                            foodListSaver, value));
+                                    _controller.animateTo(
+                                      _controller.position.minScrollExtent,
+                                      duration: Duration(seconds: 1),
+                                      curve: Curves.fastOutSlowIn,
+                                    );
+                                  });
+                                },
+                                decoration: InputDecoration(
+                                  hintText: "search for foods",
+                                  hintStyle: TextStyle(
+                                    color: Color(0xFF979BA3),
+                                  ),
+                                  // filled: true,
+                                  border: InputBorder.none,
+                                ),
+                              ),
                             ),
-                            DropdownButton<String>(
-                              hint: Text("fat"),
-                              icon: Icon(Icons.arrow_drop_down,
-                                  color: Colors.white),
-                            ),
-                            DropdownButton<String>(
-                              hint: Text("prot"),
-                              icon: Icon(Icons.arrow_drop_down,
-                                  color: Colors.white),
-                            ),
+                            Expanded(
+                                flex: 1,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    _textController.clear();
+                                    setState(() {
+                                      categorie_model =
+                                          List.from(foodListSaver);
+                                    });
+                                  },
+                                  child: Container(
+                                      height: 30,
+                                      child: Icon(
+                                        Icons.close,
+                                        color: Color(0xFF979BA3),
+                                      )),
+                                )),
                           ],
                         ),
                       ),
                     ),
-                    Wrap(
-                      children: _buildList(categorie_model.length),
+                  ),
+                  // Wrap(
+                  //   children: _buildList(categorie_model.length),
+                  // ),
+                  Expanded(
+                    child: Container(
+                      child: ListView.builder(
+                          controller: _controller,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: categorie_model.length,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                                padding: new EdgeInsets.all(8.0),
+                                child: Card_details(
+                                    categorieModel: categorie_model[index]));
+                          }),
                     ),
-                  ],
-                ),
+                  )
+                ],
               ),
               Positioned(
                 bottom: 3,
