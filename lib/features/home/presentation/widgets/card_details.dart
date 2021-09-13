@@ -1,4 +1,5 @@
 import 'package:fapp/features/ads/services/ads_manager.dart';
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -11,7 +12,7 @@ class Card_details extends StatefulWidget {
   static double proteins = 0;
   static double carb = 0;
   static double fat = 0;
-  static double remaining = 2655;
+  static double remaining = 0;
   double calories_tmp = 0;
   double proteins_tmp = 0;
   double carb_tmp = 0;
@@ -72,17 +73,6 @@ class _Card_detailsState extends State<Card_details> {
     );
   }
 
-
-
-
-
-  @override
-  void initState() {
-    super.initState();
-    // AdsManager.createInterAd();
-    // createInterAd();
-  }
-
   Future<dynamic> draggableScrollable(BuildContext context, double rating) {
     return showModalBottomSheet(
       context: context,
@@ -123,28 +113,6 @@ class _Card_detailsState extends State<Card_details> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _Columns(widget.categorieModel.proteins.toString(),
-                            "proteins."),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        _Columns(widget.categorieModel.fat.toString(), "fat."),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        _Columns(
-                            widget.categorieModel.carb.toString(), "carsb."),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        _Columns(
-                            widget.categorieModel.calories.toString(), "Kcal."),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
                         _Columns(
                             widget.proteins_tmp.toStringAsFixed(2).toString(),
                             "proteins."),
@@ -176,8 +144,19 @@ class _Card_detailsState extends State<Card_details> {
                             Card_details.carb += widget.carb_tmp;
                             Card_details.fat += widget.fat_tmp;
                             Card_details.proteins += widget.proteins_tmp;
-                            Card_details.remaining =
-                                Card_details.remaining - Card_details.calories;
+                            Card_details.remaining -= widget.calories_tmp;
+                            final mybox = Boxes.getQuestions();
+                            final quetion = mybox.get('key');
+                            quetion.fat = Card_details.fat;
+                            quetion.carb = Card_details.carb;
+                            quetion.prot = Card_details.proteins;
+                            quetion.eating = Card_details.calories;
+                            quetion.remining = Card_details.remaining;
+                            if (quetion == null)
+                              mybox.put('key', quetion);
+                            else {
+                              quetion.save();
+                            }
                             Navigator.of(context).pop();
                           });
                         },
@@ -234,10 +213,11 @@ class _Card_detailsState extends State<Card_details> {
                       AdsManager.createInterAd();
                       setState(() {
                         draggableScrollable(context, rating);
-                        widget.calories_tmp = 0;
-                        widget.proteins_tmp = 0;
-                        widget.carb_tmp = 0;
-                        widget.fat_tmp = 0;
+                        widget.calories_tmp = double.parse(
+                            widget.categorieModel.calories.toString());
+                        widget.proteins_tmp = widget.categorieModel.proteins;
+                        widget.carb_tmp = widget.categorieModel.carb;
+                        widget.fat_tmp = widget.categorieModel.fat;
                       });
                     },
                   )

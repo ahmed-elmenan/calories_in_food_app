@@ -11,6 +11,4 @@ class FireStoreServices {
       print("create user service error = " + e.toString());
     }
   }
-
-  
 }

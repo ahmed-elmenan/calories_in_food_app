@@ -1,3 +1,5 @@
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
+import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -33,6 +35,30 @@ class _HomeHeaderState extends State<HomeHeader> {
     );
   }
 
+  Firstpage quetion;
+
+  macrosInit() {
+    setState(() {
+      final mybox = Boxes.getQuestions();
+      quetion = mybox.get('key');
+      Card_details.remaining = calacRemaining(quetion);
+      if (quetion.eating != null) Card_details.remaining -= quetion.eating;
+      Card_details.fat = quetion.fat;
+      Card_details.carb = quetion.carb;
+      Card_details.proteins = quetion.prot;
+      Card_details.calories = quetion.eating;
+    });
+  }
+
+  @override
+  void initState() {
+    macrosInit();
+    quetion.addListener(() {
+      setState(() {});
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,7 +78,7 @@ class _HomeHeaderState extends State<HomeHeader> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Eaten", style: headertextStyle),
-                Text("${Card_details.calories.toStringAsFixed(2)} Cal",
+                Text("${quetion.eating.toStringAsFixed(2)} Cal",
                     style: headertextStyle),
                 SizedBox(height: 8),
                 Text("Remaining", style: headertextStyle),
@@ -63,12 +89,11 @@ class _HomeHeaderState extends State<HomeHeader> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    macroPerGrame("carb", Card_details.carb.toStringAsFixed(2)),
+                    macroPerGrame("carb", quetion.carb.toStringAsFixed(2)),
                     verticalDivider(),
-                    macroPerGrame("fat", Card_details.fat.toStringAsFixed(2)),
+                    macroPerGrame("fat", quetion.fat.toStringAsFixed(2)),
                     verticalDivider(),
-                    macroPerGrame(
-                        "prot", Card_details.proteins.toStringAsFixed(2)),
+                    macroPerGrame("prot", quetion.prot.toStringAsFixed(2)),
                   ],
                 ),
               ],
@@ -84,5 +109,30 @@ class _HomeHeaderState extends State<HomeHeader> {
         ],
       ),
     );
+  }
+
+  // double setOldInfos() {
+  //   final mybox = Boxes.getQuestions();
+  //   final quetion = mybox.get('key');
+  //   return quetion.remining;
+  // }
+
+  double calacRemaining(dynamic quetion) {
+    double bmr = 0;
+    double Remaining = 0;
+    if (quetion.Gender == 1)
+      bmr = quetion.isWomen(quetion.Age, quetion.Length, quetion.Weight);
+    else if (quetion.Gender == 2)
+      bmr = quetion.is_Man(quetion.Age, quetion.Length, quetion.Weight);
+    if (quetion.typeExercise == 1)
+      Remaining = quetion.notExercise(bmr);
+    else if (quetion.typeExercise == 2)
+      Remaining = quetion.lightExercise(bmr);
+    else if (quetion.typeExercise == 3)
+      Remaining = quetion.notExercise(bmr);
+    else if (quetion.typeExercise == 4)
+      Remaining = quetion.moderateExercise(bmr);
+    else if (quetion.typeExercise == 5) Remaining = quetion.extraActive(bmr);
+    return Remaining;
   }
 }
