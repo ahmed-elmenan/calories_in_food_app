@@ -1,0 +1,39 @@
+{
+        "name" : "Fries Medium",
+        "proteins" : 3.8,
+        "fat" : 12.9,
+        "carb" : 46.2,
+        "calories" : 309
+    }
+
+{
+        "name" : "Fries Large",
+        "proteins" : 5.3,
+        "fat" : 17.7,
+        "carb" : 63.3,
+        "calories" : 423
+    }
+
+{
+        "name" : "fries Small",
+        "proteins" : 3,
+        "fat" : 10,
+        "carb" : 35.9,
+        "calories" : 240
+    }
+
+{
+        "name" : " King Fries Cheese &Crispy Oinions",
+        "proteins" : 9.1,
+        "fat" : 26,
+        "carb" : 62.2,
+        "calories" : 528
+    }
+
+{
+        "name" : "Onion Rings",
+        "proteins" : 4.8,
+        "fat" : 12.7,
+        "carb" : 38.4,
+        "calories" : 279
+    }
