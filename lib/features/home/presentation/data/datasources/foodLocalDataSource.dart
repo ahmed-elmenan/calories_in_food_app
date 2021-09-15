@@ -5,6 +5,7 @@ abstract class FoodLocalDataSource {
   List<FoodModel> getSortCarb(List<FoodModel> foodList, int _croissance);
   List<FoodModel> getSortFat(List<FoodModel> foodList, int _croissance);
   List<FoodModel> getSortProt(List<FoodModel> foodList, int _croissance);
+  List<FoodModel> getSortCal(List<FoodModel> foodList, int _croissance);
 }
 
 class IFoodLocalDataSource implements FoodLocalDataSource {
@@ -42,6 +43,15 @@ class IFoodLocalDataSource implements FoodLocalDataSource {
   }
 
   @override
+  List<FoodModel> getSortCal(List<FoodModel> foodList, int _croissance) {
+    if (_croissance == 1)
+      foodList.sort((a, b) => a.calories.compareTo(b.calories));
+    else if (_croissance == -1)
+      foodList.sort((a, b) => b.calories.compareTo(a.calories));
+    return foodList;
+  }
+
+  @override
   List<FoodModel> getSort(List<FoodModel> foodList, int _croissance, int prop) {
     if (prop == 1) {
       getSortProt(foodList, _croissance);
@@ -49,6 +59,8 @@ class IFoodLocalDataSource implements FoodLocalDataSource {
       getSortFat(foodList, _croissance);
     } else if (prop == 3) {
       getSortCarb(foodList, _croissance);
+    } else if (prop == 4) {
+      getSortCal(foodList, _croissance);
     }
     return foodList;
   }

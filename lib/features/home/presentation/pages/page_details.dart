@@ -130,8 +130,8 @@ class _page_detailsState extends State<page_details> {
 
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
     primary: Colors.white,
-    minimumSize: Size(88, 36),
-    padding: EdgeInsets.symmetric(horizontal: 16.0),
+    minimumSize: Size(80, 36),
+    padding: EdgeInsets.symmetric(horizontal: 8.0),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
@@ -171,30 +171,32 @@ class _page_detailsState extends State<page_details> {
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       color: GlobalTheme.lightGreen,
                       child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text("Sort by :",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: "greycliff-cf-regular",
-                                    fontWeight: FontWeight.bold)),
-                            Expanded(
-                              child: Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    appBarSort(
-                                        foodLocalDataSource, 1, "Protein"),
-                                    appBarSort(foodLocalDataSource, 2, "Fat"),
-                                    appBarSort(foodLocalDataSource, 3, "Carb"),
-                                  ],
+                        child: Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text("Sort by :",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "greycliff-cf-regular",
+                                      fontWeight: FontWeight.bold)),
+                              Expanded(
+                                child: Container(
+                                  child: Row(
+                                    children: <Widget>[
+                                      appBarSort(
+                                          foodLocalDataSource, 1, "Protein"),
+                                      appBarSort(foodLocalDataSource, 2, "Fat"),
+                                      appBarSort(
+                                          foodLocalDataSource, 3, "Carb"),
+                                      appBarSort(foodLocalDataSource, 4, "Cal"),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
