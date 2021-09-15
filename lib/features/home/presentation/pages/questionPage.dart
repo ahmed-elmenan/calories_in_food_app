@@ -1,3 +1,4 @@
+import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:flutter/material.dart';
@@ -35,213 +36,216 @@ class _quetionPageState extends State<quetionPage> {
             children: [
               Text(_message, style: _errorText),
               Expanded(
-                child: Stepper(
-                  type: stepperType,
-                  physics: ScrollPhysics(),
-                  currentStep: _currentStep,
-                  onStepTapped: (step) => tapped(step),
-                  onStepContinue: continued,
-                  onStepCancel: cancel,
-                  steps: <Step>[
-                    Step(
-                      title: new Text('Gender'),
-                      content: Row(
-                        children: <Widget>[
-                          Text("Male"),
-                          Radio(
-                            value: 1,
-                            groupValue: gender,
-                            onChanged: (value) {
-                              setState(() {
-                                gender = value;
-                                question.Gender = value;
-                              });
-                            },
-                            activeColor: Colors.green,
-                          ),
-                          SizedBox(
-                            width: 50,
-                          ),
-                          Text("Female"),
-                          Radio(
-                            value: 2,
-                            groupValue: gender,
-                            onChanged: (value) {
-                              setState(() {
-                                gender = value;
-                                question.Gender = value;
-                              });
-                            },
-                            activeColor: Colors.green,
-                          ),
-                        ],
+                child: Theme(
+                  data: GlobalTheme.widgetThemeData,
+                  child: Stepper(
+                    type: stepperType,
+                    physics: ScrollPhysics(),
+                    currentStep: _currentStep,
+                    onStepTapped: (step) => tapped(step),
+                    onStepContinue: continued,
+                    onStepCancel: cancel,
+                    steps: <Step>[
+                      Step(
+                        title: new Text('Gender'),
+                        content: Row(
+                          children: <Widget>[
+                            Text("Male"),
+                            Radio(
+                              value: 1,
+                              groupValue: gender,
+                              onChanged: (value) {
+                                setState(() {
+                                  gender = value;
+                                  question.Gender = value;
+                                });
+                              },
+                              activeColor: Colors.green,
+                            ),
+                            SizedBox(
+                              width: 50,
+                            ),
+                            Text("Female"),
+                            Radio(
+                              value: 2,
+                              groupValue: gender,
+                              onChanged: (value) {
+                                setState(() {
+                                  gender = value;
+                                  question.Gender = value;
+                                });
+                              },
+                              activeColor: Colors.green,
+                            ),
+                          ],
+                        ),
+                        isActive: _currentStep >= 0,
+                        state: _currentStep >= 0
+                            ? StepState.complete
+                            : StepState.disabled,
                       ),
-                      isActive: _currentStep >= 0,
-                      state: _currentStep >= 0
-                          ? StepState.complete
-                          : StepState.disabled,
-                    ),
-                    Step(
-                      title: new Text('Address'),
-                      content: Column(
-                        children: <Widget>[
-                          TextFormField(
-                            keyboardType:
-                                TextInputType.numberWithOptions(decimal: true),
-                            onChanged: (String value) {
-                              question.Age = double.parse(value);
-                            },
-                            inputFormatters: [
-                              FilteringTextInputFormatter.allow(
-                                  RegExp('[0-9]+')),
-                              LengthLimitingTextInputFormatter(2),
-                            ],
-                            decoration: InputDecoration(labelText: 'Age'),
-                          ),
-                          TextFormField(
-                            keyboardType:
-                                TextInputType.numberWithOptions(decimal: true),
-                            onChanged: (String value) {
-                              LengthOnSubmitted(value, "Length");
-                            },
-                            inputFormatters: [
-                              FilteringTextInputFormatter.allow(
-                                  RegExp('[0-9.]+')),
-                              LengthLimitingTextInputFormatter(5),
-                            ],
-                            decoration:
-                                InputDecoration(labelText: 'Length (CM)'),
-                          ),
-                          TextFormField(
-                            keyboardType:
-                                TextInputType.numberWithOptions(decimal: true),
-                            onChanged: (String value) {
-                              WeightOnSubmitted(value, "Weight");
-                            },
-                            inputFormatters: [
-                              FilteringTextInputFormatter.allow(
-                                  RegExp('[0-9.]+')),
-                              LengthLimitingTextInputFormatter(5),
-                            ],
-                            decoration:
-                                InputDecoration(labelText: 'Weight (KG)'),
-                          ),
-                        ],
+                      Step(
+                        title: new Text('Address'),
+                        content: Column(
+                          children: <Widget>[
+                            TextFormField(
+                              keyboardType: TextInputType.numberWithOptions(
+                                  decimal: true),
+                              onChanged: (String value) {
+                                question.Age = double.parse(value);
+                              },
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp('[0-9]+')),
+                                LengthLimitingTextInputFormatter(2),
+                              ],
+                              decoration: InputDecoration(labelText: 'Age'),
+                            ),
+                            TextFormField(
+                              keyboardType: TextInputType.numberWithOptions(
+                                  decimal: true),
+                              onChanged: (String value) {
+                                LengthOnSubmitted(value, "Length");
+                              },
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp('[0-9.]+')),
+                                LengthLimitingTextInputFormatter(5),
+                              ],
+                              decoration:
+                                  InputDecoration(labelText: 'Length (CM)'),
+                            ),
+                            TextFormField(
+                              keyboardType: TextInputType.numberWithOptions(
+                                  decimal: true),
+                              onChanged: (String value) {
+                                WeightOnSubmitted(value, "Weight");
+                              },
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp('[0-9.]+')),
+                                LengthLimitingTextInputFormatter(5),
+                              ],
+                              decoration:
+                                  InputDecoration(labelText: 'Weight (KG)'),
+                            ),
+                          ],
+                        ),
+                        isActive: _currentStep >= 0,
+                        state: _currentStep >= 1
+                            ? StepState.complete
+                            : StepState.disabled,
                       ),
-                      isActive: _currentStep >= 0,
-                      state: _currentStep >= 1
-                          ? StepState.complete
-                          : StepState.disabled,
-                    ),
-                    Step(
-                      title: new Text('Mobile Number'),
-                      content: Column(
-                        children: <Widget>[
-                          Row(
-                            children: [
-                              Radio(
-                                value: 1,
-                                groupValue: _state,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _state = value;
-                                    question.typeExercise = value;
-                                  });
-                                },
-                                activeColor: Colors.green,
-                              ),
-                              Text("bla bla bla bla bla bla"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 2,
-                                groupValue: _state,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _state = value;
-                                    question.typeExercise = value;
-                                  });
-                                },
-                                activeColor: Colors.green,
-                              ),
-                              Text("bla bla bla bla bla bla"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 3,
-                                groupValue: _state,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _state = value;
-                                    question.typeExercise = value;
-                                  });
-                                },
-                                activeColor: Colors.green,
-                              ),
-                              Text("bla bla bla bla bla bla"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 4,
-                                groupValue: _state,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _state = value;
-                                    question.typeExercise = value;
-                                  });
-                                },
-                                activeColor: Colors.green,
-                              ),
-                              Text("bla bla bla bla bla bla"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 5,
-                                groupValue: _state,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _state = value;
-                                    question.typeExercise = value;
-                                  });
-                                },
-                                activeColor: Colors.green,
-                              ),
-                              Text("bla bla bla bla bla bla"),
-                            ],
-                          ),
-                        ],
+                      Step(
+                        title: new Text('Mobile Number'),
+                        content: Column(
+                          children: <Widget>[
+                            Row(
+                              children: [
+                                Radio(
+                                  value: 1,
+                                  groupValue: _state,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _state = value;
+                                      question.typeExercise = value;
+                                    });
+                                  },
+                                  activeColor: Colors.green,
+                                ),
+                                Text("bla bla bla bla bla bla"),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Radio(
+                                  value: 2,
+                                  groupValue: _state,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _state = value;
+                                      question.typeExercise = value;
+                                    });
+                                  },
+                                  activeColor: Colors.green,
+                                ),
+                                Text("bla bla bla bla bla bla"),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Radio(
+                                  value: 3,
+                                  groupValue: _state,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _state = value;
+                                      question.typeExercise = value;
+                                    });
+                                  },
+                                  activeColor: Colors.green,
+                                ),
+                                Text("bla bla bla bla bla bla"),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Radio(
+                                  value: 4,
+                                  groupValue: _state,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _state = value;
+                                      question.typeExercise = value;
+                                    });
+                                  },
+                                  activeColor: Colors.green,
+                                ),
+                                Text("bla bla bla bla bla bla"),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Radio(
+                                  value: 5,
+                                  groupValue: _state,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _state = value;
+                                      question.typeExercise = value;
+                                    });
+                                  },
+                                  activeColor: Colors.green,
+                                ),
+                                Text("bla bla bla bla bla bla"),
+                              ],
+                            ),
+                          ],
+                        ),
+                        isActive: _currentStep >= 0,
+                        state: _currentStep >= 2
+                            ? StepState.complete
+                            : StepState.disabled,
                       ),
-                      isActive: _currentStep >= 0,
-                      state: _currentStep >= 2
-                          ? StepState.complete
-                          : StepState.disabled,
-                    ),
-                    Step(
-                      title: new Text('Gender'),
-                      content: Row(
-                        children: <Widget>[
-                          ElevatedButton(
-                            onPressed: () {
-                              _selectTime(context);
-                            },
-                            child: Text("Choose Time"),
-                          ),
-                        ],
+                      Step(
+                        title: new Text('Gender'),
+                        content: Row(
+                          children: <Widget>[
+                            ElevatedButton(
+                              onPressed: () {
+                                _selectTime(context);
+                              },
+                              child: Text("Choose Time"),
+                            ),
+                          ],
+                        ),
+                        isActive: _currentStep >= 0,
+                        state: _currentStep >= 3
+                            ? StepState.complete
+                            : StepState.disabled,
                       ),
-                      isActive: _currentStep >= 0,
-                      state: _currentStep >= 3
-                          ? StepState.complete
-                          : StepState.disabled,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -251,10 +255,15 @@ class _quetionPageState extends State<quetionPage> {
 
   _selectTime(BuildContext context) async {
     final TimeOfDay timeOfDay = await showTimePicker(
-      context: context,
-      initialTime: timeofnow,
-      initialEntryMode: TimePickerEntryMode.dial,
-    );
+        context: context,
+        initialTime: timeofnow,
+        initialEntryMode: TimePickerEntryMode.dial,
+        builder: (BuildContext context, Widget child) {
+          return Theme(
+            data: GlobalTheme.widgetThemeData,
+            child: child,
+          );
+        });
     if (timeOfDay != null) {
       setState(() {
         timeofnow = timeOfDay;

@@ -1,13 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
+import 'package:flat_icons_flutter/flat_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../data/models/dataobject.dart';
@@ -38,13 +41,15 @@ class _page_detailsState extends State<page_details> {
   }
 
   showAdState(bool val) {
-    setState(() {
-      showAd = val;
-      if (showAd == false) {
-        print(showAd);
-        page_details.myBanner.load();
-      }
-    });
+    if (mounted) {
+      setState(() {
+        showAd = val;
+        if (showAd == false) {
+          print(showAd);
+          page_details.myBanner.load();
+        }
+      });
+    }
   }
 
   List<FoodModel> foodListSaver;
@@ -105,7 +110,21 @@ class _page_detailsState extends State<page_details> {
           );
         });
       },
-      child: Text(title),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(title,
+              style: TextStyle(
+                  fontFamily: "greycliff-cf-regular",
+                  fontWeight: FontWeight.bold)),
+          SizedBox(
+            width: 4,
+          ),
+          Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: FaIcon(FontAwesomeIcons.sortUp)),
+        ],
+      ),
     );
   }
 
@@ -131,8 +150,15 @@ class _page_detailsState extends State<page_details> {
       onWillPop: () => backToTheHome(context),
       child: Scaffold(
           appBar: AppBar(
+            title: Text('Food Calories Calculator',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "greycliff-cf-regular")),
+            backgroundColor: GlobalTheme.lightOrange,
             leading: new IconButton(
-              icon: new Icon(Icons.arrow_back),
+              icon: new Icon(Icons.chevron_left),
               onPressed: () => backToTheHome(context),
             ),
           ),
@@ -141,15 +167,33 @@ class _page_detailsState extends State<page_details> {
               children: [
                 Column(
                   children: [
-                    AppBar(
-                      automaticallyImplyLeading: false,
-                      title: Container(
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      color: GlobalTheme.lightGreen,
+                      child: Center(
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            appBarSort(foodLocalDataSource, 1, "prot"),
-                            appBarSort(foodLocalDataSource, 2, "Fat"),
-                            appBarSort(foodLocalDataSource, 3, "Carb"),
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("Sort by :",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "greycliff-cf-regular",
+                                    fontWeight: FontWeight.bold)),
+                            Expanded(
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: <Widget>[
+                                    appBarSort(
+                                        foodLocalDataSource, 1, "Protein"),
+                                    appBarSort(foodLocalDataSource, 2, "Fat"),
+                                    appBarSort(foodLocalDataSource, 3, "Carb"),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),

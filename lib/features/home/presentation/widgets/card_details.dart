@@ -1,3 +1,4 @@
+import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/features/ads/services/ads_manager.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:flutter/material.dart';
@@ -48,12 +49,17 @@ class _Card_detailsState extends State<Card_details> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(
-          value = (value == "null") ? "0" : value,
-          style: TextStyle(fontSize: 20),
+          value = (value == "null") ? "0" : value + " g",
+          style: TextStyle(fontSize: 20, fontFamily: "greycliff-cf-regular"),
         ),
         Text(
           name,
-          style: TextStyle(fontSize: 10),
+          style: TextStyle(
+            fontSize: 10,
+            fontFamily: "greycliff-cf-regular",
+            color: GlobalTheme.lightOrange,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );
@@ -63,17 +69,22 @@ class _Card_detailsState extends State<Card_details> {
     return Row(
       children: <Widget>[
         Container(
-          width: MediaQuery.of(context).size.width / 1.2,
+          // width: MediaQuery.of(context).size.width / 1.2,
           child: Text(
             "$title \n(100 g)",
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: "greycliff-cf-regular",
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],
     );
   }
 
-  Future<dynamic> draggableScrollable(BuildContext context, double rating) {
+  Future<dynamic> draggableScrollable(
+      BuildContext context, double rating, FoodModel foodModel) {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -86,19 +97,25 @@ class _Card_detailsState extends State<Card_details> {
               return Container(
                 color: Colors.white,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Text("${foodModel.name}",
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontFamily: "greycliff-cf-regular")),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("$rating\g"),
+                        Text("$rating\g",
+                            style:
+                                TextStyle(fontFamily: "greycliff-cf-regular")),
                       ],
                     ),
                     Slider(
-                        activeColor: Colors.red,
-                        inactiveColor: Colors.red.shade100,
+                        activeColor: GlobalTheme.lightGreen,
+                        inactiveColor: Colors.green.shade100,
                         value: rating,
                         min: 0,
                         max: 500,
@@ -160,7 +177,10 @@ class _Card_detailsState extends State<Card_details> {
                             Navigator.of(context).pop();
                           });
                         },
-                        child: Text("confirme")),
+                        child: Text(
+                          "confirme",
+                          style: TextStyle(fontFamily: "greycliff-cf-regular"),
+                        )),
                   ],
                 ),
               );
@@ -176,43 +196,70 @@ class _Card_detailsState extends State<Card_details> {
     double rating = 100;
     Size size = MediaQuery.of(context).size;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8),
       margin: EdgeInsets.symmetric(vertical: 5),
-      height: size.height / 7,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      height: 120,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(15)),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 10,
-            offset: Offset(0, 3),
+            spreadRadius: 1,
+            blurRadius: 7,
+            offset: Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          _titleOfcard(widget.categorieModel.name),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              _Columns(widget.categorieModel.proteins.toString(), "proteins."),
-              _Columns(widget.categorieModel.fat.toString(), "fat."),
-              _Columns(widget.categorieModel.carb.toString(), "carsb."),
-              _Columns(widget.categorieModel.calories.toString(), "Kcal."),
-              Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Column(
+                // mainAxisSize: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  IconButton(
+                  Expanded(
+                      flex: 2, child: _titleOfcard(widget.categorieModel.name)),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        _Columns(widget.categorieModel.proteins.toString(),
+                            "proteins."),
+                        _Columns(widget.categorieModel.fat.toString(), "fat."),
+                        _Columns(
+                            widget.categorieModel.carb.toString(), "carsb."),
+                        _Columns(
+                            widget.categorieModel.calories.toString(), "Kcal."),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              child: Center(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: IconButton(
                     icon: Icon(
                       Icons.add,
+                      size: 40,
+                      color: GlobalTheme.lightGreen,
                     ),
                     onPressed: () {
                       AdsManager.createInterAd();
                       setState(() {
-                        draggableScrollable(context, rating);
+                        draggableScrollable(
+                            context, rating, widget.categorieModel);
                         widget.calories_tmp = double.parse(
                             widget.categorieModel.calories.toString());
                         widget.proteins_tmp = widget.categorieModel.proteins;
@@ -220,10 +267,10 @@ class _Card_detailsState extends State<Card_details> {
                         widget.fat_tmp = widget.categorieModel.fat;
                       });
                     },
-                  )
-                ],
+                  ),
+                ),
               ),
-            ],
+            ),
           ),
         ],
       ),

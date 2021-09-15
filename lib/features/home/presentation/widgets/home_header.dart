@@ -1,3 +1,5 @@
+import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/widgets/vertical_divider.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:flutter/material.dart';
@@ -12,26 +14,27 @@ class HomeHeader extends StatefulWidget {
 }
 
 class _HomeHeaderState extends State<HomeHeader> {
-  TextStyle headertextStyle =
-      TextStyle(color: Colors.white, fontSize: 23, fontWeight: FontWeight.bold);
-
-  Widget verticalDivider() {
-    return Container(
-      width: 2,
-      height: 30,
-      margin: EdgeInsets.symmetric(horizontal: 10),
-      color: Color(0xFF818182),
-    );
-  }
+  TextStyle headertextStyle = TextStyle(
+      color: Colors.white,
+      fontSize: 23,
+      fontWeight: FontWeight.bold,
+      fontFamily: "greycliff-cf-regular");
 
   Widget macroPerGrame(String name, String value) {
-    return Column(
-      children: [
-        Text("$value",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        Text("$name",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-      ],
+    TextStyle macroStyle = TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontFamily: "greycliff-cf-regular");
+
+    return Expanded(
+      flex: 2,
+      child: Column(
+        children: [
+          Text("$name", style: macroStyle),
+          SizedBox(height: 8),
+          Text("$value" + " g", style: macroStyle),
+        ],
+      ),
     );
   }
 
@@ -62,49 +65,63 @@ class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      // padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.only(top: 60.0, left: 15, right: 15),
       decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
-              colors: [Color(0xFF09D093), Color(0xFF00B892)])),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              colors: [GlobalTheme.lightOrange, GlobalTheme.shadeOrange])),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            padding: EdgeInsets.only(left: 20.0, top: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Eaten", style: headertextStyle),
-                Text("${quetion.eating.toStringAsFixed(2)} Cal",
-                    style: headertextStyle),
-                SizedBox(height: 8),
-                Text("Remaining", style: headertextStyle),
-                Text("${Card_details.remaining.toStringAsFixed(2)} Cal",
-                    style: headertextStyle),
-                SizedBox(height: 30),
-                Row(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 20, left: 20.0),
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    macroPerGrame("carb", quetion.carb.toStringAsFixed(2)),
-                    verticalDivider(),
-                    macroPerGrame("fat", quetion.fat.toStringAsFixed(2)),
-                    verticalDivider(),
-                    macroPerGrame("prot", quetion.prot.toStringAsFixed(2)),
+                    Text("Eaten", style: headertextStyle),
+                    SizedBox(height: 4),
+                    Text("${quetion.eating.toStringAsFixed(2)} Cal",
+                        style: headertextStyle),
+                    SizedBox(height: 15),
+                    Text("Remaining", style: headertextStyle),
+                    SizedBox(height: 4),
+                    Text("${Card_details.remaining.toStringAsFixed(2)} Cal",
+                        style: headertextStyle),
+                    SizedBox(height: 30),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 30, right: 15),
+                  child: SvgPicture.asset(
+                    "assets/images/apple_home_logo.svg",
+                    height: 150,
+                  ),
+                ),
+              )
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 30, right: 15),
-            child: SvgPicture.asset(
-              "assets/images/apple_home_logo.svg",
-              height: 150,
-            ),
+          SizedBox(
+            height: 18,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              macroPerGrame("Carb", quetion.carb.toStringAsFixed(2)),
+              VerticalLineDivider(),
+              macroPerGrame("Fat", quetion.fat.toStringAsFixed(2)),
+              VerticalLineDivider(),
+              macroPerGrame("Protein", quetion.prot.toStringAsFixed(2)),
+            ],
           )
         ],
       ),
