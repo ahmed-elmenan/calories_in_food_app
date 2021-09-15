@@ -27,9 +27,15 @@ class _quetionPageState extends State<quetionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text('Flutter Stepper Demo'),
-          centerTitle: true,
+          title: Center(
+            child: Text('Food Calories Calculator',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "greycliff-cf-regular")),
+          ),
+          backgroundColor: GlobalTheme.lightOrange,
         ),
         body: Container(
           child: Column(
