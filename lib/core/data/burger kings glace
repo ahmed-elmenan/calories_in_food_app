@@ -1,0 +1,63 @@
+{
+        "name" : "King Fusion Twix",
+        "proteins" : 6,
+        "fat" : 12,
+        "carb" : 60,
+        "calories" : 369
+    }
+
+{
+        "name" : "King Fusion",
+        "proteins" : 4.1,
+        "fat" : 10,
+        "carb" : 39.2,
+        "calories" : 237
+    }
+
+{
+        "name" : "Mini King Fusion au Nutella",
+        "proteins" : 3.3,
+        "fat" : 8.8,
+        "carb" : 28.2,
+        "calories" : 207
+    }
+
+{
+        "name" : "King Fusion Nutella",
+        "proteins" : 3.9,
+        "fat" : 10.1,
+        "carb" : 32.9,
+        "calories" : 240
+    }
+
+{
+        "name" : "Petit Shake Vanille",
+        "proteins" : 4.2,
+        "fat" : 3.9,
+        "carb" : 26.7,
+        "calories" : 157
+    }
+
+{
+        "name" : "King Waffle",
+        "proteins" : 4.7,
+        "fat" : 17,
+        "carb" : 51.4,
+        "calories" : 381
+    }
+
+{
+        "name" : "X-Cream Oreo",
+        "proteins" : 5.8,
+        "fat" : 11.2,
+        "carb" : 41.9,
+        "calories" : 293
+    }
+
+{
+        "name" : "X-Cream Strawberry",
+        "proteins" : 11.9,
+        "fat" : 9.7,
+        "carb" : 53.2,
+        "calories" : 314
+    }
