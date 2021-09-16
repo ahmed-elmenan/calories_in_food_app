@@ -1,0 +1,103 @@
+{
+        "name" : "Tuna",
+        "proteins" : 19.8,
+        "fat" : 12.4,
+        "carb" : 40.8,
+        "calories" : 357
+    }
+
+{
+        "name" : "Chicken",
+        "proteins" : 24,
+        "fat" : 3.7,
+        "carb" : 43.3,
+        "calories" : 304
+    }
+
+{
+        "name" : "Subway melt",
+        "proteins" : 28,
+        "fat" : 10.3,
+        "carb" : 46.3,
+        "calories" : 376
+    }
+
+{
+        "name" : "Steak&cheese",
+        "proteins" : 21.2,
+        "fat" : 5.4,
+        "carb" : 47,
+        "calories" : 303
+    }
+
+{
+        "name" : "Sub15 vegetarian",
+        "proteins" : 9.9,
+        "fat" : 2.5,
+        "carb" : 6.3,
+        "calories" : 231
+    }
+
+{
+        "name" : "Chipotle southwest sauce",
+        "proteins" : 0.2,
+        "fat" : 7.7,
+        "carb" : 1.8,
+        "calories" : 80
+    }
+
+{
+        "name" : "Turkey",
+        "proteins" : 21,
+        "fat" : 3.4,
+        "carb" : 45.4,
+        "calories" : 287
+    }
+
+{
+        "name" : "Végétarian steak",
+        "proteins" : 22,
+        "fat" : 9.6,
+        "carb" : 53.9,
+        "calories" : 398
+    }
+
+{
+        "name" : "Subway club",
+        "proteins" : 24.5,
+        "fat" : 4.1,
+        "carb" : 45.8,
+        "calories" : 306
+    }
+
+{
+        "name" : "Sliced beef",
+        "proteins" : 23.5,
+        "fat" : 4,
+        "carb" : 45.5,
+        "calories" : 300
+    }
+
+{
+        "name" : "Beef pastrami ",
+        "proteins" : 9.1,
+        "fat" : 2,
+        "carb" : 22,
+        "calories" : 145
+    }
+
+{
+        "name" : "Spicy italian",
+        "proteins" : 25.7,
+        "fat" : 29.4,
+        "carb" : 42.8,
+        "calories" : 533
+    }
+
+{
+        "name" : "Subway club",
+        "proteins" : 24.5,
+        "fat" : 4.1,
+        "carb" : 45.8,
+        "calories" : 306
+    }

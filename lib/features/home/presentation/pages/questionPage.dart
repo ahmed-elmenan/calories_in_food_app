@@ -366,6 +366,7 @@ class _quetionPageState extends State<quetionPage> {
       question.prot = 0.0;
       question.eating = 0.0;
       question.remining = 0.0;
+      question.totalCal = 0.0;
       box.put('key', quetion);
       Navigator.pushAndRemoveUntil(
         context,

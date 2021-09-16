@@ -2,6 +2,7 @@ import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
 import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/pages/questionPage.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
@@ -48,12 +49,17 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
             children: [
               const DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.orange,
                 ),
-                child: Text('Drawer Header'),
+                child: Text('Menu'),
               ),
               ListTile(
-                title: const Text('Item 1'),
+                title: const Text('Question Page',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
+                tileColor: Colors.green,
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => quetionPage()));
@@ -61,6 +67,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
               ),
               ListTile(
                 title: const Text('Item 2'),
+                tileColor: Colors.green,
                 onTap: () {
                   // Update the state of the app.
                   // ...

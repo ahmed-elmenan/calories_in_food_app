@@ -3,7 +3,6 @@ import 'package:fapp/features/home/presentation/pages/page_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flat_icons_flutter/flat_icons_flutter.dart';
 
 class FoodCard extends StatelessWidget {
   Map<String, dynamic> foodCategorie;

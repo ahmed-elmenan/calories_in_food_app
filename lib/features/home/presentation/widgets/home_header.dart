@@ -46,6 +46,7 @@ class _HomeHeaderState extends State<HomeHeader> {
       quetion = mybox.get('key');
       Card_details.remaining = calacRemaining(quetion);
       if (quetion.eating != null) Card_details.remaining -= quetion.eating;
+      quetion.totalCal = Card_details.remaining;
       Card_details.fat = quetion.fat;
       Card_details.carb = quetion.carb;
       Card_details.proteins = quetion.prot;
@@ -137,6 +138,8 @@ class _HomeHeaderState extends State<HomeHeader> {
   double calacRemaining(dynamic quetion) {
     double bmr = 0;
     double Remaining = 0;
+    final mybox = Boxes.getQuestions();
+    final quetion = mybox.get('key');
     if (quetion.Gender == 1)
       bmr = quetion.isWomen(quetion.Age, quetion.Length, quetion.Weight);
     else if (quetion.Gender == 2)

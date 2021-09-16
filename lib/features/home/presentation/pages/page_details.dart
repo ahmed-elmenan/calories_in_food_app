@@ -218,7 +218,7 @@ class _page_detailsState extends State<page_details>
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Eaten",
+                                  "Etaen",
                                   style: headertextStyle,
                                 ),
                                 SizedBox(height: 4),
