@@ -1,4 +1,5 @@
 import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/widgets/bottom_sheet_sub_title.dart';
 import 'package:fapp/features/ads/services/ads_manager.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:flutter/material.dart';
@@ -88,6 +89,12 @@ class _Card_detailsState extends State<Card_details> {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
         return StatefulBuilder(
             builder: (BuildContext context, StateSetter setState) {
@@ -95,37 +102,46 @@ class _Card_detailsState extends State<Card_details> {
             expand: false,
             builder: (context, controller) {
               return Container(
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(32),
+                ),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("${foodModel.name}",
+                    Text(foodModel.name,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.black87,
+                            fontSize: 24,
+                            color: GlobalTheme.customedBlack,
+                            fontWeight: FontWeight.bold,
                             fontFamily: "greycliff-cf-regular")),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    BottomSheetSubTitle(subTitle: "Select Quantity"),
+                    Column(
                       children: [
-                        Text("$rating\g",
-                            style:
-                                TextStyle(fontFamily: "greycliff-cf-regular")),
+                        Text(rating.toStringAsFixed(0) + " g",
+                            style: TextStyle(
+                                fontSize: 24,
+                                color: GlobalTheme.lightGreen,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "greycliff-cf-regular")),
+                        Slider(
+                            activeColor: GlobalTheme.lightGreen,
+                            inactiveColor: Colors.green.shade100,
+                            value: rating,
+                            min: 0,
+                            max: 500,
+                            divisions: 100,
+                            onChanged: (_myvalue) {
+                              setState(() {
+                                rating = _myvalue;
+                                calcul(rating);
+                              });
+                            }),
                       ],
                     ),
-                    Slider(
-                        activeColor: GlobalTheme.lightGreen,
-                        inactiveColor: Colors.green.shade100,
-                        value: rating,
-                        min: 0,
-                        max: 500,
-                        divisions: 100,
-                        onChanged: (_myvalue) {
-                          setState(() {
-                            rating = _myvalue;
-                            calcul(rating);
-                          });
-                        }),
+                    BottomSheetSubTitle(subTitle: "Food Macros"),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -151,36 +167,55 @@ class _Card_detailsState extends State<Card_details> {
                             "Kcal."),
                       ],
                     ),
-                    TextButton(
-                        onPressed: () {
-                          // showInter();
-                          AdsManager.interListener();
-                          AdsManager.showInter();
-                          setState(() {
-                            Card_details.calories += widget.calories_tmp;
-                            Card_details.carb += widget.carb_tmp;
-                            Card_details.fat += widget.fat_tmp;
-                            Card_details.proteins += widget.proteins_tmp;
-                            Card_details.remaining -= widget.calories_tmp;
-                            final mybox = Boxes.getQuestions();
-                            final quetion = mybox.get('key');
-                            quetion.fat = Card_details.fat;
-                            quetion.carb = Card_details.carb;
-                            quetion.prot = Card_details.proteins;
-                            quetion.eating = Card_details.calories;
-                            quetion.remining = Card_details.remaining;
-                            if (quetion == null)
-                              mybox.put('key', quetion);
-                            else {
-                              quetion.save();
-                            }
-                            Navigator.of(context).pop();
-                          });
-                        },
-                        child: Text(
-                          "confirme",
-                          style: TextStyle(fontFamily: "greycliff-cf-regular"),
-                        )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width - 30,
+                        height: 40,
+                        child: TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.white,
+                              backgroundColor: GlobalTheme.shadeOrange,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {
+                              // showInter();
+                              AdsManager.interListener();
+                              AdsManager.showInter();
+                              setState(() {
+                                Card_details.calories += widget.calories_tmp;
+                                Card_details.carb += widget.carb_tmp;
+                                Card_details.fat += widget.fat_tmp;
+                                Card_details.proteins += widget.proteins_tmp;
+                                Card_details.remaining -= widget.calories_tmp;
+                                final mybox = Boxes.getQuestions();
+                                final quetion = mybox.get('key');
+                                quetion.fat = Card_details.fat;
+                                quetion.carb = Card_details.carb;
+                                quetion.prot = Card_details.proteins;
+                                quetion.eating = Card_details.calories;
+                                quetion.remining = Card_details.remaining;
+                                if (quetion == null)
+                                  mybox.put('key', quetion);
+                                else {
+                                  quetion.save();
+                                }
+                                Navigator.of(context).pop();
+                              });
+                            },
+                            child: Text(
+                              "confirme",
+                              style: TextStyle(
+                                  fontFamily: "greycliff-cf-regular",
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            )),
+                      ),
+                    ),
                   ],
                 ),
               );

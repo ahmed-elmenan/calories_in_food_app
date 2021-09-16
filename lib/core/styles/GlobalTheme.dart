@@ -5,6 +5,7 @@ class GlobalTheme {
   static Color shadeOrange = Color(0xFFFDA86F);
   static Color lightGreen = Color(0xFF6dc82a);
   static Color customedBlack = Color(0xFF21282e);
+  static Color secondaryGrey = Colors.grey[200];
 
   static Map<int, Color> stepperColors = {
     50: Color.fromRGBO(254, 123, 73, .1),

@@ -31,9 +31,6 @@ void main() async {
   Timer timer = Timer.periodic(
       Duration(seconds: 5), (Timer t) => ManageUserInfo.zerowingMacros());
   runApp(MaterialApp(
-    theme: appTheme,
-    debugShowCheckedModeBanner: false,
-    // home: (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
-    home: quetionPage(),
+    home: (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
   ));
 }
