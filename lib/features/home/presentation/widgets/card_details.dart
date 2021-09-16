@@ -5,6 +5,7 @@ import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:sweetalertv2/sweetalertv2.dart';
 import '../data/models/dataobject.dart';
 
 class Card_details extends StatefulWidget {
@@ -206,6 +207,11 @@ class _Card_detailsState extends State<Card_details> {
                                 }
                                 Navigator.of(context).pop();
                               });
+                              SweetAlertV2.show(context,
+                                  title: "${widget.categorieModel.name} Added",
+                                  subtitle:
+                                      "${Card_details.calories.toStringAsFixed(2)} calories for ${widget.categorieModel.name} Added", //tatmodifi had text  //sayab
+                                  style: SweetAlertV2Style.success);
                             },
                             child: Text(
                               "confirme",
