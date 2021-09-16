@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:fapp/core/styles/GlobalTheme.dart';
-import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
+import 'package:fapp/core/widgets/vertical_divider.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
-import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
+import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
-import 'package:flat_icons_flutter/flat_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -25,7 +25,8 @@ class page_details extends StatefulWidget {
   _page_detailsState createState() => _page_detailsState();
 }
 
-class _page_detailsState extends State<page_details> {
+class _page_detailsState extends State<page_details>
+    with SingleTickerProviderStateMixin {
   List<FoodModel> categorie_model = [];
   bool showAd = true;
   Future<List<FoodModel>> getData() async {
@@ -53,13 +54,20 @@ class _page_detailsState extends State<page_details> {
   }
 
   List<FoodModel> foodListSaver;
+  AnimationController _animationController;
   @override
   void initState() {
     super.initState();
     getData();
+    macrosInit();
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    Timer(Duration(milliseconds: 200), () => _animationController.forward());
 
-    // print("LLLLLLLEEEEEEEENNNNNNN +>" + foodListSaver.length.toString());
-    // print("LLLLLLLEEEEEEEENNNNNNN +>" + categorie_model.length.toString());
+    if (mounted){userInfo.addListener(() {
+      setState(() {});
+    });}
+
     foodLocalDataSource = IFoodLocalDataSource();
     // page_details.myBanner = BannerAd(
     //     adUnitId: BannerAd.testAdUnitId,
@@ -144,34 +152,140 @@ class _page_detailsState extends State<page_details> {
     return Future.value(true);
   }
 
+  TextStyle headertextStyle = TextStyle(
+      color: Colors.white,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      fontFamily: "greycliff-cf-regular");
+
+  Firstpage userInfo;
+
+  macrosInit() {
+    final mybox = Boxes.getQuestions();
+    userInfo = mybox.get('key');
+  }
+
+  Widget macroPerGrame(String name, String value) {
+    TextStyle macroStyle = TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontFamily: "greycliff-cf-regular");
+
+    return Expanded(
+      flex: 2,
+      child: Column(
+        children: [
+          Text("$name", style: macroStyle),
+          SizedBox(height: 8),
+          Text("$value" + " g", style: macroStyle),
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _controller.dispose();
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () => backToTheHome(context),
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('Food Calories Calculator',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "greycliff-cf-regular")),
-            backgroundColor: GlobalTheme.lightOrange,
-            leading: new IconButton(
-              icon: new Icon(Icons.chevron_left),
-              onPressed: () => backToTheHome(context),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(180.0),
+            child: AppBar(
+              flexibleSpace: Container(
+                padding: EdgeInsets.only(top: 20),
+                child: SlideTransition(
+                  position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)
+                      .animate(_animationController),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 80),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Eaten",
+                                  style: headertextStyle,
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  "${userInfo.eating.toStringAsFixed(2)} Cal",
+                                  style: headertextStyle,
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Remaining",
+                                  style: headertextStyle,
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  "${userInfo.remining.toStringAsFixed(2)} Cal",
+                                  style: headertextStyle,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            macroPerGrame(
+                                "Carb", userInfo.carb.toStringAsFixed(2)),
+                            VerticalLineDivider(),
+                            macroPerGrame(
+                                "Fat", userInfo.fat.toStringAsFixed(2)),
+                            VerticalLineDivider(),
+                            macroPerGrame(
+                                "Protein", userInfo.prot.toStringAsFixed(2)),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              backgroundColor: GlobalTheme.lightOrange,
+              leading: new IconButton(
+                icon: new Icon(Icons.chevron_left),
+                onPressed: () => backToTheHome(context),
+              ),
             ),
           ),
           body: Center(
             child: Stack(
               children: [
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      color: GlobalTheme.lightGreen,
-                      child: Center(
-                        child: Expanded(
+                SlideTransition(
+                  position: Tween<Offset>(begin: Offset(0, 1), end: Offset.zero)
+                      .animate(_animationController),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        color: GlobalTheme.lightGreen,
+                        child: Center(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -199,90 +313,88 @@ class _page_detailsState extends State<page_details> {
                           ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(8),
-                      height: 60,
-                      // color: Colors.red,
-                      child: Form(
-                        child: Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 7, horizontal: 17),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(32),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                flex: 5,
-                                child: TextField(
-                                  controller: _textController,
-                                  onChanged: (String value) {
-                                    // bloc event here
-                                    setState(() {
-                                      categorie_model = List.from(
-                                          foodLocalDataSource.getSerchedFood(
-                                              foodListSaver, value));
-                                      _controller.animateTo(
-                                        _controller.position.minScrollExtent,
-                                        duration: Duration(seconds: 1),
-                                        curve: Curves.fastOutSlowIn,
-                                      );
-                                    });
-                                  },
-                                  decoration: InputDecoration(
-                                    hintText: "search for foods",
-                                    hintStyle: TextStyle(
-                                      color: Color(0xFF979BA3),
-                                    ),
-                                    // filled: true,
-                                    border: InputBorder.none,
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                  flex: 1,
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      _textController.clear();
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        height: 60,
+                        // color: Colors.red,
+                        child: Form(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 7, horizontal: 17),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[200],
+                              borderRadius: BorderRadius.circular(32),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  flex: 5,
+                                  child: TextField(
+                                    controller: _textController,
+                                    onChanged: (String value) {
+                                      // bloc event here
                                       setState(() {
-                                        categorie_model =
-                                            List.from(foodListSaver);
+                                        categorie_model = List.from(
+                                            foodLocalDataSource.getSerchedFood(
+                                                foodListSaver, value));
+                                        _controller.animateTo(
+                                          _controller.position.minScrollExtent,
+                                          duration: Duration(seconds: 1),
+                                          curve: Curves.fastOutSlowIn,
+                                        );
                                       });
                                     },
-                                    child: Container(
-                                        height: 30,
-                                        child: Icon(
-                                          Icons.close,
-                                          color: Color(0xFF979BA3),
-                                        )),
-                                  )),
-                            ],
+                                    decoration: InputDecoration(
+                                      hintText: "search for foods",
+                                      hintStyle: TextStyle(
+                                        color: Color(0xFF979BA3),
+                                      ),
+                                      // filled: true,
+                                      border: InputBorder.none,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                    flex: 1,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        _textController.clear();
+                                        setState(() {
+                                          categorie_model =
+                                              List.from(foodListSaver);
+                                        });
+                                      },
+                                      child: Container(
+                                          height: 30,
+                                          child: Icon(
+                                            Icons.close,
+                                            color: Color(0xFF979BA3),
+                                          )),
+                                    )),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    // Wrap(
-                    //   children: _buildList(categorie_model.length),
-                    // ),
-                    Expanded(
-                      child: Container(
-                        child: ListView.builder(
-                            controller: _controller,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: categorie_model.length,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                  padding: new EdgeInsets.all(8.0),
-                                  child: Card_details(
-                                      categorieModel: categorie_model[index]));
-                            }),
-                      ),
-                    )
-                  ],
+                      Expanded(
+                        child: Container(
+                          child: ListView.builder(
+                              controller: _controller,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: categorie_model.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                    padding: new EdgeInsets.all(8.0),
+                                    child: Card_details(
+                                        categorieModel:
+                                            categorie_model[index]));
+                              }),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 // Positioned(
                 //   bottom: 3,
@@ -299,14 +411,4 @@ class _page_detailsState extends State<page_details> {
           )),
     );
   }
-
-  // List _buildList(int count) {
-  //   List<Widget> listItems = [];
-  //   for (int i = 0; i < count; i++) {
-  //     listItems.add(new Padding(
-  //         padding: new EdgeInsets.all(8.0),
-  //         child: Card_details(categorieModel: categorie_model[i])));
-  //   }
-  //   return listItems;
-  // }
 }
