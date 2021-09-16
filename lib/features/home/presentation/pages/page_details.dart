@@ -6,6 +6,7 @@ import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flat_icons_flutter/flat_icons_flutter.dart';
@@ -32,6 +33,9 @@ class _page_detailsState extends State<page_details> {
     return await Future.delayed(Duration(seconds: 0), () {
       print(widget.nameCategorie);
       List<dynamic> data = jsonDecode(foodJsonMap[widget.nameCategorie]);
+      // final mybox = Boxes.getQuestions();
+      // final quetion = mybox.get('key');
+      // print("object====>  " + quetion.totalCal.toString());
       setState(() {
         categorie_model = data.map((data) => FoodModel.fromJson(data)).toList();
       });
@@ -57,7 +61,6 @@ class _page_detailsState extends State<page_details> {
   void initState() {
     super.initState();
     getData();
-
     // print("LLLLLLLEEEEEEEENNNNNNN +>" + foodListSaver.length.toString());
     // print("LLLLLLLEEEEEEEENNNNNNN +>" + categorie_model.length.toString());
     foodLocalDataSource = IFoodLocalDataSource();
@@ -171,39 +174,32 @@ class _page_detailsState extends State<page_details> {
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       color: GlobalTheme.lightGreen,
                       child: Center(
-                        child: Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text("Sort by :",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: "greycliff-cf-regular",
-                                      fontWeight: FontWeight.bold)),
-                              Expanded(
-                                child: Container(
-                                  child: Row(
-                                    children: <Widget>[
-                                      appBarSort(
-                                          foodLocalDataSource, 1, "Protein"),
-                                      appBarSort(foodLocalDataSource, 2, "Fat"),
-                                      appBarSort(
-                                          foodLocalDataSource, 3, "Carb"),
-                                      appBarSort(foodLocalDataSource, 4, "Cal"),
-                                    ],
-                                  ),
-                                ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("Sort by :",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "greycliff-cf-regular",
+                                    fontWeight: FontWeight.bold)),
+                            Container(
+                              child: Row(
+                                children: <Widget>[
+                                  appBarSort(foodLocalDataSource, 1, "Protein"),
+                                  appBarSort(foodLocalDataSource, 2, "Fat"),
+                                  appBarSort(foodLocalDataSource, 3, "Carb"),
+                                  appBarSort(foodLocalDataSource, 4, "Cal"),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.all(8),
                       height: 60,
-                      // color: Colors.red,
                       child: Form(
                         child: Container(
                           padding:
@@ -264,9 +260,6 @@ class _page_detailsState extends State<page_details> {
                         ),
                       ),
                     ),
-                    // Wrap(
-                    //   children: _buildList(categorie_model.length),
-                    // ),
                     Expanded(
                       child: Container(
                         child: ListView.builder(

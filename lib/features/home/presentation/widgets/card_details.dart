@@ -187,13 +187,13 @@ class _Card_detailsState extends State<Card_details> {
                               AdsManager.interListener();
                               AdsManager.showInter();
                               setState(() {
+                                final mybox = Boxes.getQuestions();
+                                final quetion = mybox.get('key');
                                 Card_details.calories += widget.calories_tmp;
                                 Card_details.carb += widget.carb_tmp;
                                 Card_details.fat += widget.fat_tmp;
                                 Card_details.proteins += widget.proteins_tmp;
                                 Card_details.remaining -= widget.calories_tmp;
-                                final mybox = Boxes.getQuestions();
-                                final quetion = mybox.get('key');
                                 quetion.fat = Card_details.fat;
                                 quetion.carb = Card_details.carb;
                                 quetion.prot = Card_details.proteins;

@@ -4,9 +4,7 @@ import 'package:hive/hive.dart';
 part 'firstpage.g.dart';
 
 @HiveType(typeId: 0)
-class Firstpage extends HiveObject  with ChangeNotifier{
-
-
+class Firstpage extends HiveObject with ChangeNotifier {
   Firstpage();
   @HiveField(0)
   int typeExercise;
@@ -33,6 +31,8 @@ class Firstpage extends HiveObject  with ChangeNotifier{
   double remining;
   @HiveField(11)
   DateTime initialzingDate;
+  @HiveField(12)
+  double totalCal;
 
   set eating(double val) {
     _eating = val;
