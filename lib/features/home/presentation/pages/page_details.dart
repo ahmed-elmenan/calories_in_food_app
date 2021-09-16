@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/core/widgets/vertical_divider.dart';
+import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
@@ -41,13 +42,15 @@ class _page_detailsState extends State<page_details>
     });
   }
 
+  Timer timer;
   showAdState(bool val) {
     if (mounted) {
       setState(() {
         showAd = val;
         if (showAd == false) {
           print(showAd);
-          page_details.myBanner.load();
+          timer = Timer.periodic(
+              Duration(minutes: 1), (Timer t) => page_details.myBanner.load());
         }
       });
     }
@@ -64,30 +67,32 @@ class _page_detailsState extends State<page_details>
         AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
 
-    if (mounted){userInfo.addListener(() {
-      setState(() {});
-    });}
+    if (mounted) {
+      userInfo.addListener(() {
+        setState(() {});
+      });
+    }
 
     foodLocalDataSource = IFoodLocalDataSource();
-    // page_details.myBanner = BannerAd(
-    //     adUnitId: BannerAd.testAdUnitId,
-    //     size: AdSize.banner,
-    //     request: AdRequest(),
-    //     listener: BannerAdListener(onAdLoaded: (Ad ad) async {
-    //       print("==AD ID=>" + ad.responseInfo.responseId);
-    //       if (await AdsGlobalUtils.isAdDisplayable(
-    //           ad.responseInfo.responseId, 'banner')) {
-    //         print(
-    //             "BANNER HAS BEEN APPROVED =====================================================");
-    //         showAdState(true);
-    //       } else {
-    //         ad.dispose();
-    //         showAdState(false);
-    //         print(
-    //             "BANNER NOT APPROVED =====================================================");
-    //       }
-    //     }));
-    // page_details.myBanner.load();
+    page_details.myBanner = BannerAd(
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.banner,
+        request: AdRequest(),
+        listener: BannerAdListener(onAdLoaded: (Ad ad) async {
+          print("==AD ID=>" + ad.responseInfo.responseId);
+          if (await AdsGlobalUtils.isAdDisplayable(
+              ad.responseInfo.responseId, 'banner')) {
+            print(
+                "BANNER HAS BEEN APPROVED =====================================================");
+            showAdState(true);
+          } else {
+            ad.dispose();
+            showAdState(false);
+            print(
+                "BANNER NOT APPROVED =====================================================");
+          }
+        }));
+    page_details.myBanner.load();
   }
 
   final _controller = ScrollController();
@@ -188,6 +193,7 @@ class _page_detailsState extends State<page_details>
     // TODO: implement dispose
     _controller.dispose();
     _animationController.dispose();
+    timer.cancel();
     super.dispose();
   }
 
@@ -200,6 +206,14 @@ class _page_detailsState extends State<page_details>
             preferredSize: Size.fromHeight(180.0),
             child: AppBar(
               flexibleSpace: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                      GlobalTheme.lightOrange,
+                      GlobalTheme.shadeOrange,
+                    ])),
                 padding: EdgeInsets.only(top: 20),
                 child: SlideTransition(
                   position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)
@@ -218,7 +232,7 @@ class _page_detailsState extends State<page_details>
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Etaen",
+                                  "Eaten",
                                   style: headertextStyle,
                                 ),
                                 SizedBox(height: 4),
@@ -267,7 +281,7 @@ class _page_detailsState extends State<page_details>
                   ),
                 ),
               ),
-              backgroundColor: GlobalTheme.lightOrange,
+              // backgroundColor: GlobalTheme.lightOrange,
               leading: new IconButton(
                 icon: new Icon(Icons.chevron_left),
                 onPressed: () => backToTheHome(context),
@@ -396,16 +410,16 @@ class _page_detailsState extends State<page_details>
                     ],
                   ),
                 ),
-                // Positioned(
-                //   bottom: 3,
-                //   child: Container(
-                //       height: 50,
-                //       width: MediaQuery.of(context).size.width,
-                //       child: /* trenary to check if the id exist in the db then take an action*/
-                //           Visibility(
-                //               visible: showAd,
-                //               child: AdWidget(ad: page_details.myBanner))),
-                // ),
+                Positioned(
+                  bottom: 3,
+                  child: Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      child: /* trenary to check if the id exist in the db then take an action*/
+                          Visibility(
+                              visible: showAd,
+                              child: AdWidget(ad: page_details.myBanner))),
+                ),
               ],
             ),
           )),
