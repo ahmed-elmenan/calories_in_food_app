@@ -87,6 +87,8 @@ class _Card_detailsState extends State<Card_details> {
 
   Future<dynamic> draggableScrollable(
       BuildContext context, double rating, FoodModel foodModel) {
+    TextStyle confirmAlert =
+        TextStyle(fontFamily: "greycliff-cf-regular", fontSize: 16);
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -185,8 +187,7 @@ class _Card_detailsState extends State<Card_details> {
                             ),
                             onPressed: () {
                               // showInter();
-                              AdsManager.interListener();
-                              AdsManager.showInter();
+                              
                               setState(() {
                                 final mybox = Boxes.getQuestions();
                                 final quetion = mybox.get('key');
@@ -210,8 +211,18 @@ class _Card_detailsState extends State<Card_details> {
                               SweetAlertV2.show(context,
                                   title: "${widget.categorieModel.name} Added",
                                   subtitle:
-                                      "${Card_details.calories.toStringAsFixed(2)} calories for ${widget.categorieModel.name} Added", //tatmodifi had text  //sayab
-                                  style: SweetAlertV2Style.success);
+                                      "${Card_details.calories.toStringAsFixed(2)} calories of ${widget.categorieModel.name} Added", //tatmodifi had text  //sayab
+                                  style: SweetAlertV2Style.success,
+                                  confirmButtonColor: GlobalTheme.lightGreen,
+                                  titleStyle: confirmAlert.copyWith(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                  subtitleStyle: confirmAlert, onPress: (val) {
+                                AdsManager.interListener();
+                              AdsManager.showInter();
+                                
+                                return true;
+                              });
                             },
                             child: Text(
                               "confirme",

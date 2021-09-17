@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
 import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
+import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/pages/questionPage.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
@@ -11,9 +14,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
   static Map<String, Map<String, List<AdsInfoModel>>> adsData;
+  static BannerAd myBanner;
 
   @override
   _FoodCaloriesAppState createState() => _FoodCaloriesAppState();
@@ -32,11 +37,45 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     setState(() {});
   }
 
+    bool showAd = true;
+   Timer timer;
+  showAdState(bool val) {
+    if (mounted) {
+      setState(() {
+        showAd = val;
+        if (showAd == false) {
+          print(showAd);
+          timer = Timer.periodic(
+              Duration(minutes: 1), (Timer t) => FoodCaloriesApp.myBanner.load());
+        }
+      });
+    }
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     // getAdsData();
+      FoodCaloriesApp.myBanner = BannerAd(
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.banner,
+        request: AdRequest(),
+        listener: BannerAdListener(onAdLoaded: (Ad ad) async {
+          print("==AD ID=>" + ad.responseInfo.responseId);
+          if (await AdsGlobalUtils.isAdDisplayable(
+              ad.responseInfo.responseId, 'banner')) {
+            print(
+                "BANNER HAS BEEN APPROVED =====================================================");
+            showAdState(true);
+          } else {
+            ad.dispose();
+            showAdState(false);
+            print(
+                "BANNER NOT APPROVED =====================================================");
+          }
+        }));
+    FoodCaloriesApp.myBanner.load();
   }
 
   @override
@@ -109,9 +148,16 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
                 background: HomeHeader(),
               ),
             ),
-            new SliverList(
-                delegate: new SliverChildListDelegate(
-                    _buildList(FOOD_CATEGORIES.length))),
+            Positioned(
+                  bottom: 3,
+                  child: Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      child: /* trenary to check if the id exist in the db then take an action*/
+                          Visibility(
+                              visible: showAd,
+                              child: AdWidget(ad: FoodCaloriesApp.myBanner))),
+                ),
           ],
         ),
       ),
