@@ -1,4 +1,5 @@
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
+import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import '../../features/home/presentation/data/models/firstpage.dart';
 
 class ManageUserInfo {
@@ -17,6 +18,10 @@ class ManageUserInfo {
         ..initialzingDate =
             userInfoModel.initialzingDate.add(Duration(hours: 24));
       userInfoModel.save();
+      Card_details.calories = 0.0;
+      Card_details.carb = 0.0;
+      Card_details.proteins = 0.0;
+      Card_details.calories = 0.0;
     }
   }
 }

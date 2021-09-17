@@ -37,6 +37,7 @@ dependencies:
   auto_animated: ^3.0.0
   flutter_bloc: ^6.1.1
   hive: ^2.0.3
+  share: ^2.0.4
   sweetalertv2:
   hive_flutter: 
   

@@ -1,5 +1,6 @@
 import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
 import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
@@ -8,6 +9,7 @@ import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
@@ -87,6 +89,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
                         fontWeight: FontWeight.bold,
                         fontFamily: "greycliff-cf-regular")),
               ),
+              actions: <Widget>[ShareButton()],
               leading: Builder(builder: (BuildContext context) {
                 return IconButton(
                   icon: FaIcon(FontAwesomeIcons.hamburger),

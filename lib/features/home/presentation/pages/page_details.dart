@@ -2,17 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:fapp/core/styles/GlobalTheme.dart';
-import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
+import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
-import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
-import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
-import 'package:flat_icons_flutter/flat_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:share/share.dart';
 
 import '../data/models/dataobject.dart';
 
@@ -33,9 +31,6 @@ class _page_detailsState extends State<page_details> {
     return await Future.delayed(Duration(seconds: 0), () {
       print(widget.nameCategorie);
       List<dynamic> data = jsonDecode(foodJsonMap[widget.nameCategorie]);
-      // final mybox = Boxes.getQuestions();
-      // final quetion = mybox.get('key');
-      // print("object====>  " + quetion.totalCal.toString());
       setState(() {
         categorie_model = data.map((data) => FoodModel.fromJson(data)).toList();
       });
@@ -160,6 +155,9 @@ class _page_detailsState extends State<page_details> {
                     fontWeight: FontWeight.bold,
                     fontFamily: "greycliff-cf-regular")),
             backgroundColor: GlobalTheme.lightOrange,
+            actions: <Widget>[
+             ShareButton(),
+            ],
             leading: new IconButton(
               icon: new Icon(Icons.chevron_left),
               onPressed: () => backToTheHome(context),

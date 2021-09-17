@@ -1,4 +1,5 @@
 import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,9 @@ class _quetionPageState extends State<quetionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          actions: <Widget>[
+            ShareButton(),
+          ],
           title: Center(
             child: Text('Food Calories Calculator',
                 style: TextStyle(
