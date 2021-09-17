@@ -2,24 +2,17 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:fapp/core/styles/GlobalTheme.dart';
-<<<<<<< HEAD
-import 'package:fapp/core/widgets/shareButton.dart';
-import 'package:fapp/features/home/presentation/consts/json_map.dart';
-import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
-=======
 import 'package:fapp/core/widgets/vertical_divider.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
 import 'package:fapp/features/home/presentation/data/datasources/foodLocalDataSource.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
->>>>>>> d8743f85953e7888bde6e03486760b1d171496ae
 import 'package:fapp/features/home/presentation/pages/home_page.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:share/share.dart';
 
 import '../data/models/dataobject.dart';
 
@@ -209,31 +202,27 @@ class _page_detailsState extends State<page_details>
     return WillPopScope(
       onWillPop: () => backToTheHome(context),
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('Food Calories Calculator',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "greycliff-cf-regular")),
-            backgroundColor: GlobalTheme.lightOrange,
-            actions: <Widget>[
-             ShareButton(),
-            ],
-            leading: new IconButton(
-              icon: new Icon(Icons.chevron_left),
-              onPressed: () => backToTheHome(context),
-            ),
-          ),
-          body: Center(
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      color: GlobalTheme.lightGreen,
-                      child: Center(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(180.0),
+            child: AppBar(
+              flexibleSpace: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        colors: [
+                      GlobalTheme.lightOrange,
+                      GlobalTheme.shadeOrange,
+                    ])),
+                padding: EdgeInsets.only(top: 20),
+                child: SlideTransition(
+                  position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)
+                      .animate(_animationController),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 80),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,

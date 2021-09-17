@@ -12,7 +12,6 @@ import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -117,36 +116,43 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
             ],
           ),
         ),
-        body: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              title: Center(
-                child: Text('Food Calories Calculator',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "greycliff-cf-regular")),
-              ),
-              actions: <Widget>[ShareButton()],
-              leading: Builder(builder: (BuildContext context) {
-                return IconButton(
-                  icon: FaIcon(FontAwesomeIcons.hamburger),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
-                  tooltip:
-                      MaterialLocalizations.of(context).openAppDrawerTooltip,
-                );
-              }),
-              expandedHeight: 350.0,
-              floating: true,
-              pinned: true,
-              snap: true,
-              elevation: 50,
-              backgroundColor: GlobalTheme.lightOrange,
-              flexibleSpace: FlexibleSpaceBar(
-                centerTitle: true,
-                background: HomeHeader(),
-              ),
+        body: Stack(
+          children: [
+            CustomScrollView(
+              slivers: <Widget>[
+                SliverAppBar(
+                  title: Center(
+                    child: Text('Food Calories Calculator',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "greycliff-cf-regular")),
+                  ),
+                  actions: <Widget>[ShareButton()],
+                  leading: Builder(builder: (BuildContext context) {
+                    return IconButton(
+                      icon: FaIcon(FontAwesomeIcons.hamburger),
+                      onPressed: () => Scaffold.of(context).openDrawer(),
+                      tooltip: MaterialLocalizations.of(context)
+                          .openAppDrawerTooltip,
+                    );
+                  }),
+                  expandedHeight: 350.0,
+                  floating: true,
+                  pinned: true,
+                  snap: true,
+                  elevation: 50,
+                  backgroundColor: GlobalTheme.lightOrange,
+                  flexibleSpace: FlexibleSpaceBar(
+                    centerTitle: true,
+                    background: HomeHeader(),
+                  ),
+                ),
+                new SliverList(
+                    delegate: new SliverChildListDelegate(
+                        _buildList(FOOD_CATEGORIES.length))),
+              ],
             ),
             Positioned(
                   bottom: 3,
