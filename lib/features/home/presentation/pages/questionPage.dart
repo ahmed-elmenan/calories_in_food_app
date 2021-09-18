@@ -23,7 +23,17 @@ class _quetionPageState extends State<quetionPage> {
       TextStyle(color: Colors.red, fontSize: 23, fontWeight: FontWeight.bold);
   String _message = "";
   TimeOfDay timeofnow = TimeOfDay.now();
-  Firstpage question = new Firstpage();
+   Firstpage question;
+
+  @override
+  void initState() {
+    final mybox = Boxes.getQuestions();
+    question = mybox.get('key');
+    if (question == null) {
+      question = new Firstpage();
+    }
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -361,17 +371,23 @@ class _quetionPageState extends State<quetionPage> {
     }
   }
 
-  Future addQuestions(Firstpage quetion) {
+Future addQuestions(Firstpage quetion) {
     final box = Boxes.getQuestions();
+    Firstpage questionTmp = box.get('key');
     question.isvisible = true;
+
     if (validationAllFields(question) == 1) {
-      question.carb = 0.0;
-      question.fat = 0.0;
-      question.prot = 0.0;
-      question.eating = 0.0;
-      question.remining = 0.0;
-      question.totalCal = 0.0;
-      box.put('key', quetion);
+      if (questionTmp == null) {
+        question.carb = 0.0;
+        question.fat = 0.0;
+        question.prot = 0.0;
+        question.eating = 0.0;
+        question.remining = 0.0;
+        question.totalCal = 0.0;
+        box.put('key', quetion);
+      } else {
+        question.save();
+      }
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => FoodCaloriesApp()),
@@ -380,3 +396,4 @@ class _quetionPageState extends State<quetionPage> {
     }
   }
 }
+

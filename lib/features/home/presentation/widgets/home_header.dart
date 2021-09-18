@@ -58,8 +58,10 @@ class _HomeHeaderState extends State<HomeHeader> {
   void initState() {
     macrosInit();
     quetion.addListener(() {
-      setState(() {});
-    });
+      if (mounted){
+        setState(() {});
+    
+    }});
     super.initState();
   }
 

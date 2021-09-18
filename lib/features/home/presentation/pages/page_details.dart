@@ -19,7 +19,7 @@ import '../data/models/dataobject.dart';
 class page_details extends StatefulWidget {
   String nameCategorie;
   bool toShow = false;
-  static BannerAd myBanner;
+  
 
   page_details({this.nameCategorie});
   @override
@@ -50,7 +50,7 @@ class _page_detailsState extends State<page_details>
         if (showAd == false) {
           print(showAd);
           timer = Timer.periodic(
-              Duration(minutes: 1), (Timer t) => page_details.myBanner.load());
+              Duration(minutes: 1), (Timer t) => banner.load());
         }
       });
     }
@@ -58,6 +58,7 @@ class _page_detailsState extends State<page_details>
 
   List<FoodModel> foodListSaver;
   AnimationController _animationController;
+  BannerAd banner;
   @override
   void initState() {
     super.initState();
@@ -67,32 +68,38 @@ class _page_detailsState extends State<page_details>
         AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
 
-    if (mounted) {
       userInfo.addListener(() {
-        setState(() {});
+        if (mounted) {
+          setState(() {});
+        }
       });
-    }
+
+
 
     foodLocalDataSource = IFoodLocalDataSource();
-    page_details.myBanner = BannerAd(
+    banner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
           print("==AD ID=>" + ad.responseInfo.responseId);
-          if (await AdsGlobalUtils.isAdDisplayable(
-              ad.responseInfo.responseId, 'banner')) {
-            print(
-                "BANNER HAS BEEN APPROVED =====================================================");
-            showAdState(true);
-          } else {
-            ad.dispose();
-            showAdState(false);
-            print(
-                "BANNER NOT APPROVED =====================================================");
+          try {
+            if (await AdsGlobalUtils.isAdDisplayable(
+                ad.responseInfo.responseId, 'banner')) {
+              print(
+                  "BANNER HAS BEEN APPROVED =====================================================");
+              showAdState(true);
+            } else {
+              ad.dispose();
+              showAdState(false);
+              print(
+                  "BANNER NOT APPROVED =====================================================");
+            }
+          } catch (e) {
+            print(e.toString());
           }
         }));
-    page_details.myBanner.load();
+    banner.load();
   }
 
   final _controller = ScrollController();
@@ -152,8 +159,11 @@ class _page_detailsState extends State<page_details>
   IFoodLocalDataSource foodLocalDataSource;
 
   Future<bool> backToTheHome(BuildContext context) {
-    FoodCaloriesApp.of(context).updateState();
-    Navigator.pop(context);
+    // FoodCaloriesApp.of(context).updateState();
+      Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => FoodCaloriesApp()),
+          );
     return Future.value(true);
   }
 
@@ -193,7 +203,7 @@ class _page_detailsState extends State<page_details>
     // TODO: implement dispose
     _controller.dispose();
     _animationController.dispose();
-    timer.cancel();
+    // timer.cancel();
     super.dispose();
   }
 
@@ -252,7 +262,7 @@ class _page_detailsState extends State<page_details>
                                 ),
                                 SizedBox(height: 4),
                                 Text(
-                                  "${userInfo.remining.toStringAsFixed(2)} Cal",
+                                  "${Card_details.remaining.toStringAsFixed(2)} Cal",
                                   style: headertextStyle,
                                 ),
                               ],
@@ -418,7 +428,7 @@ class _page_detailsState extends State<page_details>
                       child: /* trenary to check if the id exist in the db then take an action*/
                           Visibility(
                               visible: showAd,
-                              child: AdWidget(ad: page_details.myBanner))),
+                              child: AdWidget(ad: banner))),
                 ),
               ],
             ),

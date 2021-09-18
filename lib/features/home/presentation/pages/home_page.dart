@@ -1,12 +1,14 @@
 import 'dart:async';
 
 import 'package:fapp/core/consts/food_categories.dart';
+import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
 import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
+import 'package:fapp/features/home/presentation/pages/page_details.dart';
 import 'package:fapp/features/home/presentation/pages/questionPage.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
@@ -17,7 +19,6 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
   static Map<String, Map<String, List<AdsInfoModel>>> adsData;
-  static BannerAd myBanner;
 
   @override
   _FoodCaloriesAppState createState() => _FoodCaloriesAppState();
@@ -36,19 +37,37 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     setState(() {});
   }
 
-    bool showAd = true;
-   Timer timer;
+  BannerAd banner;
+
+  bool showAd = true;
+  Timer timer;
   showAdState(bool val) {
-    if (mounted) {
-      setState(() {
-        showAd = val;
-        if (showAd == false) {
-          print(showAd);
-          timer = Timer.periodic(
-              Duration(minutes: 1), (Timer t) => FoodCaloriesApp.myBanner.load());
-        }
-      });
+    try {
+      if (mounted) {
+      print("baraaaaaaaaa ++++++Z");
+        setState(() {
+          showAd = val;
+          if (showAd == false) {
+            print(showAd);
+            timer = Timer.periodic(
+                Duration(minutes: 1), (Timer t) => banner.load());
+          }
+        });
+      }
+    } catch (e) {
+      print("daaaaaaaakhl ++++++Z"  + e.toString());
+
     }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    print(
+        "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    banner.dispose();
+    // timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -56,7 +75,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     // TODO: implement initState
     super.initState();
     // getAdsData();
-      FoodCaloriesApp.myBanner = BannerAd(
+    banner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
         request: AdRequest(),
@@ -71,10 +90,10 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
             ad.dispose();
             showAdState(false);
             print(
-                "BANNER NOT APPROVED =====================================================");
+                " HOME BANNER NOT APPROVED =====================================================");
           }
         }));
-    FoodCaloriesApp.myBanner.load();
+    banner.load();
   }
 
   @override
@@ -155,15 +174,13 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
               ],
             ),
             Positioned(
-                  bottom: 3,
-                  child: Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      child: /* trenary to check if the id exist in the db then take an action*/
-                          Visibility(
-                              visible: showAd,
-                              child: AdWidget(ad: FoodCaloriesApp.myBanner))),
-                ),
+              bottom: 3,
+              child: Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  child: /* trenary to check if the id exist in the db then take an action*/
+                      Visibility(visible: showAd, child: AdWidget(ad: banner))),
+            ),
           ],
         ),
       ),
@@ -173,9 +190,19 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   List _buildList(int count) {
     List<Widget> listItems = [];
     for (int i = 0; i < count; i++) {
-      listItems.add(new Padding(
-          padding: new EdgeInsets.all(8.0),
-          child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])));
+      listItems.add(InkWell(
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
+          );
+        },
+        child: new Padding(
+            padding: new EdgeInsets.all(8.0),
+            child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
+      ));
     }
     return listItems;
   }

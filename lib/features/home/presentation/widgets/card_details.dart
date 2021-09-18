@@ -27,7 +27,8 @@ class Card_details extends StatefulWidget {
 
 class _Card_detailsState extends State<Card_details> {
   void calcul(double rating) {
-    double rest = 0.0;
+    print("======================calc==============================");
+   double rest = 0.0;
     if (widget.categorieModel.calories.toString() != "null") {
       rest = (rating * widget.categorieModel.calories) / 100;
       widget.calories_tmp = rest;
@@ -70,20 +71,24 @@ class _Card_detailsState extends State<Card_details> {
   Widget _titleOfcard(String title) {
     return Row(
       children: <Widget>[
-        Container(
-          // width: MediaQuery.of(context).size.width / 1.2,
-          child: Text(
-            "$title \n(100 g)",
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: "greycliff-cf-regular",
-              fontWeight: FontWeight.bold,
+        Expanded(
+          child: Container(
+            // width: MediaQuery.of(context).size.width / 1.2,
+            child: Text(
+              "$title \n(100 g)",
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: "greycliff-cf-regular",
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
       ],
     );
   }
+
+
 
   Future<dynamic> draggableScrollable(
       BuildContext context, double rating, FoodModel foodModel) {
@@ -187,7 +192,7 @@ class _Card_detailsState extends State<Card_details> {
                             ),
                             onPressed: () {
                               // showInter();
-                              
+
                               setState(() {
                                 final mybox = Boxes.getQuestions();
                                 final quetion = mybox.get('key');
@@ -219,8 +224,8 @@ class _Card_detailsState extends State<Card_details> {
                                       fontWeight: FontWeight.bold),
                                   subtitleStyle: confirmAlert, onPress: (val) {
                                 AdsManager.interListener();
-                              AdsManager.showInter();
-                                
+                                AdsManager.showInter();
+
                                 return true;
                               });
                             },
