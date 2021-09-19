@@ -20,13 +20,12 @@ class DrawerItem extends StatelessWidget {
         child: Center(
           child: Row(
             children: [
-              Expanded(flex: 1, child: FaIcon(iconData)),
+              Expanded(
+                  flex: 1,
+                  child: Container(child: Center(child: FaIcon(iconData)))),
               Expanded(
                 flex: 2,
-                child: Text(title,
-                    style: TextStyle(
-                      color: Colors.black,
-                    )),
+                child: Text(title, style: TextStyle()),
               ),
             ],
           ),
