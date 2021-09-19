@@ -66,7 +66,8 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     print(
         "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     banner.dispose();
-    // timer.cancel();
+    if (timer != null && timer.isActive)
+      timer.cancel();
     super.dispose();
   }
 

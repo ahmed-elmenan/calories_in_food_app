@@ -19,7 +19,6 @@ import '../data/models/dataobject.dart';
 class page_details extends StatefulWidget {
   String nameCategorie;
   bool toShow = false;
-  
 
   page_details({this.nameCategorie});
   @override
@@ -49,8 +48,8 @@ class _page_detailsState extends State<page_details>
         showAd = val;
         if (showAd == false) {
           print(showAd);
-          timer = Timer.periodic(
-              Duration(minutes: 1), (Timer t) => banner.load());
+          timer =
+              Timer.periodic(Duration(minutes: 1), (Timer t) => banner.load());
         }
       });
     }
@@ -68,13 +67,11 @@ class _page_detailsState extends State<page_details>
         AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     Timer(Duration(milliseconds: 200), () => _animationController.forward());
 
-      userInfo.addListener(() {
-        if (mounted) {
-          setState(() {});
-        }
-      });
-
-
+    userInfo.addListener(() {
+      if (mounted) {
+        setState(() {});
+      }
+    });
 
     foodLocalDataSource = IFoodLocalDataSource();
     banner = BannerAd(
@@ -160,10 +157,10 @@ class _page_detailsState extends State<page_details>
 
   Future<bool> backToTheHome(BuildContext context) {
     // FoodCaloriesApp.of(context).updateState();
-      Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => FoodCaloriesApp()),
-          );
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => FoodCaloriesApp()),
+    );
     return Future.value(true);
   }
 
@@ -314,14 +311,10 @@ class _page_detailsState extends State<page_details>
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text("Sort by :",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: "greycliff-cf-regular",
-                                      fontWeight: FontWeight.bold)),
                               Expanded(
                                 child: Container(
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       appBarSort(
                                           foodLocalDataSource, 1, "Protein"),
@@ -357,7 +350,6 @@ class _page_detailsState extends State<page_details>
                                   child: TextField(
                                     controller: _textController,
                                     onChanged: (String value) {
-                                      // bloc event here
                                       setState(() {
                                         categorie_model = List.from(
                                             foodLocalDataSource.getSerchedFood(
@@ -374,7 +366,6 @@ class _page_detailsState extends State<page_details>
                                       hintStyle: TextStyle(
                                         color: Color(0xFF979BA3),
                                       ),
-                                      // filled: true,
                                       border: InputBorder.none,
                                     ),
                                   ),
@@ -427,8 +418,7 @@ class _page_detailsState extends State<page_details>
                       width: MediaQuery.of(context).size.width,
                       child: /* trenary to check if the id exist in the db then take an action*/
                           Visibility(
-                              visible: showAd,
-                              child: AdWidget(ad: banner))),
+                              visible: showAd, child: AdWidget(ad: banner))),
                 ),
               ],
             ),

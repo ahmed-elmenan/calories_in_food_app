@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'core/styles/app_theme.dart';
 import 'core/utils/manage_user_info.dart';
 import 'features/home/presentation/data/models/boxes.dart';
 import 'features/home/presentation/data/models/firstpage.dart';
