@@ -1,4 +1,5 @@
 import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/utils/global_utils.dart';
 import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
@@ -23,7 +24,7 @@ class _quetionPageState extends State<quetionPage> {
       TextStyle(color: Colors.red, fontSize: 23, fontWeight: FontWeight.bold);
   String _message = "";
   TimeOfDay timeofnow = TimeOfDay.now();
-   Firstpage question;
+  Firstpage question;
 
   @override
   void initState() {
@@ -34,6 +35,7 @@ class _quetionPageState extends State<quetionPage> {
     }
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +50,10 @@ class _quetionPageState extends State<quetionPage> {
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: "greycliff-cf-regular")),
+          ),
+          leading: new IconButton(
+            icon: new Icon(Icons.chevron_left),
+            onPressed: () => GlobalUtils.backToTheHome(context),
           ),
           backgroundColor: GlobalTheme.lightOrange,
         ),
@@ -371,7 +377,7 @@ class _quetionPageState extends State<quetionPage> {
     }
   }
 
-Future addQuestions(Firstpage quetion) {
+  Future addQuestions(Firstpage quetion) {
     final box = Boxes.getQuestions();
     Firstpage questionTmp = box.get('key');
     question.isvisible = true;
@@ -396,4 +402,3 @@ Future addQuestions(Firstpage quetion) {
     }
   }
 }
-

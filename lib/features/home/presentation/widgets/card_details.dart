@@ -222,7 +222,7 @@ class _Card_detailsState extends State<Card_details> {
                               SweetAlertV2.show(context,
                                   title: "${widget.categorieModel.name} Added",
                                   subtitle:
-                                      "${Card_details.calories.toStringAsFixed(2)} calories of ${widget.categorieModel.name} Added",
+                                      "${widget.calories_tmp.toStringAsFixed(2)} calories of ${widget.categorieModel.name} Added",
                                   style: SweetAlertV2Style.success,
                                   confirmButtonColor: GlobalTheme.lightGreen,
                                   titleStyle: confirmAlert.copyWith(
@@ -231,7 +231,6 @@ class _Card_detailsState extends State<Card_details> {
                                   subtitleStyle: confirmAlert, onPress: (val) {
                                 AdsManager.interListener();
                                 AdsManager.showInter();
-
                                 return true;
                               });
                             },
@@ -329,17 +328,12 @@ class _Card_detailsState extends State<Card_details> {
                       AdsManager.createInterAd();
                       setState(() {
                         FocusScope.of(context).requestFocus(new FocusNode());
-                        // calcul(100);
                         widget.calories_tmp = double.parse(
                             widget.categorieModel.calories.toString());
                         widget.proteins_tmp = widget.categorieModel.proteins;
                         widget.carb_tmp = widget.categorieModel.carb;
                         widget.fat_tmp = widget.categorieModel.fat;
                       });
-
-                      // print(widget.categorieModel.proteins.toString() +
-                      // " ++++++++++++PROT+++++++++++++");
-
                       draggableScrollable(
                           context, rating, widget.categorieModel);
                     },

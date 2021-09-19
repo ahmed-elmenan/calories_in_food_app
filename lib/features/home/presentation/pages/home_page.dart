@@ -1,19 +1,19 @@
 import 'dart:async';
 
 import 'package:fapp/core/consts/food_categories.dart';
-import 'package:fapp/core/consts/food_categories.dart';
+import 'package:fapp/features/home/presentation/widgets/drawer_item.dart';
+import 'package:flutter/material.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/ads/data/datasources/adsRemoteDataSource.dart';
 import 'package:fapp/features/ads/data/models/adsInfoModel.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
-import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/pages/page_details.dart';
 import 'package:fapp/features/home/presentation/pages/questionPage.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -44,7 +44,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   showAdState(bool val) {
     try {
       if (mounted) {
-      print("baraaaaaaaaa ++++++Z");
+        print("baraaaaaaaaa ++++++Z");
         setState(() {
           showAd = val;
           if (showAd == false) {
@@ -55,8 +55,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
         });
       }
     } catch (e) {
-      print("daaaaaaaakhl ++++++Z"  + e.toString());
-
+      print("daaaaaaaakhl ++++++Z" + e.toString());
     }
   }
 
@@ -66,8 +65,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     print(
         "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     banner.dispose();
-    if (timer != null && timer.isActive)
-      timer.cancel();
+    if (timer != null && timer.isActive) timer.cancel();
     super.dispose();
   }
 
@@ -75,7 +73,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // getAdsData();
     banner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
@@ -107,31 +104,35 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
             // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: [
-              const DrawerHeader(
+              DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: Colors.white38,
                 ),
-                child: Text('Menu'),
+                child: Column(
+                  children: [
+                    SvgPicture.asset(
+                      "assets/images/apple_home_logo.svg",
+                      height: 100,
+                    ),
+                    Text("atduyuyfiytytdtudutdutdfaf"),
+                    Text("data")
+                  ],
+                ),
               ),
-              ListTile(
-                title: const Text('Question Page',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                    )),
-                tileColor: Colors.green,
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => quetionPage()));
-                },
+              DrawerItem(
+                title: "QuestionPage",
+                iconData: Icons.accessibility_new,
+                redirectWidget: quetionPage(),
               ),
-              ListTile(
-                title: const Text('Item 2'),
-                tileColor: Colors.green,
-                onTap: () {
-                  // Update the state of the app.
-                  // ...
-                },
+              DrawerItem(
+                title: "Privacy policy",
+                iconData: FontAwesomeIcons.userShield,
+                redirectWidget: quetionPage(),
+              ),
+              DrawerItem(
+                title: "Contact Us",
+                iconData: FontAwesomeIcons.mailchimp,
+                redirectWidget: quetionPage(),
               ),
             ],
           ),
