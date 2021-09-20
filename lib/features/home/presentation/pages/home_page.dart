@@ -70,6 +70,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     banner.dispose();
     if (timer != null && timer.isActive) timer.cancel();
     _subscription.cancel();
+    _nativeAdController.dispose();
     super.dispose();
   }
 
@@ -200,6 +201,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     for (int i = 0; i < count; i++) {
       if (i % 5 == 0 && i != 0) {
         listItems.add(myNativeAd());
+        _nativeAdController.reloadAd(numberAds: 1);
       } else {
         listItems.add(InkWell(
           onTap: () {
@@ -262,20 +264,30 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
             ),
           ],
         ),
-        child: NativeAdmob(
-          adUnitID: "ca-app-pub-3940256099942544/2247696110",
-          controller: _nativeAdController,
-          type: NativeAdmobType.banner,
-          // numberAds: 3,
-          loading: Center(
-            child: CircularProgressIndicator(),
-          ),
-          options: NativeAdmobOptions(
-              headlineTextStyle: NativeTextStyle(
-                fontSize: 16,
-                color: GlobalTheme.customedBlack,
+        child: Center(
+          child: NativeAdmob(
+            adUnitID: "ca-app-pub-3940256099942544/2247696110",
+            controller: _nativeAdController,
+            type: NativeAdmobType.banner,
+            loading: Center(
+              child: CircularProgressIndicator(
+                valueColor:
+                    AlwaysStoppedAnimation<Color>(GlobalTheme.lightOrange),
+                backgroundColor: GlobalTheme.shadeOrange,
               ),
-              showMediaContent: true),
+            ),
+            options: NativeAdmobOptions(
+                headlineTextStyle: NativeTextStyle(
+                  fontSize: 16,
+                  color: GlobalTheme.customedBlack,
+                ),
+                adLabelTextStyle:
+                    NativeTextStyle(backgroundColor: GlobalTheme.lightOrange),
+                ratingColor: GlobalTheme.lightOrange,
+                callToActionStyle:
+                    NativeTextStyle(backgroundColor: GlobalTheme.lightGreen),
+                showMediaContent: true),
+          ),
         ),
       ),
     );
