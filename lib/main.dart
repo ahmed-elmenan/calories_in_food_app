@@ -11,6 +11,8 @@ import 'features/home/presentation/pages/questionPage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'nativeadscreen.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
@@ -31,5 +33,6 @@ void main() async {
       Duration(seconds: 5), (Timer t) => ManageUserInfo.zerowingMacros());
   runApp(MaterialApp(
     home: (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
+  // home:NativeAdScreen()
   ));
 }
