@@ -46,7 +46,6 @@ class AdsManager {
   }
 
   static Future<InterstitialAd> createInterAd() async {
-    // attemptSaver = creatingInterAttempt;
     await InterstitialAd.load(
         adUnitId: InterstitialAd.testAdUnitId, // interAdUnitId,
         request: AdRequest(),
@@ -54,20 +53,13 @@ class AdsManager {
           onAdLoaded: (InterstitialAd ad) async {
             // interstitialAd = ad;
 
-            print(
-                "INTER  APPROVED ==============================================================================");
             if (await AdsGlobalUtils.isAdDisplayable(
-                "12345", 'interstitial')) {
+                ad.responseInfo.responseId, 'interstitial')) {
               print(
                   "INTER HAS BEEN APPROVED +++++++++++++++++++++++++++++++++++++++");
 
               interstitialAd = ad;
-              // if (creatingInterAttempt == 0) {
-              //   createInterAd();
-              //   creatingInterAttempt = 1;
-              // } else {
-              //   creatingInterAttempt = 0;
-              // }
+            
             } else {
               await ad.dispose();
               interstitialAd = null;
@@ -77,26 +69,14 @@ class AdsManager {
           },
           onAdFailedToLoad: (LoadAdError error) {
             print('INTER LOAD ERROR ========================>' + error.message);
-            // creatingInterAttempt++;
-            // if (creatingInterAttempt <= 2) {
-            //   createInterAd(creatingInterAttempt);
-            // }
+           
           },
         ));
     return null;
   }
 
   static FullScreenContentCallback<InterstitialAd> interListener() {
-    // print("IIIIIIIIINNNNNNTTTEERRRR ==> " +
-    //     interstitialAd.responseInfo.responseId);
-
-    // if (interstitialAd == null) {
-    //   {
-    //     print('Warning: attempt to show interstitial before loaded.');
-    //     return;
-    //   }
-    print(
-        "mzzzzzaaaaakh ======================================================================>>");
+ 
 
     return interstitialAd != null
         ? FullScreenContentCallback(

@@ -28,13 +28,14 @@ class FirstpageAdapter extends TypeAdapter<Firstpage> {
       .._fat = fields[8] as double
       .._prot = fields[9] as double
       ..remining = fields[10] as double
-      ..initialzingDate = fields[11] as DateTime;
+      ..initialzingDate = fields[11] as DateTime
+      ..totalCal = fields[12] as double;
   }
 
   @override
   void write(BinaryWriter writer, Firstpage obj) {
     writer
-      ..writeByte(12)
+      ..writeByte(13)
       ..writeByte(0)
       ..write(obj.typeExercise)
       ..writeByte(1)
@@ -58,7 +59,9 @@ class FirstpageAdapter extends TypeAdapter<Firstpage> {
       ..writeByte(10)
       ..write(obj.remining)
       ..writeByte(11)
-      ..write(obj.initialzingDate);
+      ..write(obj.initialzingDate)
+      ..writeByte(12)
+      ..write(obj.totalCal);
   }
 
   @override

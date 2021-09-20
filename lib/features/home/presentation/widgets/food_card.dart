@@ -28,50 +28,41 @@ class FoodCard extends StatelessWidget {
             ),
           ],
         ),
-        child: InkWell(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => page_details(
-                        nameCategorie: this.foodCategorie["name"])));
-          },
-          child: Row(
-            children: [
-              Container(
-                  height: double.infinity,
-                  child: CircleAvatar(
-                    radius: 35.0,
-                    backgroundImage:
-                        AssetImage(this.foodCategorie["imagePath"]),
-                    backgroundColor: Colors.transparent,
-                  )),
-              SizedBox(width: 20),
-              Expanded(
-                flex: 1,
-                child: Text(
-                  this.foodCategorie["name"],
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: GlobalTheme.customedBlack,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "greycliff-cf-regular"),
-                ),
+        child: Row(
+          children: [
+            Container(
+                height: double.infinity,
+                child: CircleAvatar(
+                  radius: 35.0,
+                  backgroundImage:
+                      AssetImage(this.foodCategorie["imagePath"]),
+                  backgroundColor: Colors.transparent,
+                )),
+            SizedBox(width: 20),
+            Expanded(
+              flex: 1,
+              child: Text(
+                this.foodCategorie["name"],
+                style: TextStyle(
+                    fontSize: 16,
+                    color: GlobalTheme.customedBlack,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "greycliff-cf-regular"),
               ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  child: Align(
-                      alignment: Alignment.centerRight,
-                      child: SvgPicture.asset(
-                        "assets/images/icons/right-chevron.svg",
-                        color: GlobalTheme.lightGreen,
-                        height: 40,
-                      )),
-                ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: SvgPicture.asset(
+                      "assets/images/icons/right-chevron.svg",
+                      color: GlobalTheme.lightGreen,
+                      height: 40,
+                    )),
               ),
-            ],
-          ),
+            ),
+          ],
         ));
   }
 }

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'core/styles/app_theme.dart';
 import 'core/utils/manage_user_info.dart';
 import 'features/home/presentation/data/models/boxes.dart';
 import 'features/home/presentation/data/models/firstpage.dart';
@@ -11,6 +10,8 @@ import 'features/home/presentation/pages/home_page.dart';
 import 'features/home/presentation/pages/questionPage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
+import 'nativeadscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,5 +33,6 @@ void main() async {
       Duration(seconds: 5), (Timer t) => ManageUserInfo.zerowingMacros());
   runApp(MaterialApp(
     home: (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
+  // home:NativeAdScreen()
   ));
 }

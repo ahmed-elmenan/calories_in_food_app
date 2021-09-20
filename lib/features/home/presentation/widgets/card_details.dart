@@ -5,6 +5,7 @@ import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:sweetalertv2/sweetalertv2.dart';
 import '../data/models/dataobject.dart';
 
 class Card_details extends StatefulWidget {
@@ -69,14 +70,15 @@ class _Card_detailsState extends State<Card_details> {
   Widget _titleOfcard(String title) {
     return Row(
       children: <Widget>[
-        Container(
-          // width: MediaQuery.of(context).size.width / 1.2,
-          child: Text(
-            "$title \n(100 g)",
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: "greycliff-cf-regular",
-              fontWeight: FontWeight.bold,
+        Expanded(
+          child: Container(
+            child: Text(
+              "$title \n(100 g)",
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: "greycliff-cf-regular",
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -84,8 +86,18 @@ class _Card_detailsState extends State<Card_details> {
     );
   }
 
+  @override
+  void initState() {
+    super.initState();
+    calcul(100);
+  }
+
+  int i = 0;
+
   Future<dynamic> draggableScrollable(
       BuildContext context, double rating, FoodModel foodModel) {
+    TextStyle confirmAlert =
+        TextStyle(fontFamily: "greycliff-cf-regular", fontSize: 16);
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -96,6 +108,10 @@ class _Card_detailsState extends State<Card_details> {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
+        print("hadi I" + i.toString());
+        i++;
+        // print("++++++++++++++PROT+++++++++++++>" +
+        // widget.proteins_tmp.toStringAsFixed(2));
         return StatefulBuilder(
             builder: (BuildContext context, StateSetter setState) {
           return DraggableScrollableSheet(
@@ -148,7 +164,7 @@ class _Card_detailsState extends State<Card_details> {
                       children: [
                         _Columns(
                             widget.proteins_tmp.toStringAsFixed(2).toString(),
-                            "proteins."),
+                            "protein"),
                         SizedBox(
                           width: 20,
                         ),
@@ -158,7 +174,7 @@ class _Card_detailsState extends State<Card_details> {
                           width: 20,
                         ),
                         _Columns(widget.carb_tmp.toStringAsFixed(2).toString(),
-                            "carsb."),
+                            "carb."),
                         SizedBox(
                           width: 20,
                         ),
@@ -183,17 +199,14 @@ class _Card_detailsState extends State<Card_details> {
                               ),
                             ),
                             onPressed: () {
-                              // showInter();
-                              AdsManager.interListener();
-                              AdsManager.showInter();
                               setState(() {
+                                final mybox = Boxes.getQuestions();
+                                final quetion = mybox.get('key');
                                 Card_details.calories += widget.calories_tmp;
                                 Card_details.carb += widget.carb_tmp;
                                 Card_details.fat += widget.fat_tmp;
                                 Card_details.proteins += widget.proteins_tmp;
                                 Card_details.remaining -= widget.calories_tmp;
-                                final mybox = Boxes.getQuestions();
-                                final quetion = mybox.get('key');
                                 quetion.fat = Card_details.fat;
                                 quetion.carb = Card_details.carb;
                                 quetion.prot = Card_details.proteins;
@@ -205,6 +218,20 @@ class _Card_detailsState extends State<Card_details> {
                                   quetion.save();
                                 }
                                 Navigator.of(context).pop();
+                              });
+                              SweetAlertV2.show(context,
+                                  title: "${widget.categorieModel.name} Added",
+                                  subtitle:
+                                      "${widget.calories_tmp.toStringAsFixed(2)} calories of ${widget.categorieModel.name} Added",
+                                  style: SweetAlertV2Style.success,
+                                  confirmButtonColor: GlobalTheme.lightGreen,
+                                  titleStyle: confirmAlert.copyWith(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                  subtitleStyle: confirmAlert, onPress: (val) {
+                                AdsManager.interListener();
+                                AdsManager.showInter();
+                                return true;
                               });
                             },
                             child: Text(
@@ -226,10 +253,15 @@ class _Card_detailsState extends State<Card_details> {
     );
   }
 
+  final focusNode = FocusNode();
+
+// ...
+
   @override
   Widget build(BuildContext context) {
     double rating = 100;
     Size size = MediaQuery.of(context).size;
+    calcul(100);
     return Container(
       margin: EdgeInsets.symmetric(vertical: 5),
       padding: EdgeInsets.symmetric(horizontal: 10),
@@ -266,10 +298,10 @@ class _Card_detailsState extends State<Card_details> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         _Columns(widget.categorieModel.proteins.toString(),
-                            "proteins."),
+                            "protein."),
                         _Columns(widget.categorieModel.fat.toString(), "fat."),
                         _Columns(
-                            widget.categorieModel.carb.toString(), "carsb."),
+                            widget.categorieModel.carb.toString(), "carb."),
                         _Columns(
                             widget.categorieModel.calories.toString(), "Kcal."),
                       ],
@@ -291,16 +323,19 @@ class _Card_detailsState extends State<Card_details> {
                       color: GlobalTheme.lightGreen,
                     ),
                     onPressed: () {
+                      focusNode.unfocus();
+
                       AdsManager.createInterAd();
                       setState(() {
-                        draggableScrollable(
-                            context, rating, widget.categorieModel);
+                        FocusScope.of(context).requestFocus(new FocusNode());
                         widget.calories_tmp = double.parse(
                             widget.categorieModel.calories.toString());
                         widget.proteins_tmp = widget.categorieModel.proteins;
                         widget.carb_tmp = widget.categorieModel.carb;
                         widget.fat_tmp = widget.categorieModel.fat;
                       });
+                      draggableScrollable(
+                          context, rating, widget.categorieModel);
                     },
                   ),
                 ),
