@@ -198,7 +198,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   List _buildList(int count) {
     List<Widget> listItems = [];
     for (int i = 0; i < count; i++) {
-      if (i % 3 == 0 && i != 0) {
+      if (i % 5 == 0 && i != 0) {
         listItems.add(myNativeAd());
       } else {
         listItems.add(InkWell(
@@ -266,15 +266,15 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
           adUnitID: "ca-app-pub-3940256099942544/2247696110",
           controller: _nativeAdController,
           type: NativeAdmobType.banner,
-          numberAds: 3,
+          // numberAds: 3,
           loading: Center(
             child: CircularProgressIndicator(),
           ),
           options: NativeAdmobOptions(
               headlineTextStyle: NativeTextStyle(
-                  fontSize: 16,
-                  color: GlobalTheme.customedBlack,
-                  ),
+                fontSize: 16,
+                color: GlobalTheme.customedBlack,
+              ),
               showMediaContent: true),
         ),
       ),
