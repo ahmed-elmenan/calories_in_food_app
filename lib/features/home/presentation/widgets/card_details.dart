@@ -92,8 +92,6 @@ class _Card_detailsState extends State<Card_details> {
     calcul(100);
   }
 
-  int i = 0;
-
   Future<dynamic> draggableScrollable(
       BuildContext context, double rating, FoodModel foodModel) {
     TextStyle confirmAlert =
@@ -108,10 +106,6 @@ class _Card_detailsState extends State<Card_details> {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) {
-        print("hadi I" + i.toString());
-        i++;
-        // print("++++++++++++++PROT+++++++++++++>" +
-        // widget.proteins_tmp.toStringAsFixed(2));
         return StatefulBuilder(
             builder: (BuildContext context, StateSetter setState) {
           return DraggableScrollableSheet(

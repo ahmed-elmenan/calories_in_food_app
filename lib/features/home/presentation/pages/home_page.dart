@@ -74,7 +74,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
         "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     banner.dispose();
     if (timer != null && timer.isActive) timer.cancel();
-    _subscription.cancel();
+    // _subscription.cancel();
     _nativeAdController.dispose();
     super.dispose();
   }
@@ -83,7 +83,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _subscription = _nativeAdController.stateChanged.listen(_onStateChanged);
+    // _subscription = _nativeAdController.stateChanged.listen(_onStateChanged);
 
     banner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
@@ -115,32 +115,35 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                padding: EdgeInsets.only(bottom: 15),
-                decoration: BoxDecoration(
-                  color: GlobalTheme.lightOrange,
-                ),
-                child: Column(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/apple_home_logo.svg",
-                      height: 80,
-                    ),
-                    SizedBox(height: 10),
-                    Text(NAMEOFAPP,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "GrechenFuemen-Regular")),
-                    SizedBox(height: 6),
-                    Text("It's Never Too Late To Get Fit",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "greycliff-cf-regular"))
-                  ],
+              SizedBox(
+                height: 220,
+                child: DrawerHeader(
+                  padding: EdgeInsets.only(bottom: 15),
+                  decoration: BoxDecoration(
+                    color: GlobalTheme.lightOrange,
+                  ),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(
+                        "assets/images/apple_home_logo.svg",
+                        height: 80,
+                      ),
+                      SizedBox(height: 10),
+                      Text(NAMEOFAPP,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "GrechenFuemen-Regular")),
+                      SizedBox(height: 6),
+                      Text("It's Never Too Late To Get Fit",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "greycliff-cf-regular"))
+                    ],
+                  ),
                 ),
               ),
               DrawerItem(
@@ -225,24 +228,24 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   List _buildList(int count) {
     List<Widget> listItems = [];
     for (int i = 0; i < count; i++) {
-      if (i % 5 == 0 && i != 0) {
-        listItems.add(myNativeAd());
-        _nativeAdController.reloadAd(numberAds: 1);
-      } else {
-        listItems.add(InkWell(
-          onTap: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
-            );
-          },
-          child: new Padding(
-              padding: new EdgeInsets.all(8.0),
-              child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
-        ));
-      }
+      // if (i % 5 == 0 && i != 0) {
+      //   listItems.add(myNativeAd());
+      //   _nativeAdController.reloadAd(numberAds: 1);
+      // } else {
+      listItems.add(InkWell(
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
+          );
+        },
+        child: new Padding(
+            padding: new EdgeInsets.all(8.0),
+            child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
+      ));
+      // }
     }
     return listItems;
   }
@@ -251,7 +254,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
 
   double _nativeAdHeight = 0;
 
-  StreamSubscription _subscription;
+  // StreamSubscription _subscription;
 
   void _onStateChanged(AdLoadState state) {
     switch (state) {
