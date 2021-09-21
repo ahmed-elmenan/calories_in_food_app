@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/core/widgets/vertical_divider.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
@@ -33,10 +34,17 @@ class _page_detailsState extends State<page_details>
     return await Future.delayed(Duration(seconds: 0), () {
       print(widget.nameCategorie);
       List<dynamic> data = jsonDecode(foodJsonMap[widget.nameCategorie]);
+
       setState(() {
-        categorie_model = data.map((data) => FoodModel.fromJson(data)).toList();
+        try {
+          categorie_model =
+              data.map((data) => FoodModel.fromJson(data)).toList();
+        } catch (e) {
+          print("===>" + e.toString());
+        }
       });
       foodListSaver = List.from(categorie_model);
+      // print("HEYYYYYYYYYYYYYYYYYYYY =============>" + categorie_model[0].name);
       return categorie_model;
     });
   }
@@ -80,21 +88,21 @@ class _page_detailsState extends State<page_details>
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
           print("==AD ID=>" + ad.responseInfo.responseId);
-          try {
-            if (await AdsGlobalUtils.isAdDisplayable(
-                ad.responseInfo.responseId, 'banner')) {
-              print(
-                  "BANNER HAS BEEN APPROVED =====================================================");
-              showAdState(true);
-            } else {
-              ad.dispose();
-              showAdState(false);
-              print(
-                  "BANNER NOT APPROVED =====================================================");
-            }
-          } catch (e) {
-            print(e.toString());
-          }
+          // try {
+          //   if (await AdsGlobalUtils.isAdDisplayable(
+          //       ad.responseInfo.responseId, 'banner')) {
+          //     print(
+          //         "BANNER HAS BEEN APPROVED =====================================================");
+          //     showAdState(true);
+          //   } else {
+          //     ad.dispose();
+          //     showAdState(false);
+          //     print(
+          //         "BANNER NOT APPROVED =====================================================");
+          //   }
+          // } catch (e) {
+          //   print(e.toString());
+          // }
         }));
     banner.load();
   }
@@ -212,6 +220,21 @@ class _page_detailsState extends State<page_details>
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(180.0),
             child: AppBar(
+              title: Center(
+                child: Text(
+                  widget.nameCategorie,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "greycliff-cf-regular",
+                    // fontFamily: "GrechenFuemen-Regular"
+                  ),
+                ),
+              ),
+              actions: <Widget>[
+                ShareButton(),
+              ],
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -221,7 +244,7 @@ class _page_detailsState extends State<page_details>
                       GlobalTheme.lightOrange,
                       GlobalTheme.shadeOrange,
                     ])),
-                padding: EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 70),
                 child: SlideTransition(
                   position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)
                       .animate(_animationController),

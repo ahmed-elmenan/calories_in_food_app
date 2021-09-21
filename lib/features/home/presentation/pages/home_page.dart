@@ -1,6 +1,8 @@
 import 'dart:async';
-
 import 'package:fapp/core/consts/food_categories.dart';
+import 'package:fapp/core/widgets/bottom_sheet_sub_title.dart';
+import 'package:fapp/features/home/presentation/consts/privacy_policyText.dart';
+import 'package:fapp/features/home/presentation/pages/privacy_policy.dart';
 import 'package:fapp/features/home/presentation/widgets/drawer_item.dart';
 import 'package:flutter/material.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
@@ -13,12 +15,12 @@ import 'package:fapp/features/home/presentation/pages/questionPage.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_native_admob/flutter_native_admob.dart';
-import 'package:flutter_native_admob/native_admob_controller.dart';
-import 'package:flutter_native_admob/native_admob_options.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'contact_us.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
   static Map<String, Map<String, List<AdsInfoModel>>> adsData;
@@ -69,8 +71,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
         "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     banner.dispose();
     if (timer != null && timer.isActive) timer.cancel();
-    _subscription.cancel();
-    _nativeAdController.dispose();
     super.dispose();
   }
 
@@ -78,25 +78,23 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _subscription = _nativeAdController.stateChanged.listen(_onStateChanged);
-
     banner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
-          print("==AD ID=>" + ad.responseInfo.responseId);
-          if (await AdsGlobalUtils.isAdDisplayable(
-              ad.responseInfo.responseId, 'banner')) {
-            print(
-                "BANNER HAS BEEN APPROVED =====================================================");
-            showAdState(true);
-          } else {
-            ad.dispose();
-            showAdState(false);
-            print(
-                " HOME BANNER NOT APPROVED =====================================================");
-          }
+          // print("==AD ID=>" + ad.responseInfo.responseId);
+          // if (await AdsGlobalUtils.isAdDisplayable(
+          //     ad.responseInfo.responseId, 'banner')) {
+          //   print(
+          //       "BANNER HAS BEEN APPROVED =====================================================");
+          //   showAdState(true);
+          // } else {
+          //  ad.dispose();
+          //   showAdState(false);
+          //   print(
+          //       " HOME BANNER NOT APPROVED =====================================================");
+          // }
         }));
     banner.load();
   }
@@ -108,38 +106,62 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
       home: Scaffold(
         drawer: Drawer(
           child: ListView(
-            // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.white38,
-                ),
-                child: Column(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/apple_home_logo.svg",
-                      height: 100,
-                    ),
-                    Text("atduyuyfiytytdtudutdutdfaf"),
-                    Text("data")
-                  ],
+              SizedBox(
+                height: 220,
+                child: DrawerHeader(
+                  padding: EdgeInsets.only(bottom: 15),
+                  decoration: BoxDecoration(
+                    color: GlobalTheme.lightOrange,
+                  ),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(
+                        "assets/images/apple_home_logo.svg",
+                        height: 80,
+                      ),
+                      SizedBox(height: 10),
+                      Text(NAMEOFAPP,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "GrechenFuemen-Regular")),
+                      SizedBox(height: 6),
+                      Text("It's Never Too Late To Get Fit",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "greycliff-cf-regular"))
+                    ],
+                  ),
                 ),
               ),
               DrawerItem(
                 title: "QuestionPage",
-                iconData: Icons.accessibility_new,
+                iconData: FontAwesomeIcons.userCog,
                 redirectWidget: quetionPage(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
               ),
               DrawerItem(
                 title: "Privacy policy",
                 iconData: FontAwesomeIcons.userShield,
-                redirectWidget: quetionPage(),
+                redirectWidget: privacyPolicy(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
               ),
               DrawerItem(
                 title: "Contact Us",
-                iconData: FontAwesomeIcons.mailchimp,
-                redirectWidget: quetionPage(),
+                iconData: FontAwesomeIcons.solidEnvelope,
+                redirectWidget: contactUs(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
               ),
             ],
           ),
@@ -150,7 +172,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
               slivers: <Widget>[
                 SliverAppBar(
                   title: Center(
-                    child: Text('Food Calories Calculator',
+                    child: Text(NAMEOFAPP,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
@@ -199,10 +221,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   List _buildList(int count) {
     List<Widget> listItems = [];
     for (int i = 0; i < count; i++) {
-      if (i % 5 == 0 && i != 0) {
-        listItems.add(myNativeAd());
-        _nativeAdController.reloadAd(numberAds: 1);
-      } else {
+    
         listItems.add(InkWell(
           onTap: () {
             Navigator.pushReplacement(
@@ -216,82 +235,11 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
               padding: new EdgeInsets.all(8.0),
               child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
         ));
-      }
+      
     }
     return listItems;
   }
 
-  final _nativeAdController = NativeAdmobController();
-
-  double _nativeAdHeight = 0;
-
-  StreamSubscription _subscription;
-
-  void _onStateChanged(AdLoadState state) {
-    switch (state) {
-      case AdLoadState.loading:
-        setState(() {
-          _nativeAdHeight = 0;
-        });
-        break;
-      case AdLoadState.loadCompleted:
-        setState(() {
-          _nativeAdHeight = 100;
-        });
-        break;
-      default:
-        break;
-    }
-    print(state);
-  }
-
-  Widget myNativeAd() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        margin: EdgeInsets.symmetric(vertical: 5),
-        height: _nativeAdHeight,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Center(
-          child: NativeAdmob(
-            adUnitID: "ca-app-pub-3940256099942544/2247696110",
-            controller: _nativeAdController,
-            type: NativeAdmobType.banner,
-            loading: Center(
-              child: CircularProgressIndicator(
-                valueColor:
-                    AlwaysStoppedAnimation<Color>(GlobalTheme.lightOrange),
-                backgroundColor: GlobalTheme.shadeOrange,
-              ),
-            ),
-            options: NativeAdmobOptions(
-                headlineTextStyle: NativeTextStyle(
-                  fontSize: 16,
-                  color: GlobalTheme.customedBlack,
-                ),
-                adLabelTextStyle:
-                    NativeTextStyle(backgroundColor: GlobalTheme.lightOrange),
-                ratingColor: GlobalTheme.lightOrange,
-                callToActionStyle:
-                    NativeTextStyle(backgroundColor: GlobalTheme.lightGreen),
-                showMediaContent: true),
-          ),
-        ),
-      ),
-    );
-  }
 }
 // 09D093
 // 00B892

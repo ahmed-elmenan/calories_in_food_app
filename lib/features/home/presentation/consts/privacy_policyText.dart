@@ -1,0 +1,3 @@
+const String PRIVACY_POLICYTEXT =
+    'Privacy Policy of FOOD CALORIES CALCULATOR \n In order to receive more information about your Personal Data, contact the Owner. \n  \n this Personal Data is freely provided by the User in purpose to use the services of this app and they are NOT COLLECTED ; PROCESSED or SHARED with any one \n  \n Complete details on each type of Personal Data user are provided : \n GENDER man/women \n AGE  \n WEIGHT \n LENGHT \n LEVEL OF DAILY EXERCISES \n  \n others data automatically provided by the user by using this Application like : \n types of food eaten \n numbers of time eaten  \n calories per day eaten ....  \n are NOT COLLECTED ; PROCESSED or SHARED with any one';
+const String NAMEOFAPP = "Food Calories Calculator";

@@ -1,0 +1,2 @@
+const String BURGER_KING_MILK_SHAKE = 
+'[{"Name" : "Petit Shake Vanille","proteins" : 4.2,"Fat" : 3.9,"Carb" : 27.4,"calories" : 313},{"Name" : "Creamy Shake ","proteins" : 5.9,"Fat" : 14.9,"Carb" : 76,"calories" : 465}]';
