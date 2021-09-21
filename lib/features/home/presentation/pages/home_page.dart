@@ -90,7 +90,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
           //       "BANNER HAS BEEN APPROVED =====================================================");
           //   showAdState(true);
           // } else {
-          //   ad.dispose();
+          //  ad.dispose();
           //   showAdState(false);
           //   print(
           //       " HOME BANNER NOT APPROVED =====================================================");

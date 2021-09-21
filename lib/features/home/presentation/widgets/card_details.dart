@@ -72,7 +72,6 @@ class _Card_detailsState extends State<Card_details> {
       children: <Widget>[
         Expanded(
           child: Container(
-            color: Colors.red,
             child: Text(
               "$title \n(100 g)",
               style: TextStyle(
