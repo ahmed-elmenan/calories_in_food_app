@@ -1,0 +1,2 @@
+const String BURGER_KING_FRIES =
+    '[{"Name" : "Fries Medium","proteins" : 3.8,"Fat" : 12.9,"Carb" : 46.2,"calories" : 309},{"Name" : "Fries Large","proteins" : 5.3,"Fat" : 17.7,"Carb" : 63.3,"calories" : 423},{"Name" : "fries Small","proteins" : 3,"Fat" : 10,"Carb" : 35.9,"calories" : 240},{"Name" : " King Fries Cheese & Crispy Oinions","proteins" : 9.1,"Fat" : 26,"Carb" : 62.2,"calories" : 528},{"Name" : "Onion Rings","proteins" : 4.8,"Fat" : 12.7,"Carb" : 38.4,"calories" : 279}]';

@@ -1,0 +1,2 @@
+const String BURGER_KING_WRAPS =
+'[{"Name" : "Crousty Goat  Cheese wrap ","proteins" : 13.8,"Fat" : 35.1,"Carb" : 60.6,"calories" : 596},{"Name" : "Wrap chicken louisiana","proteins" : 27.9,"Fat" : 39.3,"Carb" : 55.9,"calories" : 698},{"Name" : "Master auvergnat","proteins" : 45,"Fat" : 60.4,"Carb" : 61.7,"calories" : 976}]';

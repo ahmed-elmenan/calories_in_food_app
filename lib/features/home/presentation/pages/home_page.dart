@@ -15,9 +15,6 @@ import 'package:fapp/features/home/presentation/pages/questionPage.dart';
 import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_native_admob/flutter_native_admob.dart';
-import 'package:flutter_native_admob/native_admob_controller.dart';
-import 'package:flutter_native_admob/native_admob_options.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -74,8 +71,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
         "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     banner.dispose();
     if (timer != null && timer.isActive) timer.cancel();
-    // _subscription.cancel();
-    _nativeAdController.dispose();
     super.dispose();
   }
 
@@ -83,25 +78,23 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // _subscription = _nativeAdController.stateChanged.listen(_onStateChanged);
-
     banner = BannerAd(
         adUnitId: BannerAd.testAdUnitId,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
-          print("==AD ID=>" + ad.responseInfo.responseId);
-          if (await AdsGlobalUtils.isAdDisplayable(
-              ad.responseInfo.responseId, 'banner')) {
-            print(
-                "BANNER HAS BEEN APPROVED =====================================================");
-            showAdState(true);
-          } else {
-            ad.dispose();
-            showAdState(false);
-            print(
-                " HOME BANNER NOT APPROVED =====================================================");
-          }
+          // print("==AD ID=>" + ad.responseInfo.responseId);
+          // if (await AdsGlobalUtils.isAdDisplayable(
+          //     ad.responseInfo.responseId, 'banner')) {
+          //   print(
+          //       "BANNER HAS BEEN APPROVED =====================================================");
+          //   showAdState(true);
+          // } else {
+          //   ad.dispose();
+          //   showAdState(false);
+          //   print(
+          //       " HOME BANNER NOT APPROVED =====================================================");
+          // }
         }));
     banner.load();
   }
@@ -228,99 +221,25 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   List _buildList(int count) {
     List<Widget> listItems = [];
     for (int i = 0; i < count; i++) {
-      // if (i % 5 == 0 && i != 0) {
-      //   listItems.add(myNativeAd());
-      //   _nativeAdController.reloadAd(numberAds: 1);
-      // } else {
-      listItems.add(InkWell(
-        onTap: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
-          );
-        },
-        child: new Padding(
-            padding: new EdgeInsets.all(8.0),
-            child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
-      ));
-      // }
+    
+        listItems.add(InkWell(
+          onTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
+            );
+          },
+          child: new Padding(
+              padding: new EdgeInsets.all(8.0),
+              child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
+        ));
+      
     }
     return listItems;
   }
 
-  final _nativeAdController = NativeAdmobController();
-
-  double _nativeAdHeight = 0;
-
-  // StreamSubscription _subscription;
-
-  void _onStateChanged(AdLoadState state) {
-    switch (state) {
-      case AdLoadState.loading:
-        setState(() {
-          _nativeAdHeight = 0;
-        });
-        break;
-      case AdLoadState.loadCompleted:
-        setState(() {
-          _nativeAdHeight = 100;
-        });
-        break;
-      default:
-        break;
-    }
-    print(state);
-  }
-
-  Widget myNativeAd() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        margin: EdgeInsets.symmetric(vertical: 5),
-        height: _nativeAdHeight,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Center(
-          child: NativeAdmob(
-            adUnitID: "ca-app-pub-3940256099942544/2247696110",
-            controller: _nativeAdController,
-            type: NativeAdmobType.banner,
-            loading: Center(
-              child: CircularProgressIndicator(
-                valueColor:
-                    AlwaysStoppedAnimation<Color>(GlobalTheme.lightOrange),
-                backgroundColor: GlobalTheme.shadeOrange,
-              ),
-            ),
-            options: NativeAdmobOptions(
-                headlineTextStyle: NativeTextStyle(
-                  fontSize: 16,
-                  color: GlobalTheme.customedBlack,
-                ),
-                adLabelTextStyle:
-                    NativeTextStyle(backgroundColor: GlobalTheme.lightOrange),
-                ratingColor: GlobalTheme.lightOrange,
-                callToActionStyle:
-                    NativeTextStyle(backgroundColor: GlobalTheme.lightGreen),
-                showMediaContent: true),
-          ),
-        ),
-      ),
-    );
-  }
 }
 // 09D093
 // 00B892
