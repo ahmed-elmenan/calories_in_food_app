@@ -1,0 +1,2 @@
+const String BURGER_KING_SAUCE =
+'[{"Name" : "Caesar Sauce ","proteins" : 1.3,"Fat" : 41.7,"Carb" : 9,"calories" : 417},{"Name" : "Chili Cheese Sauce","proteins" : 0.5,"Fat" : 10,"Carb" : 2.1,"calories" : 105}]';

@@ -33,10 +33,17 @@ class _page_detailsState extends State<page_details>
     return await Future.delayed(Duration(seconds: 0), () {
       print(widget.nameCategorie);
       List<dynamic> data = jsonDecode(foodJsonMap[widget.nameCategorie]);
+
       setState(() {
-        categorie_model = data.map((data) => FoodModel.fromJson(data)).toList();
+        try {
+          categorie_model =
+              data.map((data) => FoodModel.fromJson(data)).toList();
+        } catch (e) {
+          print("===>" + e.toString());
+        }
       });
       foodListSaver = List.from(categorie_model);
+      // print("HEYYYYYYYYYYYYYYYYYYYY =============>" + categorie_model[0].name);
       return categorie_model;
     });
   }
@@ -80,21 +87,21 @@ class _page_detailsState extends State<page_details>
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
           print("==AD ID=>" + ad.responseInfo.responseId);
-          try {
-            if (await AdsGlobalUtils.isAdDisplayable(
-                ad.responseInfo.responseId, 'banner')) {
-              print(
-                  "BANNER HAS BEEN APPROVED =====================================================");
-              showAdState(true);
-            } else {
-              ad.dispose();
-              showAdState(false);
-              print(
-                  "BANNER NOT APPROVED =====================================================");
-            }
-          } catch (e) {
-            print(e.toString());
-          }
+          // try {
+          //   if (await AdsGlobalUtils.isAdDisplayable(
+          //       ad.responseInfo.responseId, 'banner')) {
+          //     print(
+          //         "BANNER HAS BEEN APPROVED =====================================================");
+          //     showAdState(true);
+          //   } else {
+          //     ad.dispose();
+          //     showAdState(false);
+          //     print(
+          //         "BANNER NOT APPROVED =====================================================");
+          //   }
+          // } catch (e) {
+          //   print(e.toString());
+          // }
         }));
     banner.load();
   }

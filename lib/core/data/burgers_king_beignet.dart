@@ -1,0 +1,2 @@
+const String BURGER_KING_BEIGNET =
+'[{"Name" : "Chili Cheese Nugget","proteins" : 16.2,"Fat" : 30.6,"Carb" : 58,"calories" : 549},{"Name" : "Donut Chocolat Noisette","proteins" : 4.8,"Fat" : 20.2,"Carb" : 27.4,"calories" : 313}]';

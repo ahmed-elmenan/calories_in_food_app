@@ -272,15 +272,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.3"
-  flutter_native_admob:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "1e623f96c34a6462871c98630afd3f2bfa6a47d1"
-      url: "https://github.com/hicnar/flutter_native_admob.git"
-    source: git
-    version: "2.2.2"
   flutter_sequence_animation:
     dependency: transitive
     description:

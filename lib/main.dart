@@ -11,7 +11,6 @@ import 'features/home/presentation/pages/questionPage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'nativeadscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
