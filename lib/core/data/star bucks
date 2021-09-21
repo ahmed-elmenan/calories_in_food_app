@@ -1,0 +1,288 @@
+{
+        "name" : "Soy caffé latte (large)",
+        "proteins" : 10.4,
+        "fat" : 5.3,
+        "carb" : 12.9,
+        "calories" : 184
+    } 
+{
+        "name" : "Semi-skimmed caffé latte ",
+        "proteins" : 9.5,
+        "fat" : 5.1,
+        "carb" : 14.8,
+        "calories" : 134
+    }
+
+{
+        "name" : "Cafe americano  ",
+        "proteins" : 1.2,
+        "fat" : 1,
+        "carb" : 5.9,
+        "calories" : 38
+    }
+{
+        "name" : "Sekim milk caffé latte (tall)",
+        "proteins" : 9.9,
+        "fat" : 0.2,
+        "carb" : 15.1,
+        "calories" : 102
+    }
+{
+        "name" : "Semi-skimmed caffé latte(large) ",
+        "proteins" : 12.4,
+        "fat" : 7,
+        "carb" : 18.5,
+        "calories" : 188
+    }
+{
+        "name" : "Skim mlik café frappucino (tall)",
+        "proteins" : 2.8,
+        "fat" : 9,
+        "carb" : 35.7,
+        "calories" : 235
+    }
+
+{
+        "name" : "Skim mlik café latte (large)",
+        "proteins" : 12.6,
+        "fat" : 0.3,
+        "carb" : 19.5,
+        "calories" : 131
+    }
+{
+        "name" : "Soy café latte (venti)",
+        "proteins" : 12.8,
+        "fat" : 6.7,
+        "carb" : 16.6,
+        "calories" : 185
+    }
+{
+        "name" : "café frappucino light (large)",
+        "proteins" : 3.4,
+        "fat" : 0.1,
+        "carb" : 25.6,
+        "calories" : 118
+    }
+{
+        "name" : " café frappucino (tall)",
+        "proteins" : 2.6,
+        "fat" : 0.1,
+        "carb" : 17.7,
+        "calories" : 83
+    }
+
+{
+        "name" : "Skim mlik coffe frappucino (grand)",
+        "proteins" : 3.4,
+        "fat" : 12.5,
+        "carb" : 49.7,
+        "calories" : 325
+    }
+
+{
+        "name" : "café frappucino light (venti)",
+        "proteins" : 4.4,
+        "fat" : 0.1,
+        "carb" : 29.8,
+        "calories" : 139
+    }
+
+{
+        "name" : " caffé mocha Semi-skimmed milk (large)",
+        "proteins" : 13.2,
+        "fat" : 15,
+        "carb" : 43,
+        "calories" : 335
+    }
+
+{
+        "name" : "Skim mlik café frappucino (venti)",
+        "proteins" : 3.7,
+        "fat" : 12.5,
+        "carb" : 61.3,
+        "calories" : 373
+    }
+
+{
+        "name" : "caffé latte",
+        "proteins" : 2.8,
+        "fat" : 2.6,
+        "carb" : 8.9,
+        "calories" : 70
+    }
+
+{
+        "name" : "Caramel macchiato ",
+        "proteins" : 1.35,
+        "fat" : 1.4,
+        "carb" : 4.5,
+        "calories" : 37
+    }
+
+{
+        "name" : "Frappucino ",
+        "proteins" : 2.8,
+        "fat" : 1.2,
+        "carb" : 10,
+        "calories" : 63
+    }
+
+{
+        "name" : "Macchiato hazelnut ",
+        "proteins" : 2.6,
+        "fat" : 2.6,
+        "carb" : 9.3,
+        "calories" : 71
+    }
+
+{
+        "name" : "Caramel macchiato skim milk(grand)",
+        "proteins" : 10.7,
+        "fat" : 1.1,
+        "carb" : 34.9,
+        "calories" : 139
+    }
+
+{
+        "name" : "Cappuccino semi -skimmed milk (large)",
+        "proteins" : 7.6,
+        "fat" : 4.1,
+        "carb" : 11.7,
+        "calories" : 115
+    }
+
+{
+        "name" : "Vanilla bean macchiato ",
+        "proteins" : 2.8,
+        "fat" : 1.4,
+        "carb" : 8.9,
+        "calories" : 60
+    }
+
+{
+        "name" : "Skim mlik café caramel macchiato(tall)",
+        "proteins" : 10.2,
+        "fat" : 1,
+        "carb" : 28.7,
+        "calories" : 165
+    }
+
+{
+        "name" : "Vanilla iced semi skimmed milk latte (large)",
+        "proteins" : 7.3,
+        "fat" : 3.9,
+        "carb" : 30,
+        "calories" : 187
+    }
+
+{
+        "name" : "Soy cappucchino (large)",
+        "proteins" : 6.4,
+        "fat" : 3.2,
+        "carb" : 8.5,
+        "calories" : 92
+    }
+
+{
+        "name" : "Caramel macchiato semi-skimmed milk (tall)",
+        "proteins" : 10,
+        "fat" : 6.3,
+        "carb" : 28.2,
+        "calories" : 209
+    }
+
+{
+        "name" : "Cppuccino  semi-skimmed milk (tall)",
+        "proteins" : 6.4,
+        "fat" : 3.4,
+        "carb" : 10.2,
+        "calories" : 97
+    }
+
+{
+        "name" : "skim milk cappuccino  (tall)",
+        "proteins" : 6.5,
+        "fat" : 0.1,
+        "carb" : 10.5,
+        "calories" : 70
+    }
+
+{
+        "name" : " Doubleshot espresso ",
+        "proteins" : 2.8,
+        "fat" : 2.6,
+        "carb" : 9.3,
+        "calories" : 72
+    }
+
+{
+        "name" : "Caramel macchiato semi-skimmed milk (grand)",
+        "proteins" : 10.5,
+        "fat" : 6.7,
+        "carb" : 34,
+        "calories" : 240
+    }
+
+{
+        "name" : "White chocolate mocha",
+        "proteins" : 2.8,
+        "fat" : 1.7,
+        "carb" : 10,
+        "calories" : 68
+    }
+
+{
+        "name" : "Espresso frappuccino(large)",
+        "proteins" : 2.2,
+        "fat" : 2.4,
+        "carb" : 34.7,
+        "calories" : 205
+    }
+
+{
+        "name" : "Mocha white with whipped cream (large)",
+        "proteins" : 14.7,
+        "fat" : 22.1,
+        "carb" : 62.3,
+        "calories" : 500
+    }
+
+{
+        "name" : "Mocha white with whipped cream (tall)",
+        "proteins" : 9.5,
+        "fat" : 15.5,
+        "carb" : 33.3,
+        "calories" : 297
+    }
+
+{
+        "name" : "Pumpkin spice latte (tall)",
+        "proteins" : 11,
+        "fat" : 11,
+        "carb" : 40,
+        "calories" : 300
+    }
+
+{
+        "name" : "Mocha white skim milk with whipped cream (ltall)",
+        "proteins" : 11.4,
+        "fat" : 10.4,
+        "carb" : 48.1,
+        "calories" : 327
+    }
+
+{
+        "name" : "white mocha soybean with whipped cream (tall)",
+        "proteins" : 16.6,
+        "fat" : 20.4,
+        "carb" : 54.2,
+        "calories" : 465
+    }
+
+{
+        "name" : "Mocha semi-skimmed milk with whipped cream (tall)",
+        "proteins" : 5.3,
+        "fat" : 0.9,
+        "carb" : 39.6,
+        "calories" : 179
+    }

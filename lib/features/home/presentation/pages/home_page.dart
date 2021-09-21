@@ -1,6 +1,8 @@
 import 'dart:async';
-
 import 'package:fapp/core/consts/food_categories.dart';
+import 'package:fapp/core/widgets/bottom_sheet_sub_title.dart';
+import 'package:fapp/features/home/presentation/consts/privacy_policyText.dart';
+import 'package:fapp/features/home/presentation/pages/privacy_policy.dart';
 import 'package:fapp/features/home/presentation/widgets/drawer_item.dart';
 import 'package:flutter/material.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
@@ -14,8 +16,11 @@ import 'package:fapp/features/home/presentation/widgets/food_card.dart';
 import 'package:fapp/features/home/presentation/widgets/home_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'contact_us.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
   static Map<String, Map<String, List<AdsInfoModel>>> adsData;
@@ -101,38 +106,62 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
       home: Scaffold(
         drawer: Drawer(
           child: ListView(
-            // Important: Remove any padding from the ListView.
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.white38,
-                ),
-                child: Column(
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/apple_home_logo.svg",
-                      height: 100,
-                    ),
-                    Text("atduyuyfiytytdtudutdutdfaf"),
-                    Text("data")
-                  ],
+              SizedBox(
+                height: 220,
+                child: DrawerHeader(
+                  padding: EdgeInsets.only(bottom: 15),
+                  decoration: BoxDecoration(
+                    color: GlobalTheme.lightOrange,
+                  ),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(
+                        "assets/images/apple_home_logo.svg",
+                        height: 80,
+                      ),
+                      SizedBox(height: 10),
+                      Text(NAMEOFAPP,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "GrechenFuemen-Regular")),
+                      SizedBox(height: 6),
+                      Text("It's Never Too Late To Get Fit",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "greycliff-cf-regular"))
+                    ],
+                  ),
                 ),
               ),
               DrawerItem(
                 title: "QuestionPage",
-                iconData: Icons.accessibility_new,
+                iconData: FontAwesomeIcons.userCog,
                 redirectWidget: quetionPage(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
               ),
               DrawerItem(
                 title: "Privacy policy",
                 iconData: FontAwesomeIcons.userShield,
-                redirectWidget: quetionPage(),
+                redirectWidget: privacyPolicy(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
               ),
               DrawerItem(
                 title: "Contact Us",
-                iconData: FontAwesomeIcons.mailchimp,
-                redirectWidget: quetionPage(),
+                iconData: FontAwesomeIcons.solidEnvelope,
+                redirectWidget: contactUs(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
               ),
             ],
           ),
@@ -143,7 +172,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
               slivers: <Widget>[
                 SliverAppBar(
                   title: Center(
-                    child: Text('Food Calories Calculator',
+                    child: Text(NAMEOFAPP,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,

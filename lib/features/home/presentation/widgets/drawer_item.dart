@@ -15,7 +15,7 @@ class DrawerItem extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => redirectWidget));
       },
       child: Container(
-        color: Colors.red,
+        color: Colors.white,
         height: 60,
         child: Center(
           child: Row(

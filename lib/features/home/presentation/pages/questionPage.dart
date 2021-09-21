@@ -20,8 +20,13 @@ class _quetionPageState extends State<quetionPage> {
   int gender = -1;
   int _state = -1;
   int _checkTime = -1;
-  TextStyle _errorText =
-      TextStyle(color: Colors.red, fontSize: 23, fontWeight: FontWeight.bold);
+  TextEditingController ageController = TextEditingController();
+  TextEditingController legthController = TextEditingController();
+  TextEditingController wightController = TextEditingController();
+  TextStyle _errorText = TextStyle(
+    color: Colors.red,
+    fontSize: 15,
+  );
   String _message = "";
   TimeOfDay timeofnow = TimeOfDay.now();
   Firstpage question;
@@ -33,6 +38,10 @@ class _quetionPageState extends State<quetionPage> {
     if (question == null) {
       question = new Firstpage();
     }
+    _currentStep = 0;
+    gender = -1;
+    _state = -1;
+    _checkTime = -1;
     super.initState();
   }
 
@@ -53,14 +62,17 @@ class _quetionPageState extends State<quetionPage> {
           ),
           leading: new IconButton(
             icon: new Icon(Icons.chevron_left),
-            onPressed: () => GlobalUtils.backToTheHome(context),
+            onPressed: () => Navigator.pop((context)),
           ),
           backgroundColor: GlobalTheme.lightOrange,
         ),
         body: Container(
           child: Column(
             children: [
-              Text(_message, style: _errorText),
+              Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: Text(_message, style: _errorText),
+              ),
               Expanded(
                 child: Theme(
                   data: GlobalTheme.widgetThemeData,
@@ -111,10 +123,11 @@ class _quetionPageState extends State<quetionPage> {
                             : StepState.disabled,
                       ),
                       Step(
-                        title: new Text('Address'),
+                        title: new Text('User Setting'),
                         content: Column(
                           children: <Widget>[
                             TextFormField(
+                              controller: ageController,
                               keyboardType: TextInputType.numberWithOptions(
                                   decimal: true),
                               onChanged: (String value) {
@@ -128,6 +141,7 @@ class _quetionPageState extends State<quetionPage> {
                               decoration: InputDecoration(labelText: 'Age'),
                             ),
                             TextFormField(
+                              controller: legthController,
                               keyboardType: TextInputType.numberWithOptions(
                                   decimal: true),
                               onChanged: (String value) {
@@ -142,6 +156,7 @@ class _quetionPageState extends State<quetionPage> {
                                   InputDecoration(labelText: 'Length (CM)'),
                             ),
                             TextFormField(
+                              controller: wightController,
                               keyboardType: TextInputType.numberWithOptions(
                                   decimal: true),
                               onChanged: (String value) {
@@ -163,7 +178,7 @@ class _quetionPageState extends State<quetionPage> {
                             : StepState.disabled,
                       ),
                       Step(
-                        title: new Text('Mobile Number'),
+                        title: new Text('Daily exercices level'),
                         content: Column(
                           children: <Widget>[
                             Row(
@@ -179,7 +194,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("bla bla bla bla bla bla"),
+                                Text("peu/pas D`exercice"),
                               ],
                             ),
                             Row(
@@ -195,7 +210,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("bla bla bla bla bla bla"),
+                                Text("Exercice Leger"),
                               ],
                             ),
                             Row(
@@ -211,7 +226,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("bla bla bla bla bla bla"),
+                                Text("Exercice Modere"),
                               ],
                             ),
                             Row(
@@ -227,7 +242,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("bla bla bla bla bla bla"),
+                                Text("Tres Active"),
                               ],
                             ),
                             Row(
@@ -243,7 +258,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("bla bla bla bla bla bla"),
+                                Text("Extra Active"),
                               ],
                             ),
                           ],
@@ -254,14 +269,18 @@ class _quetionPageState extends State<quetionPage> {
                             : StepState.disabled,
                       ),
                       Step(
-                        title: new Text('Gender'),
-                        content: Row(
+                        title: new Text('Reseting Time'),
+                        content: Column(
                           children: <Widget>[
-                            ElevatedButton(
+                            Text(
+                                "The time choosing will be the time which The EATEN values will be reset to (0.00 kcal) every 24 hours\n You can any time change it from settings",
+                                textAlign: TextAlign.center),
+                            TextButton(
+                              style: ButtonStyle(alignment: Alignment.center),
                               onPressed: () {
                                 _selectTime(context);
                               },
-                              child: Text("Choose Time"),
+                              child: Text(" Choose Time"),
                             ),
                           ],
                         ),
@@ -324,8 +343,6 @@ class _quetionPageState extends State<quetionPage> {
     } on FormatException catch (ex) {
       setState(() {
         _message = "${field} ne pas valide";
-        _errorText = TextStyle(
-            color: Colors.red, fontSize: 23, fontWeight: FontWeight.bold);
         question.Length = null;
       });
     }
@@ -349,11 +366,12 @@ class _quetionPageState extends State<quetionPage> {
     List<String> errorField = [
       "Gender",
       "Age",
-      "Weight",
       "Length",
-      "TypeExercise",
+      "Weight",
+      "Exercise level",
       "CheckTime"
     ];
+    print(checker);
     setState(() {
       _message = errorField[checker] + " field that is not filled in";
     });
@@ -362,10 +380,10 @@ class _quetionPageState extends State<quetionPage> {
   int validationAllFields(Firstpage quetion) {
     int checker = -1;
     if (gender == -1 && (checker = 0) >= 0 ||
-        quetion.Age == null && (checker = 1) > 0 ||
-        quetion.Length == null && (checker = 2) > 0 ||
-        quetion.Weight == null && (checker = 3) > 0 ||
-        quetion.typeExercise == null && (checker = 4) > 0 ||
+        ageController.text.isEmpty && (checker = 1) > 0 ||
+        legthController.text.isEmpty && (checker = 2) > 0 ||
+        wightController.text.isEmpty && (checker = 3) > 0 ||
+        _state == -1 && (checker = 4) > 0 ||
         _checkTime == -1 && (checker = 5) > 0) {
       validationPerField(checker);
       return 0;
