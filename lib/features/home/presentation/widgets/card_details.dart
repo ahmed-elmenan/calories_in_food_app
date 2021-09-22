@@ -281,7 +281,6 @@ class _Card_detailsState extends State<Card_details> {
             child: Container(
               padding: EdgeInsets.only(bottom: 10),
               child: Column(
-                // mainAxisSize: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -305,33 +304,30 @@ class _Card_detailsState extends State<Card_details> {
               ),
             ),
           ),
-          Expanded(
-            child: Container(
-              child: Center(
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.add,
-                      size: 40,
-                      color: GlobalTheme.lightGreen,
-                    ),
-                    onPressed: () {
-                      focusNode.unfocus();
-
-                      AdsManager.createInterAd();
-                      setState(() {
-                        FocusScope.of(context).requestFocus(new FocusNode());
-                        widget.calories_tmp = double.parse(
-                            widget.categorieModel.calories.toString());
-                        widget.proteins_tmp = widget.categorieModel.proteins;
-                        widget.carb_tmp = widget.categorieModel.carb;
-                        widget.fat_tmp = widget.categorieModel.fat;
-                      });
-                      draggableScrollable(
-                          context, rating, widget.categorieModel);
-                    },
+          Container(
+            child: Center(
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.add,
+                    size: 40,
+                    color: GlobalTheme.lightGreen,
                   ),
+                  onPressed: () {
+                    focusNode.unfocus();
+
+                    AdsManager.createInterAd();
+                    setState(() {
+                      FocusScope.of(context).requestFocus(new FocusNode());
+                      widget.calories_tmp = double.parse(
+                          widget.categorieModel.calories.toString());
+                      widget.proteins_tmp = widget.categorieModel.proteins;
+                      widget.carb_tmp = widget.categorieModel.carb;
+                      widget.fat_tmp = widget.categorieModel.fat;
+                    });
+                    draggableScrollable(context, rating, widget.categorieModel);
+                  },
                 ),
               ),
             ),

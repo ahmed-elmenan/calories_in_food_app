@@ -1,0 +1,159 @@
+{
+        "name" : "Chicken breast",
+        "proteins" : 29.55,
+        "fat" : 7.72,
+        "carb" : 0.0,
+        "calories" : 195
+    }
+
+{
+        "name" : "Chicken breast(skin not eaten)",
+        "proteins" : 30.76,
+        "fat" : 3.54,
+        "carb" : 0.0,
+        "calories" : 164
+    }
+
+{
+        "name" : "Roasted Grilled or baked Chicken breast",
+        "proteins" : 29.55,
+        "fat" : 7.72,
+        "carb" : 0.0,
+        "calories" : 195
+    }
+
+{
+        "name" : "Chicken drumstick",
+        "proteins" : 26.80,
+        "fat" : 11.06,
+        "carb" : 0.0,
+        "calories" : 214
+    }
+
+{
+        "name" : "Chicken drumstick (skin not eaten)",
+        "proteins" : 28.05,
+        "fat" : 5.61,
+        "carb" : 0.0,
+        "calories" : 171
+    }
+
+{
+        "name" : " Roasted Grilled baked or Chicken drumstick ",
+        "proteins" : 26.80,
+        "fat" : 11.06,
+        "carb" : 0.0,
+        "calories" : 214
+    }
+
+{
+        "name" : "Chicken thigh",
+        "proteins" : 24.85,
+        "fat" : 15.36,
+        "carb" : 0.0,
+        "calories" : 245
+    }
+
+{
+        "name" : "Chicken thigh (skin not eaten)",
+        "proteins" : 25.72,
+        "fat" : 10.79,
+        "carb" : 0.0,
+        "calories" : 207
+    }
+
+{
+        "name" : "Chicken thigh meat",
+        "proteins" : 19.65,
+        "fat" : 3.91,
+        "carb" : 0.0,
+        "calories" : 119
+    }
+
+{
+        "name" : "Chicken wing",
+        "proteins" : 26.64,
+        "fat" : 19.30,
+        "carb" : 0.0,
+        "calories" : 288
+    }
+
+{
+        "name" : "Chicken wing (skin not eaten)",
+        "proteins" : 30.21,
+        "fat" : 8.06,
+        "carb" : 0.0,
+        "calories" : 201
+    }
+
+{
+        "name" : "Roasted Grilled or baked Chicken wing(skin eaten)",
+        "proteins" : 26.64,
+        "fat" : 19.30,
+        "carb" : 0.0,
+        "calories" : 288
+    }
+
+{
+        "name" : " Grilled Chicken",
+        "proteins" : 27.07,
+        "fat" : 13.49,
+        "carb" : 0.0,
+        "calories" : 237
+    }
+
+{
+        "name" : " Grilled Chicken(skin not eaten)",
+        "proteins" : 28.99,
+        "fat" : 7.35,
+        "carb" : 0.0,
+        "calories" : 188
+    }
+
+{
+        "name" : "Minced Chicken",
+        "proteins" : 27.07,
+        "fat" : 13.49,
+        "carb" : 0.0,
+        "calories" : 237
+    }
+
+{
+        "name" : "Breaded Chicken patty,fillet or tenders",
+        "proteins" : 15.59,
+        "fat" : 18.82,
+        "carb" : 16.32,
+        "calories" : 297
+    }
+
+{
+        "name" : "Breaded Chicken patty with cheese",
+        "proteins" : 15.69,
+        "fat" : 16.67,
+        "carb" : 16.26,
+        "calories" : 279
+    }
+
+{
+        "name" : "Roasted grilled or baked chicken",
+        "proteins" : 27.07,
+        "fat" : 13.49,
+        "carb" : 0.0,
+        "calories" : 237
+    }
+
+{
+        "name" : "Roasted grilled or baked chicken(skin not eaten)",
+        "proteins" : 28.69,
+        "fat" : 7.35,
+        "carb" : 0.0,
+        "calories" : 188
+    }
+
+{
+        "name" : "Roasted grilled or baked chicken (skin not eaten)",
+        "proteins" : 30.76,
+        "fat" : 3.54,
+        "carb" : 0.0,
+        "calories" : 166
+    }

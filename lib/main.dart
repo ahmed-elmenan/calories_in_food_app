@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:fapp/features/home/presentation/consts/privacy_policyText.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'core/styles/GlobalTheme.dart';
 import 'core/utils/manage_user_info.dart';
 import 'features/home/presentation/data/models/boxes.dart';
 import 'features/home/presentation/data/models/firstpage.dart';
@@ -10,7 +12,7 @@ import 'features/home/presentation/pages/home_page.dart';
 import 'features/home/presentation/pages/questionPage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +33,27 @@ void main() async {
   Timer timer = Timer.periodic(
       Duration(seconds: 5), (Timer t) => ManageUserInfo.zerowingMacros());
   runApp(MaterialApp(
-    home: (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
-  // home:NativeAdScreen()
+    debugShowCheckedModeBanner: false,
+    home: SplashScreenView(
+      navigateRoute:
+          (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
+      duration: 5000,
+      imageSize: 130,
+      imageSrc: "assets/images/fruits.png",
+      text: NAMEOFAPP,
+      textType: TextType.ColorizeAnimationText,
+      textStyle: TextStyle(
+        fontFamily: "greycliff-cf-regular",
+        fontWeight: FontWeight.bold,
+        fontSize: 30,
+      ),
+      colors: [
+        GlobalTheme.lightOrange,
+        Colors.amber,
+        GlobalTheme.lightOrange,
+        Colors.white,
+      ],
+      backgroundColor: Colors.white,
+    ),
   ));
 }

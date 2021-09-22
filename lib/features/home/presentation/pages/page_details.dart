@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:fapp/core/styles/GlobalTheme.dart';
+import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/core/widgets/vertical_divider.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:fapp/features/home/presentation/consts/json_map.dart';
@@ -219,6 +220,21 @@ class _page_detailsState extends State<page_details>
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(180.0),
             child: AppBar(
+              title: Center(
+                child: Text(
+                  widget.nameCategorie,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "greycliff-cf-regular",
+                    // fontFamily: "GrechenFuemen-Regular"
+                  ),
+                ),
+              ),
+              actions: <Widget>[
+                ShareButton(),
+              ],
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -228,7 +244,7 @@ class _page_detailsState extends State<page_details>
                       GlobalTheme.lightOrange,
                       GlobalTheme.shadeOrange,
                     ])),
-                padding: EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 70),
                 child: SlideTransition(
                   position: Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)
                       .animate(_animationController),
