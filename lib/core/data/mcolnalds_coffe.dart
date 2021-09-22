@@ -1,0 +1,2 @@
+const String MCDONALD_COFFEE =
+    '[{"Name" : "Viennese Coffee","proteins" : 1,"Fat" : 13,"Carb" : 7,"calories" : 150},{"Name" : "Cappuccino Diam","proteins" : 4,"Fat" : 6,"Carb" : 9,"calories" : 105},{"Name" : "Cappuccino","proteins" : 4,"Fat" : 2,"Carb" : 8,"calories" : 66},{"Name" : "Double Latte","proteins" : 4,"Fat" : 2,"Carb" : 6,"calories" : 60},{"Name" : "Mocha","proteins" : 2.5,"Fat" : 1,"Carb" : 7,"calories" : 49}]';
