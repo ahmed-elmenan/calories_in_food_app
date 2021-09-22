@@ -62,6 +62,7 @@ const Map<String, dynamic> foodJsonMap = {
   "Burger King Milk Shake": BURGER_KING_MILK_SHAKE,
   "Burger King Nuggets": BURGER_KING_NUGGETS,
   "Burger King Sauce": BURGER_KING_SAUCE,
+  "Burger King Salad Cesar": BURGER_KING_SALAD_CESAR,
   "Burger King Wraps": BURGER_KING_WRAPS,
   "Burger King Beignet": BURGER_KING_BEIGNET,
   "Dominos Pizza": DOMINOS_PIZZA,

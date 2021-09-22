@@ -2,7 +2,7 @@ const FOOD_CATEGORIES = [
   {"name": "Vegetables", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Fruits", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Juices", "imagePath": "assets/images/vegetables.jpg"},
-  {"name": "Viande", "imagePath": "assets/images/vegetables.jpg"},
+  {"name": "Meat", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Chicken", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Fish", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Milk", "imagePath": "assets/images/vegetables.jpg"},
@@ -34,7 +34,7 @@ const FOOD_CATEGORIES = [
     "imagePath": "assets/images/vegetables.jpg"
   },
   {
-    "name": "Burger King Salad Cesar",
+    "name": "Burger King Cesar Salad",
     "imagePath": "assets/images/vegetables.jpg"
   },
   {"name": "Burger King Sandwich", "imagePath": "assets/images/vegetables.jpg"},
@@ -46,7 +46,7 @@ const FOOD_CATEGORIES = [
   {"name": "Burger King Nuggets", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Burger King Sauce", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Burger King Wraps", "imagePath": "assets/images/vegetables.jpg"},
-  {"name": "Burger King Beignet", "imagePath": "assets/images/vegetables.jpg"},
+  {"name": "Burger King Donut", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Dominos Pizza", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Pizza Hut", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Star Bucks", "imagePath": "assets/images/vegetables.jpg"},
