@@ -219,6 +219,7 @@ class _Card_detailsState extends State<Card_details> {
                                       "${widget.calories_tmp.toStringAsFixed(2)} calories of ${widget.categorieModel.name} Added",
                                   style: SweetAlertV2Style.success,
                                   confirmButtonColor: GlobalTheme.lightGreen,
+                                  subtitleTextAlign: TextAlign.center,
                                   titleStyle: confirmAlert.copyWith(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
