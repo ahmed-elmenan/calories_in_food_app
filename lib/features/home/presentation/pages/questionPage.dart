@@ -313,9 +313,15 @@ class _quetionPageState extends State<quetionPage> {
       setState(() {
         timeofnow = timeOfDay;
         final now = new DateTime.now();
+
+
         question.initialzingDate = new DateTime(
             now.year, now.month, now.day, timeOfDay.hour, timeOfDay.minute);
         _checkTime = 1;
+
+        int timeDiff = now.compareTo(question.initialzingDate);
+        question.initialzingDate = timeDiff >= 0 ? question.initialzingDate.add(Duration(hours: 24)) : question.initialzingDate;
+
       });
     }
   }
