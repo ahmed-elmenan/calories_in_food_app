@@ -194,7 +194,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("peu/pas D`exercice"),
+                                Text("No Exercises"),
                               ],
                             ),
                             Row(
@@ -210,7 +210,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("Exercice Leger"),
+                                Text("Light Exercises"),
                               ],
                             ),
                             Row(
@@ -226,7 +226,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("Exercice Modere"),
+                                Text("Moderate Exercises"),
                               ],
                             ),
                             Row(
@@ -242,7 +242,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("Tres Active"),
+                                Text("Intense Exercises"),
                               ],
                             ),
                             Row(
@@ -258,7 +258,7 @@ class _quetionPageState extends State<quetionPage> {
                                   },
                                   activeColor: Colors.green,
                                 ),
-                                Text("Extra Active"),
+                                Text("Very Intense Exercises"),
                               ],
                             ),
                           ],

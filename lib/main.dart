@@ -37,23 +37,18 @@ void main() async {
     home: SplashScreenView(
       navigateRoute:
           (my_question.isvisible) ? FoodCaloriesApp() : quetionPage(),
-      duration: 5000,
+      duration: 2000,
       imageSize: 130,
-      imageSrc: "assets/images/fruits.png",
+      imageSrc: "assets/images/logo.png",
       text: NAMEOFAPP,
       textType: TextType.ColorizeAnimationText,
       textStyle: TextStyle(
         fontFamily: "greycliff-cf-regular",
         fontWeight: FontWeight.bold,
-        fontSize: 30,
+        fontSize: 20,
       ),
-      colors: [
-        GlobalTheme.lightOrange,
-        Colors.amber,
-        GlobalTheme.lightOrange,
-        Colors.white,
-      ],
-      backgroundColor: Colors.white,
+      colors: [Colors.white, Colors.white],
+      backgroundColor: GlobalTheme.lightGreen,
     ),
   ));
 }
