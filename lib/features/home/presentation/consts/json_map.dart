@@ -14,6 +14,7 @@ import 'package:fapp/core/data/burger_kings_wraps.dart';
 import 'package:fapp/core/data/burgers_king_beignet.dart';
 import 'package:fapp/core/data/cake.dart';
 import 'package:fapp/core/data/cheese.dart';
+import 'package:fapp/core/data/dominos_pizza.dart';
 import 'package:fapp/core/data/fast_food.dart';
 import 'package:fapp/core/data/fish.dart';
 import 'package:fapp/core/data/fruits.dart';
@@ -51,4 +52,5 @@ const Map<String, dynamic> foodJsonMap = {
   "Burger King Sauce": BURGER_KING_SAUCE,
   "Burger King Wraps": BURGER_KING_WRAPS,
   "Burger King Beignet": BURGER_KING_BEIGNET,
+  "Dominos Pizza": DOMINOS_PIZZA,
 };

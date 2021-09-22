@@ -25,4 +25,5 @@ const FOOD_CATEGORIES = [
   {"name": "Burger King Sauce", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Burger King Wraps", "imagePath": "assets/images/vegetables.jpg"},
   {"name": "Burger King Beignet", "imagePath": "assets/images/vegetables.jpg"},
+  {"name": "Dominos Pizza", "imagePath": "assets/images/vegetables.jpg"},
 ];
