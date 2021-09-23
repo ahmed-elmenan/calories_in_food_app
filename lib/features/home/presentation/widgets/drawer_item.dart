@@ -15,7 +15,6 @@ class DrawerItem extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => redirectWidget));
       },
       child: Container(
-        color: Colors.white,
         height: 60,
         child: Center(
           child: Row(
@@ -25,7 +24,12 @@ class DrawerItem extends StatelessWidget {
                   child: Container(child: Center(child: FaIcon(iconData)))),
               Expanded(
                 flex: 2,
-                child: Text(title, style: TextStyle()),
+                child: Text(title,
+                    style: TextStyle(
+                      fontFamily: "greycliff-cf-regular",
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    )),
               ),
             ],
           ),
