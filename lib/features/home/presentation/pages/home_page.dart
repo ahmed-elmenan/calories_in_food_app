@@ -113,12 +113,17 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
                 child: DrawerHeader(
                   padding: EdgeInsets.only(bottom: 15),
                   decoration: BoxDecoration(
-                    color: GlobalTheme.lightOrange,
-                  ),
+                      gradient: LinearGradient(
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                          colors: [
+                        GlobalTheme.lightOrange,
+                        GlobalTheme.shadeOrange
+                      ])),
                   child: Column(
                     children: [
                       SvgPicture.asset(
-                        "assets/images/apple_home_logo.svg",
+                        "assets/images/logo.svg",
                         height: 80,
                       ),
                       SizedBox(height: 10),
@@ -221,25 +226,22 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   List _buildList(int count) {
     List<Widget> listItems = [];
     for (int i = 0; i < count; i++) {
-    
-        listItems.add(InkWell(
-          onTap: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
-            );
-          },
-          child: new Padding(
-              padding: new EdgeInsets.all(8.0),
-              child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
-        ));
-      
+      listItems.add(InkWell(
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    page_details(nameCategorie: FOOD_CATEGORIES[i]["name"])),
+          );
+        },
+        child: new Padding(
+            padding: new EdgeInsets.all(8.0),
+            child: FoodCard(foodCategorie: FOOD_CATEGORIES[i])),
+      ));
     }
     return listItems;
   }
-
 }
 // 09D093
 // 00B892
