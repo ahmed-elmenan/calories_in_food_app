@@ -30,14 +30,7 @@ class FoodCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Container(
-                height: double.infinity,
-                child: CircleAvatar(
-                  radius: 35.0,
-                  backgroundImage:
-                      AssetImage(this.foodCategorie["imagePath"]),
-                  backgroundColor: Colors.transparent,
-                )),
+            Image.asset(this.foodCategorie["imagePath"]),
             SizedBox(width: 20),
             Expanded(
               flex: 1,
