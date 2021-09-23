@@ -1,4 +1,4 @@
-package com.example.fapp
+package com.calories.food
 
 import io.flutter.embedding.android.FlutterActivity
 

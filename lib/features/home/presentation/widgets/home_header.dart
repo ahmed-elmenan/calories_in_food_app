@@ -68,7 +68,6 @@ class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.symmetric(horizontal: 15),
       padding: EdgeInsets.only(top: 60.0, left: 15, right: 15),
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -130,12 +129,6 @@ class _HomeHeaderState extends State<HomeHeader> {
       ),
     );
   }
-
-  // double setOldInfos() {
-  //   final mybox = Boxes.getQuestions();
-  //   final quetion = mybox.get('key');
-  //   return quetion.remining;
-  // }
 
   double calacRemaining(dynamic quetion) {
     double bmr = 0;

@@ -20,9 +20,7 @@ class BottomSheetSubTitle extends StatelessWidget {
           Expanded(
             child: Container(
               height: 2,
-              // width: MediaQuery.of(context).size.width - 130,
               color: GlobalTheme.secondaryGrey,
-              // child: Text("a"),
             ),
           )
         ],

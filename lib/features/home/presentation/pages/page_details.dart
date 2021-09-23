@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:fapp/core/consts/admob-info.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/core/widgets/vertical_divider.dart';
@@ -80,26 +81,26 @@ class _page_detailsState extends State<page_details>
 
     foodLocalDataSource = IFoodLocalDataSource();
     banner = BannerAd(
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: FCC_DETAIL_BANNER,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
           print("==AD ID=>" + ad.responseInfo.responseId);
-          // try {
-          //   if (await AdsGlobalUtils.isAdDisplayable(
-          //       ad.responseInfo.responseId, 'banner')) {
-          //     print(
-          //         "BANNER HAS BEEN APPROVED =====================================================");
-          //     showAdState(true);
-          //   } else {
-          //     ad.dispose();
-          //     showAdState(false);
-          //     print(
-          //         "BANNER NOT APPROVED =====================================================");
-          //   }
-          // } catch (e) {
-          //   print(e.toString());
-          // }
+          try {
+            if (await AdsGlobalUtils.isAdDisplayable(
+                ad.responseInfo.responseId, 'banner')) {
+              print(
+                  "BANNER HAS BEEN APPROVED ========");
+              showAdState(true);
+            } else {
+              ad.dispose();
+              showAdState(false);
+              print(
+                  "BANNER NOT APPROVED =======");
+            }
+          } catch (e) {
+            print(e.toString());
+          }
         }));
     banner.load();
   }
@@ -107,14 +108,6 @@ class _page_detailsState extends State<page_details>
   final _controller = ScrollController();
   int _croissance = 0;
   TextEditingController _textController = TextEditingController();
-  // addKcal() {
-  //   setState(() {
-  //     Card_details.calories;
-  //     Card_details.carb;
-  //     Card_details.fat;
-  //     Card_details.proteins;
-  //   });
-  // }
 
   Widget appBarSort(
       IFoodLocalDataSource foodLocalDataSource, int prop, String title) {

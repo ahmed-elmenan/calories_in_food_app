@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:fapp/core/consts/admob-info.dart';
 import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/widgets/bottom_sheet_sub_title.dart';
 import 'package:fapp/features/home/presentation/consts/privacy_policyText.dart';
@@ -65,7 +66,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     banner.dispose();
     if (timer != null && timer.isActive) timer.cancel();
     super.dispose();
@@ -73,25 +73,24 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     banner = BannerAd(
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: FCC_HOME_BANNER,
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
-          // print("==AD ID=>" + ad.responseInfo.responseId);
-          // if (await AdsGlobalUtils.isAdDisplayable(
-          //     ad.responseInfo.responseId, 'banner')) {
-          //   print(
-          //       "BANNER HAS BEEN APPROVED =====================================================");
-          //   showAdState(true);
-          // } else {
-          //  ²1ad.dispose();
-          //   showAdState(false);
-          //   print(
-          //       " HOME BANNER NOT APPROVED =====================================================");
-          // }
+          print("==AD ID=>" + ad.responseInfo.responseId);
+          if (await AdsGlobalUtils.isAdDisplayable(
+              ad.responseInfo.responseId, 'banner')) {
+            print(
+                "BANNER HAS BEEN APPROVED ======");
+            showAdState(true);
+          } else {
+           ad.dispose();
+            showAdState(false);
+            print(
+                " HOME BANNER NOT APPROVED =====");
+          }
         }));
     banner.load();
   }
@@ -142,7 +141,7 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
                 ),
               ),
               DrawerItem(
-                title: "QuestionPage",
+                title: "User Settings",
                 iconData: FontAwesomeIcons.userCog,
                 redirectWidget: quetionPage(),
               ),

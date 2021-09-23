@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:fapp/core/consts/admob-info.dart';
 import 'package:fapp/features/ads/data/utils/ads_global_utils.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-// import 'package:test_ads/fireStoreServices.dart';
 
 class AdsManager {
   static String get bannerAdUnitId => Platform.isAndroid
@@ -32,7 +32,7 @@ class AdsManager {
         listener: BannerAdListener(
             onAdLoaded: (Ad ad) {},
             onAdFailedToLoad: (Ad ad, LoadAdError error) {
-              print("FAIIIIIIILED =>" + error.message);
+              print("FAILED =>" + error.message);
             },
             onAdOpened: (Ad ad) {
               print("add opened");
@@ -47,16 +47,15 @@ class AdsManager {
 
   static Future<InterstitialAd> createInterAd() async {
     await InterstitialAd.load(
-        adUnitId: InterstitialAd.testAdUnitId, // interAdUnitId,
+        adUnitId: FCC_INTER_1,
         request: AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) async {
-            // interstitialAd = ad;
 
             if (await AdsGlobalUtils.isAdDisplayable(
                 ad.responseInfo.responseId, 'interstitial')) {
               print(
-                  "INTER HAS BEEN APPROVED +++++++++++++++++++++++++++++++++++++++");
+                  "INTER HAS BEEN APPROVED =====");
 
               interstitialAd = ad;
             
@@ -64,11 +63,11 @@ class AdsManager {
               await ad.dispose();
               interstitialAd = null;
               print(
-                  "INTER NOT APPROVED +++++++++++++++++++++++++++++++++++++++");
+                  "INTER NOT APPROVED ======");
             }
           },
           onAdFailedToLoad: (LoadAdError error) {
-            print('INTER LOAD ERROR ========================>' + error.message);
+            print('INTER LOAD ERROR =====>' + error.message);
            
           },
         ));
@@ -81,10 +80,10 @@ class AdsManager {
     return interstitialAd != null
         ? FullScreenContentCallback(
             onAdShowedFullScreenContent: (InterstitialAd ad) => print(
-                'ad onAdShowedFullScreenContent. ==============================================='),
+                'ad onAdShowedFullScreenContent ============'),
             onAdDismissedFullScreenContent: (InterstitialAd ad) {
               print(
-                  '$ad onAdDismissedFullScreenContent. ===========================');
+                  '$ad onAdDismissedFullScreenContent ============');
               ad.dispose();
             },
             onAdFailedToShowFullScreenContent:

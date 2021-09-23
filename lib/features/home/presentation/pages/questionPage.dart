@@ -53,7 +53,7 @@ class _quetionPageState extends State<quetionPage> {
             ShareButton(),
           ],
           title: Center(
-            child: Text('Food Calories Calculator',
+            child: Text('User Settings',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -275,14 +275,14 @@ class _quetionPageState extends State<quetionPage> {
                         content: Column(
                           children: <Widget>[
                             Text(
-                                "The time choosing will be the time which The EATEN values will be reset to (0.00 kcal) every 24 hours\n You can any time change it from settings",
+                                "You need to choose a time for resetting The EATEN calories value to 0.00 kcal, this process will happen every 24 hours from the time you picked (we recommend the waking up time)\n also you could change it any time from the user settings option",
                                 textAlign: TextAlign.center),
                             TextButton(
                               style: ButtonStyle(alignment: Alignment.center),
                               onPressed: () {
                                 _selectTime(context);
                               },
-                              child: Text(" Choose Time"),
+                              child: Text("Choose a Time"),
                             ),
                           ],
                         ),

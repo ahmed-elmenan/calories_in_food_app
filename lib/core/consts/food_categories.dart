@@ -90,7 +90,7 @@ const FOOD_CATEGORIES = [
   },
   {
     "name": "Burger King Ice Cream",
-    "imagePath": "assets/images/foodCategorieImages/burgerkingicecream.svg"
+    "imagePath": "assets/images/foodCategorieImages/burgerkingglace.svg"
   },
   {
     "name": "Burger King Salad Cesar",

@@ -7,7 +7,6 @@ class VerticalLineDivider extends StatelessWidget {
       width: 2,
       height: 40,
       margin: EdgeInsets.symmetric(horizontal: 10),
-      // color: Color(0xFF818182),
       color: Color(0xFFf8703f),
     );
   }

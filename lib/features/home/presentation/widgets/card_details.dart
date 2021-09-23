@@ -317,7 +317,6 @@ class _Card_detailsState extends State<Card_details> {
                   ),
                   onPressed: () {
                     focusNode.unfocus();
-
                     AdsManager.createInterAd();
                     setState(() {
                       FocusScope.of(context).requestFocus(new FocusNode());
