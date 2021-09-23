@@ -32,21 +32,16 @@ class _page_detailsState extends State<page_details>
   bool showAd = true;
   Future<List<FoodModel>> getData() async {
     return await Future.delayed(Duration(seconds: 0), () {
-          print("++++++++++++++++++SERT1++++++++++++++++++++++++++");
-      print(widget.nameCategorie);
       List<dynamic> data = jsonDecode(foodJsonMap[widget.nameCategorie]);
-          print("++++++++++++++++++SERT2++++++++++++++++++++++++++");
-
       setState(() {
         try {
           categorie_model =
               data.map((data) => FoodModel.fromJson(data)).toList();
         } catch (e) {
-          print("===>" + e.toString());
+          print(e.toString());
         }
       });
       foodListSaver = List.from(categorie_model);
-      // print("HEYYYYYYYYYYYYYYYYYYYY =============>" + categorie_model[0].name);
       return categorie_model;
     });
   }

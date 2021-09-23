@@ -49,7 +49,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   showAdState(bool val) {
     try {
       if (mounted) {
-        print("baraaaaaaaaa ++++++Z");
         setState(() {
           showAd = val;
           if (showAd == false) {
@@ -60,15 +59,13 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
         });
       }
     } catch (e) {
-      print("daaaaaaaakhl ++++++Z" + e.toString());
+      print(e.toString());
     }
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    print(
-        "+++++++++++++++++++++++++++++++++++++++++++++DISPOSED+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     banner.dispose();
     if (timer != null && timer.isActive) timer.cancel();
     super.dispose();

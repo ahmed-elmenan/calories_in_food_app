@@ -1,7 +1,7 @@
 const FOOD_CATEGORIES = [
   {
     "name": "Vegetables",
-    "imagePath": "assets/images/foodCategorieImages/vegetables.svg"
+    "imagePath": "assets/images/foodCategorieImages/vegetable.svg"
   },
   {
     "name": "Fruits",
@@ -77,10 +77,6 @@ const FOOD_CATEGORIES = [
     "imagePath": "assets/images/foodCategorieImages/burgerkingburgers.svg"
   },
   {
-    "name": "Burger King Cream Glace",
-    "imagePath": "assets/images/foodCategorieImages/burgerkingcreamglace.svg"
-  },
-  {
     "name": "Burger King Dessert",
     "imagePath": "assets/images/foodCategorieImages/burgerkingdessert.svg"
   },
@@ -103,10 +99,6 @@ const FOOD_CATEGORIES = [
   {
     "name": "Burger King Sandwich",
     "imagePath": "assets/images/foodCategorieImages/burgerkingsandwich.svg"
-  },
-  {
-    "name": "Burger King Glace",
-    "imagePath": "assets/images/foodCategorieImages/burgerkingglace.svg"
   },
   {
     "name": "Burger King Milk Shake",

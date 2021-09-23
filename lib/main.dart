@@ -41,7 +41,6 @@ void main() async {
       imageSize: 130,
       imageSrc: "assets/images/logo.png",
       text: NAMEOFAPP,
-      
       textType: TextType.ColorizeAnimationText,
       textStyle: TextStyle(
         fontFamily: "greycliff-cf-regular",

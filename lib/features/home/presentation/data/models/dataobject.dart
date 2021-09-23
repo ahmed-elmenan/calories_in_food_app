@@ -32,18 +32,11 @@ class FoodModel {
   set calories(double calories) => _calories = calories;
 
   FoodModel.fromJson(Map<String, dynamic> json) {
-    print("========================start================");
-    print(json);
     _name = json['Name'];
-    print("========================0================");
     _proteins = json['proteins'].toDouble();
-    print("========================1================");
     _fat = json['Fat'].toDouble();
-    print("========================2================");
     _carb = json['Carb'].toDouble();
-    print("========================3================");
     _calories = json['calories'].toDouble();
-    print("========================end================");
   }
 
   Map<String, dynamic> toJson() {

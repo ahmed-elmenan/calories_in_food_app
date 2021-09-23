@@ -14,7 +14,6 @@ class DrawerItem extends StatelessWidget {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => redirectWidget));
       },
-      // burgerkingglace
       child: Container(
         height: 60,
         child: Center(

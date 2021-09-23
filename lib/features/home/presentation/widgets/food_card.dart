@@ -30,14 +30,18 @@ class FoodCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Image.asset(this.foodCategorie["imagePath"]),
+            SvgPicture.asset(
+              this.foodCategorie["imagePath"],
+              height: 60,
+              width: 60,
+            ),
             SizedBox(width: 20),
             Expanded(
-              flex: 1,
+              flex: 3,
               child: Text(
                 this.foodCategorie["name"],
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 19,
                     color: GlobalTheme.customedBlack,
                     fontWeight: FontWeight.bold,
                     fontFamily: "greycliff-cf-regular"),

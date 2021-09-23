@@ -60,10 +60,12 @@ class _quetionPageState extends State<quetionPage> {
                     fontWeight: FontWeight.bold,
                     fontFamily: "greycliff-cf-regular")),
           ),
-          leading: new IconButton(
-            icon: new Icon(Icons.chevron_left),
-            onPressed: () => Navigator.pop((context)),
-          ),
+          leading: (question.isvisible)
+              ? new IconButton(
+                  icon: new Icon(Icons.chevron_left),
+                  onPressed: () => Navigator.pop((context)),
+                )
+              : Container(),
           backgroundColor: GlobalTheme.lightOrange,
         ),
         body: Container(
@@ -313,15 +315,13 @@ class _quetionPageState extends State<quetionPage> {
       setState(() {
         timeofnow = timeOfDay;
         final now = new DateTime.now();
-
-
         question.initialzingDate = new DateTime(
             now.year, now.month, now.day, timeOfDay.hour, timeOfDay.minute);
         _checkTime = 1;
-
         int timeDiff = now.compareTo(question.initialzingDate);
-        question.initialzingDate = timeDiff >= 0 ? question.initialzingDate.add(Duration(hours: 24)) : question.initialzingDate;
-
+        question.initialzingDate = timeDiff >= 0
+            ? question.initialzingDate.add(Duration(hours: 24))
+            : question.initialzingDate;
       });
     }
   }
@@ -377,7 +377,6 @@ class _quetionPageState extends State<quetionPage> {
       "Exercise level",
       "CheckTime"
     ];
-    print(checker);
     setState(() {
       _message = errorField[checker] + " field that is not filled in";
     });
