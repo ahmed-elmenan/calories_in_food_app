@@ -4,6 +4,8 @@ import 'package:fapp/core/widgets/shareButton.dart';
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:flutter/material.dart';
+import 'package:fapp/core/utils/macros_calculate.dart';
+
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 
@@ -411,17 +413,21 @@ class _quetionPageState extends State<quetionPage> {
         question.fat = 0.0;
         question.prot = 0.0;
         question.eating = 0.0;
-        question.remining = 0.0;
-        question.totalCal = 0.0;
+        question.remining = MacrosCalcul.calacRemaining(question);
+        question.totalCal = question.remining;
         box.put('key', quetion);
       } else {
         question.save();
       }
+      //question.isvisible ?
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => FoodCaloriesApp()),
         (Route<dynamic> route) => false,
       );
+      //: Navigator.pop(context) :;
     }
   }
 }
+
+// 1847

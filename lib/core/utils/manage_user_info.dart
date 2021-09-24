@@ -1,6 +1,7 @@
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import '../../features/home/presentation/data/models/firstpage.dart';
+import 'package:fapp/core/utils/macros_calculate.dart';
 
 class ManageUserInfo {
   static zerowingMacros() {
@@ -14,7 +15,7 @@ class ManageUserInfo {
         ..fat = 0
         ..prot = 0
         ..eating = 0
-        ..remining = userInfoModel.totalCal
+        ..remining = 0 //MacrosCalcul.calacRemaining(userInfoModel)
         ..initialzingDate =
             userInfoModel.initialzingDate.add(Duration(hours: 24));
       userInfoModel.save();
@@ -25,3 +26,5 @@ class ManageUserInfo {
     }
   }
 }
+
+// 3454

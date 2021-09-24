@@ -45,8 +45,9 @@ class _HomeHeaderState extends State<HomeHeader> {
       final mybox = Boxes.getQuestions();
       quetion = mybox.get('key');
       Card_details.remaining = calacRemaining(quetion);
-      if (quetion.eating != null) Card_details.remaining -= quetion.eating;
       quetion.totalCal = Card_details.remaining;
+      print("====TOTAL======>" + quetion.totalCal.toString());
+      if (quetion.eating != null) Card_details.remaining -= quetion.eating;
       Card_details.fat = quetion.fat;
       Card_details.carb = quetion.carb;
       Card_details.proteins = quetion.prot;
@@ -58,13 +59,20 @@ class _HomeHeaderState extends State<HomeHeader> {
   void initState() {
     macrosInit();
     quetion.addListener(() {
-      if (mounted){
-        setState(() {});
-    
-    }});
+      if (mounted) {
+        setState(() {
+          Card_details.remaining = calacRemaining(quetion);
+          print("======REM======>" + Card_details.remaining.toString());
+      print("====TOTAL======>" + quetion.totalCal.toString());
+
+        });
+      }
+    });
     super.initState();
   }
 
+//  1769
+// 136.50
   @override
   Widget build(BuildContext context) {
     return Container(
