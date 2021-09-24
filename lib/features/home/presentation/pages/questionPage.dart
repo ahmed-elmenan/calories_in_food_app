@@ -380,7 +380,7 @@ class _quetionPageState extends State<quetionPage> {
       "CheckTime"
     ];
     setState(() {
-      _message = errorField[checker] + " field that is not filled in";
+      _message = errorField[checker] + " is empty or not selected";
     });
   }
 
