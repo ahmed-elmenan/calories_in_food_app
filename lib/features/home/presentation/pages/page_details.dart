@@ -85,22 +85,22 @@ class _page_detailsState extends State<page_details>
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
-          print("==AD ID=>" + ad.responseInfo.responseId);
-          try {
-            if (await AdsGlobalUtils.isAdDisplayable(
-                ad.responseInfo.responseId, 'banner')) {
-              print(
-                  "BANNER HAS BEEN APPROVED ========");
-              showAdState(true);
-            } else {
-              ad.dispose();
-              showAdState(false);
-              print(
-                  "BANNER NOT APPROVED =======");
-            }
-          } catch (e) {
-            print(e.toString());
-          }
+          // print("==AD ID=>" + ad.responseInfo.responseId);
+          // try {
+          //   if (await AdsGlobalUtils.isAdDisplayable(
+          //       ad.responseInfo.responseId, 'banner')) {
+          //     print(
+          //         "BANNER HAS BEEN APPROVED ========");
+          //     showAdState(true);
+          //   } else {
+          //     ad.dispose();
+          //     showAdState(false);
+          //     print(
+          //         "BANNER NOT APPROVED =======");
+          //   }
+          // } catch (e) {
+          //   print(e.toString());
+          // }
         }));
     banner.load();
   }

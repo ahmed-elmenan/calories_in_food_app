@@ -52,19 +52,19 @@ class AdsManager {
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) async {
 
-            if (await AdsGlobalUtils.isAdDisplayable(
-                ad.responseInfo.responseId, 'interstitial')) {
-              print(
-                  "INTER HAS BEEN APPROVED =====");
+            // if (await AdsGlobalUtils.isAdDisplayable(
+            //     ad.responseInfo.responseId, 'interstitial')) {
+            //   print(
+            //       "INTER HAS BEEN APPROVED =====");
 
               interstitialAd = ad;
             
-            } else {
-              await ad.dispose();
-              interstitialAd = null;
-              print(
-                  "INTER NOT APPROVED ======");
-            }
+            // } else {
+            //   await ad.dispose();
+            //   interstitialAd = null;
+            //   print(
+            //       "INTER NOT APPROVED ======");
+            // }
           },
           onAdFailedToLoad: (LoadAdError error) {
             print('INTER LOAD ERROR =====>' + error.message);

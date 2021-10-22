@@ -71,8 +71,6 @@ class _HomeHeaderState extends State<HomeHeader> {
     super.initState();
   }
 
-//  1769
-// 136.50
   @override
   Widget build(BuildContext context) {
     return Container(

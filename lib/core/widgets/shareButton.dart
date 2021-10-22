@@ -6,7 +6,8 @@ Widget ShareButton() {
     icon: const Icon(Icons.share),
     tooltip: 'Show Snackbar',
     onPressed: () {
-      Share.share('Check out the Food Calories Calculator app on playstore https://play.google.com/store/apps/details?id=com.calories.food',
+      Share.share(
+          'Check out the Food Calories Calculator app on playstore https://play.google.com/store/apps/details?id=com.ahelmen.yabakhar',
           subject: 'Check it out!');
     },
   );

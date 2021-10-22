@@ -79,18 +79,18 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(onAdLoaded: (Ad ad) async {
-          print("==AD ID=>" + ad.responseInfo.responseId);
-          if (await AdsGlobalUtils.isAdDisplayable(
-              ad.responseInfo.responseId, 'banner')) {
-            print(
-                "BANNER HAS BEEN APPROVED ======");
-            showAdState(true);
-          } else {
-           ad.dispose();
-            showAdState(false);
-            print(
-                " HOME BANNER NOT APPROVED =====");
-          }
+          // print("==AD ID=>" + ad.responseInfo.responseId);
+          // if (await AdsGlobalUtils.isAdDisplayable(
+          //     ad.responseInfo.responseId, 'banner')) {
+          //   print(
+          //       "BANNER HAS BEEN APPROVED ======");
+          //   showAdState(true);
+          // } else {
+          //  ad.dispose();
+          //   showAdState(false);
+          //   print(
+          //       " HOME BANNER NOT APPROVED =====");
+          // }
         }));
     banner.load();
   }
