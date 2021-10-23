@@ -42,6 +42,8 @@ dependencies:
   google_fonts: ^2.1.0
   sweetalertv2:
   hive_flutter: 
+  # functionnal programming
+  dartz: ^0.10.0
   # flutter_native_admob: ^2.1.0+3
 
   # flutter_native_admob:
