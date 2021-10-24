@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 
-class Supplements {
+class Supplement {
   final String name;
   final String id;
   final String imageLink;
@@ -12,6 +12,6 @@ class Supplements {
   final double carbs;
   final double price;
 
-  Supplements({@required this.name, @required this.id, @required this.imageLink, @required this.flavor, @required this.ingredients, @required this.description, @required this.serving, @required this.proteins, @required this.carbs, @required this.price});
+  Supplement({@required this.name, @required this.id, @required this.imageLink, @required this.flavor, @required this.ingredients, @required this.description, @required this.serving, @required this.proteins, @required this.carbs, @required this.price});
 
 }
