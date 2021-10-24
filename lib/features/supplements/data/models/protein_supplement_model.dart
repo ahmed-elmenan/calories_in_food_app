@@ -1,8 +1,11 @@
-import 'package:fapp/features/supplements/domain/entities/supplement.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fapp/features/supplements/domain/entities/protein_supplement.dart';
 import 'package:meta/meta.dart';
 
-class SupplementModel extends Supplement {
-  SupplementModel({
+class ProteinSupplementModel extends ProteinSupplement {
+  static final collection = 'ProteinProducts';
+
+  ProteinSupplementModel({
     @required String name,
     @required String id,
     @required String imageLink,
@@ -12,7 +15,10 @@ class SupplementModel extends Supplement {
     @required String serving,
     @required double proteins,
     @required double carbs,
+    @required double fat,
+    @required double calories,
     @required double price,
+    @required double rating,
   }) : super(
           name: name,
           id: id,
@@ -23,11 +29,14 @@ class SupplementModel extends Supplement {
           serving: serving,
           proteins: proteins,
           carbs: carbs,
+          fat: fat,
+          calories: calories,
           price: price,
+          rating: rating,
         );
 
-  factory SupplementModel.fromJson(Map<String, dynamic> json) {
-    return SupplementModel(
+  factory ProteinSupplementModel.fromJson(DocumentSnapshot json) {
+    return ProteinSupplementModel(
       name: json['name'],
       id: json['id'],
       imageLink: json['imageLink'],
@@ -37,7 +46,10 @@ class SupplementModel extends Supplement {
       serving: json['serving'],
       proteins: json['proteins'],
       carbs: json['carbs'],
+      fat: json['fat'],
+      calories: json['calories'],
       price: json['price'],
+      rating: json['rating'],
     );
   }
 
@@ -52,7 +64,10 @@ class SupplementModel extends Supplement {
       'serving': serving,
       'proteins': proteins,
       'carbs': carbs,
+      'fat': fat,
+      'calories': calories,
       'price': price,
+      'rating': rating,
     };
   }
 }

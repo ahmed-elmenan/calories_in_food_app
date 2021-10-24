@@ -13,9 +13,11 @@ import 'features/home/presentation/pages/questionPage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
+import 'injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
   MobileAds.instance.initialize();
   await Firebase.initializeApp();
   await Hive.initFlutter();
