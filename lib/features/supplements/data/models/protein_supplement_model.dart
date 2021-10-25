@@ -35,7 +35,7 @@ class ProteinSupplementModel extends ProteinSupplement {
           rating: rating,
         );
 
-  factory ProteinSupplementModel.fromJson(DocumentSnapshot json) {
+  factory ProteinSupplementModel.fromSnapshot(DocumentSnapshot json) {
     return ProteinSupplementModel(
       name: json['name'],
       id: json['id'],
@@ -44,12 +44,12 @@ class ProteinSupplementModel extends ProteinSupplement {
       ingredients: json['ingredients'],
       description: json['description'],
       serving: json['serving'],
-      proteins: json['proteins'],
-      carbs: json['carbs'],
-      fat: json['fat'],
-      calories: json['calories'],
-      price: json['price'],
-      rating: json['rating'],
+      proteins: (json['proteins'] as num).toDouble(),
+      carbs: (json['carbs'] as num).toDouble(),
+      fat: (json['fat'] as num).toDouble(),
+      calories: (json['calories'] as num).toDouble(),
+      price: (json['price'] as num).toDouble(),
+      rating: (json['rating'] as num).toDouble(),
     );
   }
 

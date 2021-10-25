@@ -15,14 +15,20 @@ class SupplementRemoteDataSourceImpl implements SupplementRemoteDataSource {
   @override
   Future<ProteinSupplementModel> getProteinSupplement(
       String productName) async {
-    await firestore
-        .collection(ProteinSupplementModel.collection)
-        .where("name", isEqualTo: productName)
-        .get()
-        .then((doc) {
-      doc.docs.forEach((DocumentSnapshot doc) {
-        return ProteinSupplementModel.fromJson(doc);
+    ProteinSupplementModel model;
+    try {
+      await firestore
+          .collection(ProteinSupplementModel.collection)
+          .where("name", isEqualTo: productName)
+          .get()
+          .then((doc) {
+        doc.docs.forEach((DocumentSnapshot doc) {
+          model = new ProteinSupplementModel.fromSnapshot(doc);
+        });
       });
-    }).catchError(() => throw ServerException());
+    } catch (e) {
+      print(e.toString());
+    }
+    return model;
   }
 }

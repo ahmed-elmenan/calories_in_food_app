@@ -1,10 +1,14 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fapp/core/consts/admob-info.dart';
 import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/widgets/bottom_sheet_sub_title.dart';
 import 'package:fapp/features/home/presentation/consts/privacy_policyText.dart';
 import 'package:fapp/features/home/presentation/pages/privacy_policy.dart';
 import 'package:fapp/features/home/presentation/widgets/drawer_item.dart';
+import 'package:fapp/features/supplements/data/datasources/supplement_remote_data_source.dart';
+import 'package:fapp/features/supplements/data/models/protein_supplement_model.dart';
+import 'package:fapp/features/supplements/domain/entities/protein_supplement.dart';
 import 'package:flutter/material.dart';
 import 'package:fapp/core/styles/GlobalTheme.dart';
 import 'package:fapp/core/widgets/shareButton.dart';
@@ -21,6 +25,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+import '../../../../injection_container.dart';
 import 'contact_us.dart';
 
 class FoodCaloriesApp extends StatefulWidget {
@@ -70,6 +75,9 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
     if (timer != null && timer.isActive) timer.cancel();
     super.dispose();
   }
+
+  ProteinSupplement x;
+ 
 
   @override
   void initState() {
