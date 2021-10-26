@@ -5,6 +5,7 @@ import 'package:fapp/core/consts/food_categories.dart';
 import 'package:fapp/core/widgets/bottom_sheet_sub_title.dart';
 import 'package:fapp/features/home/presentation/consts/privacy_policyText.dart';
 import 'package:fapp/features/home/presentation/pages/privacy_policy.dart';
+import 'package:fapp/features/home/presentation/pages/statistique/screens/statistique.dart';
 import 'package:fapp/features/home/presentation/widgets/drawer_item.dart';
 import 'package:fapp/features/supplements/data/datasources/supplement_remote_data_source.dart';
 import 'package:fapp/features/supplements/data/models/protein_supplement_model.dart';
@@ -77,7 +78,6 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
   }
 
   ProteinSupplement x;
- 
 
   @override
   void initState() {
@@ -160,6 +160,14 @@ class _FoodCaloriesAppState extends State<FoodCaloriesApp> {
                 title: "Privacy policy",
                 iconData: FontAwesomeIcons.userShield,
                 redirectWidget: privacyPolicy(),
+              ),
+              BottomSheetSubTitle(
+                subTitle: "",
+              ),
+              DrawerItem(
+                title: "statistique",
+                iconData: FontAwesomeIcons.userShield,
+                redirectWidget: Statistique(),
               ),
               BottomSheetSubTitle(
                 subTitle: "",
