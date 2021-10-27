@@ -1,7 +1,10 @@
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/data/models/dataobject.dart';
+import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 class Charts {
   static List<FoodModel> listoftheday = [];

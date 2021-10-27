@@ -419,13 +419,11 @@ class _quetionPageState extends State<quetionPage> {
       } else {
         question.save();
       }
-      //question.isvisible ?
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => FoodCaloriesApp()),
         (Route<dynamic> route) => false,
       );
-      //: Navigator.pop(context) :;
     }
   }
 }

@@ -1,3 +1,5 @@
+import 'package:fapp/features/home/presentation/data/models/boxes.dart';
+import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:fapp/features/home/presentation/pages/statistique/charts/chart.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -11,6 +13,13 @@ class Statistique extends StatefulWidget {
 }
 
 class _StatistiqueState extends State<Statistique> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Boxes().checkExistingTableofday();
+  }
+
   @override
   Widget build(BuildContext context) {
     Charts.laond();

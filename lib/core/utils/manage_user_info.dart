@@ -1,7 +1,7 @@
 import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import '../../features/home/presentation/data/models/firstpage.dart';
-import 'package:fapp/core/utils/macros_calculate.dart';
+
 
 class ManageUserInfo {
   static zerowingMacros() {
@@ -10,6 +10,9 @@ class ManageUserInfo {
     Firstpage userInfoModel = mybox.get('key');
     int timeDiff = currentDate.compareTo(userInfoModel.initialzingDate);
     if (timeDiff >= 0) {
+      final mybox = Boxes.getQuestions();
+      Firstpage sameday = mybox.getAt(0);
+      sameday.save();
       userInfoModel
         ..carb = 0
         ..fat = 0
