@@ -1,41 +1,41 @@
-import 'package:fapp/features/home/presentation/data/models/boxes.dart';
-import 'package:fapp/features/home/presentation/data/models/dataobject.dart';
-import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
+import 'package:fapp/features/home/presentation/data/models/firstpage.dart';
 
 class Charts {
-  static List<FoodModel> listoftheday = [];
-  static BarChartGroupData chartgroup(int _x, FoodModel data) {
+  static BarChartGroupData chartgroup(int _x, Firstpage data) {
     BarChartGroupData barchart = BarChartGroupData(x: _x, barRods: [
       BarChartRodData(
-          y: data.carb,
+          y: (data.carb == 0) ? 0 : data.carb,
           colors: [Colors.amberAccent],
           width: 10,
           borderRadius: BorderRadius.circular(30)),
       BarChartRodData(
-          y: data.fat,
+          y: (data.fat == 0) ? 0 : data.fat,
           colors: [Colors.green],
           width: 10,
           borderRadius: BorderRadius.circular(30)),
       BarChartRodData(
-          y: data.proteins,
+          y: (data.prot == 0) ? 0 : data.prot,
           colors: [Colors.red],
           width: 10,
           borderRadius: BorderRadius.circular(30)),
     ]);
     return barchart;
   }
+}
 
-  static void laond() {
-    FoodModel foodmodel = FoodModel(
-        name: "ddd", fat: 5.8, proteins: 5.6, carb: 4.5, calories: 5.5);
-    Charts.listoftheday = List.filled(
-        7, FoodModel(name: "ddd", fat: 0, proteins: 0, carb: 0, calories: 0));
-    for (var i = 0; i < 2; i++) {
-      Charts.listoftheday[i] = foodmodel;
-    }
-  }
+class Macros {
+  double macro;
+  String name;
+  Color colorv;
+  Macros({this.name, this.macro, this.colorv});
+}
+class Pollution {
+  String place;
+  int year;
+  int quantity;
+
+  Pollution(this.year, this.place, this.quantity);
 }

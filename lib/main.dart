@@ -23,6 +23,7 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(FirstpageAdapter());
   await Hive.openBox<Firstpage>('firstpages');
+  await Hive.openBox<Firstpage>('daysboxes');
   final mybox = Boxes.getQuestions();
   Firstpage my_question = mybox.get('key');
   if (my_question == null) {
@@ -30,6 +31,7 @@ void main() async {
     my_question.initialzingDate = DateTime.now();
     my_question.isvisible = false;
     await mybox.put('key', my_question);
+    Boxes.addDaysLocalData();
   } else
     my_question = mybox.get('key');
   Timer timer = Timer.periodic(

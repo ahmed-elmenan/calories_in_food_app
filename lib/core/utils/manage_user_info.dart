@@ -2,7 +2,6 @@ import 'package:fapp/features/home/presentation/data/models/boxes.dart';
 import 'package:fapp/features/home/presentation/widgets/card_details.dart';
 import '../../features/home/presentation/data/models/firstpage.dart';
 
-
 class ManageUserInfo {
   static zerowingMacros() {
     DateTime currentDate = DateTime.now();
@@ -10,9 +9,15 @@ class ManageUserInfo {
     Firstpage userInfoModel = mybox.get('key');
     int timeDiff = currentDate.compareTo(userInfoModel.initialzingDate);
     if (timeDiff >= 0) {
-      final mybox = Boxes.getQuestions();
-      Firstpage sameday = mybox.getAt(0);
-      sameday.save();
+      final boxofdays = Boxes.getBoxofDays();
+      Firstpage dayinfo = boxofdays.get((currentDate.weekday) - 1);
+      dayinfo
+        ..prot = userInfoModel.prot
+        ..carb = userInfoModel.carb
+        ..fat = userInfoModel.fat
+        ..eating = userInfoModel.eating
+        ..remining = userInfoModel.remining;
+      dayinfo.save();
       userInfoModel
         ..carb = 0
         ..fat = 0

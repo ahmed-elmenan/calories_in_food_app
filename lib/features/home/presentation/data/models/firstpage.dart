@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 
 part 'firstpage.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType()
 class Firstpage extends HiveObject with ChangeNotifier {
   Firstpage();
   @HiveField(0)
@@ -33,7 +33,7 @@ class Firstpage extends HiveObject with ChangeNotifier {
   DateTime initialzingDate;
   @HiveField(12)
   double totalCal;
-
+  Firstpage.init(this._carb,this._fat,this._prot,this._eating,this.remining);
   set eating(double val) {
     _eating = val;
     notifyListeners();
